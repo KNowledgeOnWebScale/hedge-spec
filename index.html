@@ -11,7 +11,7 @@
       shortName: "",
       specStatus: "unofficial",
       latestVersion: "https://w3id.org/xxxx",
-      publishDate: "2025-03-11",
+      publishDate: "today",
       doJsonLd: true,
       maxToclevel: 3,
       github: "besteves4/health-data-exchange-spec",
@@ -26,6 +26,12 @@
         {}]
     };
   </script>
+  <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
 </head>
 
     <body>
@@ -48,6 +54,65 @@
             <div class="issue" title="TODO: Write into to ODRL, DPV and possibly DCAT, and its specialization HealthDCAT-AP">
                 <p>Other provenance-related vocabs will also be useful like DCTerms, PROV, ...</p>
             </div>
+
+            <section id="namespaces">
+                <h3>Namespaces</h3>
+                <p>The following namespaces and prefixes are used throughout this document:</p>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-0lax">Prefix</th>
+                            <th class="tg-0lax">Namespace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-0lax">dcterms</td>
+                            <td class="tg-0lax"><a href="http://purl.org/dc/terms/" target="_blank">http://purl.org/dc/terms/</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">dcat</td>
+                            <td class="tg-0lax"><a href="http://www.w3.org/ns/dcat#" target="_blank">http://www.w3.org/ns/dcat#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">dpv</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv#" target="_blank">https://w3id.org/dpv#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">dpv-odrl</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv/mappings/odrl#" target="_blank">https://w3id.org/dpv/mappings/odrl#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">eu-gdpr</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv/legal/eu/gdpr#" target="_blank">https://w3id.org/dpv/legal/eu/gdpr#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">ex</td>
+                            <td class="tg-0lax"><a href="https://example.com/" target="_blank">https://example.com/</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">odrl</td>
+                            <td class="tg-0lax"><a href="http://www.w3.org/ns/odrl/2/" target="_blank">http://www.w3.org/ns/odrl/2/</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">pd</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv/pd#" target="_blank">https://w3id.org/dpv/pd#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">sector-health</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv/sector/health#" target="_blank">https://w3id.org/dpv/sector/health#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">skos</td>
+                            <td class="tg-0lax"><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">xsd</td>
+                            <td class="tg-0lax"><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
 
         <section id="requirements">
@@ -55,20 +120,84 @@
             <div class="issue" title="TODO: Map requirements into information that should be reflected in the policies, for both data holders and data users">
                 <p></p>
             </div>
-
             <section id="offers">
                 <h2>Offers</h2>
                 <div class="issue" title="TODO: Write requirements for offers, e.g., policies defined by data subjects and other data holders">
                     <p></p>
                 </div>
             </section>
-
             <section id="requests">
                 <h2>Requests</h2>
                 <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users">
                     <p></p>
                 </div>
             </section>
+            <section id="agreements">
+                <h2>Agreements</h2>
+                <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users">
+                    <p></p>
+                </div>
+            </section>
+        </section>
+
+        <section id="agreement-instantiation">
+            <h2>Agreement Instantiation</h2>
+            <div class="issue" title="TODO: Write into to ODRL, DPV and possibly DCAT, and its specialization HealthDCAT-AP">
+                <p>Other provenance-related vocabs will also be useful like DCTerms, PROV, ...</p>
+            </div>
+
+            <aside class="example" title="Example of an ODRL Offer specifying a patient's permission for its health data to be read for primary care">
+                <pre><code>ex:health-primarycare a odrl:Offer ;
+    odrl:uid ex:health-primarycare ;
+    dcterms:description "Patient allows her health data to be read for primary care." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:health-data ;
+        odrl:assigner ex:patient ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ] ] .</code></pre>
+            </aside>
+
+            <aside class="example" title="Example of an ODRL Request specifying a physician's request to read the patient's health data for primary care">
+                <pre><code>ex:physician-request a odrl:Request ;
+    odrl:uid ex:physician-request ;
+    dcterms:description "Physician requests patient to read health data for primary care." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:health-data ;
+        odrl:assignee ex:physician ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .</code></pre>
+            </aside>
+
+            <aside class="example" title="Example of an ODRL Agreement specifying the agreed terms between physician and patient to read health data for primary care">
+                <pre><code>ex:patient-physician-agreement a odrl:Agreement ;
+    odrl:uid ex:patient-physician-agreement ;
+    dcterms:description "Agreement between physician and patient to read health data for primary care." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:health-data ;
+        odrl:assigner ex:patient ;
+        odrl:assignee ex:physician ;
+        odrl:constraint [
+            odrl:leftOperand odrl:purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement], [
+            odrl:leftOperand oac:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+            </aside>
+        </section>
+
+        <section id="legal-grounds">
+            <h2>Using different legal grounds</h2>
         </section>
     </body>
 </html>
