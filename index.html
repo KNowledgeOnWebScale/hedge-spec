@@ -369,8 +369,32 @@
 
         <section id="agreement-instantiation">
             <h2>Agreement Instantiation</h2>
+            <p>
+                The final agreement instantiation,
+                that results from the matching of a concrete request with the set of policies that determine the access/usage of a certain target resource,
+                should include the following terms:
+            </p>
+            <ul>
+                <li>Reference the ODRL request that triggered the agreement instantiation and the offer policies from the data subject/holder</li>
+                <ul>
+                    <li>
+                        The offer policies should only be directly accessible by the data subject/holder to mitigate privacy concerns,
+                        e.g., to avoid requesters targeting concrete 'personal data-purpose' exchange scenarios
+                    </li>
+                    <li>Data subjects/holders should be able to set these offers as public if that's their wish</li>
+                </ul>
+                <li>Instantiate the concrete assigner and assignee of the agreement</li>
+                <li>Include relevant rules with concrete actions, targets and constraints</li>
+            </ul>
             <div class="issue" title="Link to policy instantiation spec">
-                <a href="https://github.com/Dexagod/ODRL-instantiation">https://github.com/Dexagod/ODRL-instantiation</a>
+                <p>
+                    ODRL policy instantiation spec being developed at 
+                    <a href="https://solidlabresearch.github.io/policy-instantiation-spec/">https://solidlabresearch.github.io/policy-instantiation-spec/</a>
+                </p>
+                <p>
+                    ODRL policy instantiation implementation being developed at
+                    <a href="https://github.com/Dexagod/ODRL-instantiation">https://github.com/Dexagod/ODRL-instantiation</a>
+                </p>
             </div>
 
             <aside class="example" title="Example of an ODRL Offer specifying a patient's permission for its health data to be read for primary care">
@@ -441,5 +465,7 @@
                 </div>
             </section>
         </section>
+
+        <section class="appendix" id="issue-summary"></section>
     </body>
 </html>
