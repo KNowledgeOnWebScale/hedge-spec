@@ -171,6 +171,30 @@
                             <td class="tg-0lax">dpv-odrl:Purpose</td>
                             <td class="tg-0lax"></td>
                         </tr>
+                        <tr>
+                            <td class="tg-0lax">Pseudo/Anonymisation</td>
+                            <td class="tg-0lax">dpv-odrl:Pseudonymise, dpv-odrl:Anonymise</td>
+                            <td class="tg-0lax">odrl:action</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Recipient</td>
+                            <td class="tg-0lax">URI / subclass of dpv:Organisation</td>
+                            <td class="tg-0lax">dpv-odrl:Recipient</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Duration</td>
+                            <td class="tg-0lax">xsd:duration</td>
+                            <td class="tg-0lax">dpv-odrl:Duration</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Frequency</td>
+                            <td class="tg-0lax">xsd:positiveInteger</td>
+                            <td class="tg-0lax">dpv-odrl:Frequency</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
                         <!-- <tr>
                             <td class="tg-0lax"></td>
                             <td class="tg-0lax"></td>
@@ -180,11 +204,15 @@
                     </tbody>
                 </table>
                 <div class="issue" title="TODO: Fill in column with necessity (mandatory, optional, ...)"></div>
+                <div class="issue" title="TODO: Specify common healthcare-related recipients">
+                    <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
+                </div>
+                <div class="issue" title="TODO: Access/usage of retrospective/prospective data">
+                    <p> We should be able to allow both or just one of them</p>
+                </div>
             </section>
             <section id="requests">
                 <h2>Requests</h2>
-                <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users"></div>
-                <div class="issue" title="TODO: Add column with mapping to legal requirements (GDPR, EHDS, ...)"></div>
                 <table class="tg">
                     <thead>
                         <tr>
@@ -204,8 +232,29 @@
                             <td class="tg-0lax"></td>
                         </tr>
                         <tr>
+                            <td class="tg-0lax">Data subject (type)</td>
+                            <td class="tg-0lax">URI / subclass of dpv:HumanSubject</td>
+                            <td class="tg-0lax">odrl:assigner</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
                             <td class="tg-0lax">Personal data</td>
                             <td class="tg-0lax">subclass of dpv:PersonalData</td>
+                            <td class="tg-0lax">odrl:target</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Personal electronic health data</td>
+                            <td class="tg-0lax">subclass of pd:MedicalHealth</td>
+                            <td class="tg-0lax">odrl:target</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Non-personal electronic health data</td>
+                            <td class="tg-0lax">...</td>
                             <td class="tg-0lax">odrl:target</td>
                             <td class="tg-0lax"></td>
                             <td class="tg-0lax"></td>
@@ -225,9 +274,51 @@
                             <td class="tg-0lax"></td>
                         </tr>
                         <tr>
+                            <td class="tg-0lax">Primary/Secondary use</td>
+                            <td class="tg-0lax">TODO</td>
+                            <td class="tg-0lax">TODO</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
                             <td class="tg-0lax">Legal basis</td>
                             <td class="tg-0lax">subclass of dpv:LegalBasis</td>
                             <td class="tg-0lax">dpv-odrl:LegalBasis</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Pseudo/Anonymisation</td>
+                            <td class="tg-0lax">dpv-odrl:Pseudonymise, dpv-odrl:Anonymise</td>
+                            <td class="tg-0lax">odrl:action</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Recipient</td>
+                            <td class="tg-0lax">URI / subclass of dpv:Organisation</td>
+                            <td class="tg-0lax">dpv-odrl:Recipient</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Data source</td>
+                            <td class="tg-0lax">subclass of dpv:DataSource</td>
+                            <td class="tg-0lax">dpv-odrl:DataSource</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Duration</td>
+                            <td class="tg-0lax">xsd:duration</td>
+                            <td class="tg-0lax">dpv-odrl:Duration</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Frequency</td>
+                            <td class="tg-0lax">xsd:positiveInteger</td>
+                            <td class="tg-0lax">dpv-odrl:Frequency</td>
                             <td class="tg-0lax"></td>
                             <td class="tg-0lax"></td>
                         </tr>
@@ -240,6 +331,23 @@
                         </tr> -->
                     </tbody>
                 </table>
+                <div class="issue" title="TODO: Add column with mapping to legal requirements (GDPR, EHDS, ...)"></div>
+                <div class="issue" title="TODO: Add personal and non-personal electronic health data concepts to EHDS">
+                    <p>
+                        EHDS "lays down common rules and mechanisms for primary use of electronic health data and secondary use of electronic health data",
+                        and "'electronic health data’'means personal or non-personal electronic health data".
+                    </p>
+                </div>
+                <div class="issue" title="TODO: Add primary and secondary use concepts to EHDS">
+                    <p>
+                        Use case for complex right operands? (Where more than one value is needed to assess the left/right operand relation)
+                    </p>
+                </div>
+                <div class="issue" title="TODO: Add concepts/examples to deal with joint controllers and data processors">
+                    <p>
+                        In case there's joint-controllership and/or data processors involved in the processing, then policies must be specified for that as well including each parties responsibilities.
+                    </p>
+                </div>
             </section>
             <section id="agreements">
                 <h2>Agreements</h2>
