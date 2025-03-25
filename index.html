@@ -155,19 +155,19 @@
                         </tr>
                         <tr>
                             <td class="tg-0lax">Personal data</td>
-                            <td class="tg-0lax">URI / dpv:PersonalData</td>
+                            <td class="tg-0lax">URI / subclass of dpv:PersonalData</td>
                             <td class="tg-0lax">odrl:target</td>
                             <td class="tg-0lax"></td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Processing operation</td>
-                            <td class="tg-0lax">odrl:Action / dpv:Processing</td>
+                            <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
                             <td class="tg-0lax">odrl:action</td>
                             <td class="tg-0lax"></td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Purpose</td>
-                            <td class="tg-0lax">dpv:Purpose</td>
+                            <td class="tg-0lax">subclass of dpv:Purpose</td>
                             <td class="tg-0lax">dpv-odrl:Purpose</td>
                             <td class="tg-0lax"></td>
                         </tr>
@@ -185,6 +185,61 @@
                 <h2>Requests</h2>
                 <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users"></div>
                 <div class="issue" title="TODO: Add column with mapping to legal requirements (GDPR, EHDS, ...)"></div>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-0lax">Term</th>
+                            <th class="tg-0lax">Concept</th>
+                            <th class="tg-0lax">Relation / Constraint</th>
+                            <th class="tg-0lax">Necessity</th>
+                            <th class="tg-0lax">Legal requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-0lax">Data controller</td>
+                            <td class="tg-0lax">URI</td>
+                            <td class="tg-0lax">odrl:assignee</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Personal data</td>
+                            <td class="tg-0lax">subclass of dpv:PersonalData</td>
+                            <td class="tg-0lax">odrl:target</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Processing operation</td>
+                            <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
+                            <td class="tg-0lax">odrl:action</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Purpose</td>
+                            <td class="tg-0lax">subclass of dpv:Purpose</td>
+                            <td class="tg-0lax">dpv-odrl:Purpose</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Legal basis</td>
+                            <td class="tg-0lax">subclass of dpv:LegalBasis</td>
+                            <td class="tg-0lax">dpv-odrl:LegalBasis</td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
             </section>
             <section id="agreements">
                 <h2>Agreements</h2>
