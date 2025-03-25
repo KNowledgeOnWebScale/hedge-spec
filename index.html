@@ -7,11 +7,11 @@
   <script type="text/javascript" class="remove">
     var respecConfig = {
       title: "Health data sharing",
-      subtitle: "",
+      subtitle: "Work in Progress",
       shortName: "",
       specStatus: "unofficial",
       latestVersion: "https://w3id.org/xxxx",
-      publishDate: "today",
+    //   publishDate: "YYYY-MM-DD",
       doJsonLd: true,
       maxToclevel: 3,
       github: "besteves4/health-data-exchange-spec",
@@ -55,6 +55,17 @@
                 <p>Other provenance-related vocabs will also be useful like DCTerms, PROV, ...</p>
             </div>
 
+            <ul>
+                <li><b>ODRL</b>: W3C standard for policy expression</li>
+                <li><b>DPV</b>: W3C specification, developed by the W3C DPVCG, for the expression of data protection-related terms</li>
+                <ul>
+                    <li><b>EU-GDPR</b>: DPV extension for the expression of concepts related to the EU's General Data Protection Regulation</li>
+                    <li><b>EU-EHDS</b>: DPV extension for the expression of concepts related to the EU's European Health Data Spaces</li>
+                    <li><b>SECTOR-HEALTH</b>: DPV extension for the expression of concepts related to the healthcare sector</li>
+                    <li><b>PD</b>: DPV extension for the expression of concepts related to personal data categories, including health data categories</li>
+                </ul>
+            </ul>
+
             <section id="namespaces">
                 <h3>Namespaces</h3>
                 <p>The following namespaces and prefixes are used throughout this document:</p>
@@ -85,6 +96,10 @@
                         <tr>
                             <td class="tg-0lax">eu-gdpr</td>
                             <td class="tg-0lax"><a href="https://w3id.org/dpv/legal/eu/gdpr#" target="_blank">https://w3id.org/dpv/legal/eu/gdpr#</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">eu-ehds</td>
+                            <td class="tg-0lax"><a href="https://w3id.org/dpv/legal/eu/ehds#" target="_blank">https://w3id.org/dpv/legal/eu/ehds#</a></td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">ex</td>
@@ -122,19 +137,58 @@
             </div>
             <section id="offers">
                 <h2>Offers</h2>
-                <div class="issue" title="TODO: Write requirements for offers, e.g., policies defined by data subjects and other data holders">
-                    <p></p>
-                </div>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-0lax">Term</th>
+                            <th class="tg-0lax">Concept</th>
+                            <th class="tg-0lax">Relation / Constraint</th>
+                            <th class="tg-0lax">Necessity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-0lax">Data subject</td>
+                            <td class="tg-0lax">URI</td>
+                            <td class="tg-0lax">odrl:assigner</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Personal data</td>
+                            <td class="tg-0lax">URI / dpv:PersonalData</td>
+                            <td class="tg-0lax">odrl:target</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Processing operation</td>
+                            <td class="tg-0lax">odrl:Action / dpv:Processing</td>
+                            <td class="tg-0lax">odrl:action</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Purpose</td>
+                            <td class="tg-0lax">dpv:Purpose</td>
+                            <td class="tg-0lax">dpv-odrl:Purpose</td>
+                            <td class="tg-0lax"></td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <div class="issue" title="TODO: Fill in column with necessity (mandatory, optional, ...)"></div>
             </section>
             <section id="requests">
                 <h2>Requests</h2>
-                <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users">
-                    <p></p>
-                </div>
+                <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users"></div>
+                <div class="issue" title="TODO: Add column with mapping to legal requirements (GDPR, EHDS, ...)"></div>
             </section>
             <section id="agreements">
                 <h2>Agreements</h2>
-                <div class="issue" title="TODO: Write requirements for requests, e.g., policies defined by data controllers/users">
+                <div class="issue" title="TODO: Write requirements for agreements, e.g., policies agreed upon by data subjects and controllers">
                     <p></p>
                 </div>
             </section>
