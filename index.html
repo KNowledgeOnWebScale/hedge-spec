@@ -57,6 +57,9 @@
 
             <ul>
                 <li><b>ODRL</b>: W3C standard for policy expression</li>
+                <ul>
+                    <li><b>DPV-ODRL mapping</b>: ODRL profile for using DPV's terms in ODRL policies</li>
+                </ul>
                 <li><b>DPV</b>: W3C specification, developed by the W3C DPVCG, for the expression of data protection-related terms</li>
                 <ul>
                     <li><b>EU-GDPR</b>: DPV extension for the expression of concepts related to the EU's General Data Protection Regulation</li>
@@ -126,6 +129,7 @@
                             <td class="tg-0lax"><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></td>
                         </tr>
                     </tbody>
+                    <caption>Table 1 - Prefixes and namespaces for the vocabularies used throughout this document</caption>
                 </table>
             </section>
         </section>
@@ -137,7 +141,10 @@
             </div>
             <section id="offers">
                 <h2>Offers</h2>
-                <table class="tg">
+                <div class="issue" title="[WIP] Necessity of specified terms for offers">
+                    <p>The minimal set of terms to define offers, identified in <a href="#table-offers">Table 2</a>, is still work-in-progress.</p>
+                </div>
+                <table class="tg" id="table-offers">
                     <thead>
                         <tr>
                             <th class="tg-0lax">Term</th>
@@ -151,49 +158,49 @@
                             <td class="tg-0lax">Data subject</td>
                             <td class="tg-0lax">URI</td>
                             <td class="tg-0lax">odrl:assigner</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Personal data</td>
                             <td class="tg-0lax">URI / subclass of dpv:PersonalData</td>
                             <td class="tg-0lax">odrl:target</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Processing operation</td>
                             <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
                             <td class="tg-0lax">odrl:action</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Purpose</td>
                             <td class="tg-0lax">subclass of dpv:Purpose</td>
                             <td class="tg-0lax">dpv-odrl:Purpose</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Pseudo/Anonymisation</td>
                             <td class="tg-0lax">dpv-odrl:Pseudonymise, dpv-odrl:Anonymise</td>
                             <td class="tg-0lax">odrl:action</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Optional</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Recipient</td>
                             <td class="tg-0lax">URI / subclass of dpv:Organisation</td>
                             <td class="tg-0lax">dpv-odrl:Recipient</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Optional</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Duration</td>
                             <td class="tg-0lax">xsd:duration</td>
                             <td class="tg-0lax">dpv-odrl:Duration</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Optional</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Frequency</td>
                             <td class="tg-0lax">xsd:positiveInteger</td>
                             <td class="tg-0lax">dpv-odrl:Frequency</td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Optional</td>
                         </tr>
                         <!-- <tr>
                             <td class="tg-0lax"></td>
@@ -202,18 +209,26 @@
                             <td class="tg-0lax"></td>
                         </tr> -->
                     </tbody>
+                    <caption>Table 2 - Terms for defining ODRL offers, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
                 </table>
-                <div class="issue" title="TODO: Fill in column with necessity (mandatory, optional, ...)"></div>
                 <div class="issue" title="TODO: Specify common healthcare-related recipients">
                     <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
                 </div>
                 <div class="issue" title="TODO: Access/usage of retrospective/prospective data">
-                    <p> We should be able to allow both or just one of them</p>
+                    <p>We should be able to allow both or just one of them</p>
+                    <p>In the absense of this information, should we assume by default only retrospective data or retrospective+prospective data?</p>
                 </div>
             </section>
             <section id="requests">
                 <h2>Requests</h2>
-                <table class="tg">
+                <div class="issue" title="[WIP] Necessity of specified terms for requests">
+                    <p>
+                        The minimal set of terms to define requests, identified in <a href="#table-requests">Table 3</a>, 
+                        and respective mapping into legal requirements, e.g., from the GDPR and EHDS,
+                        is still work-in-progress.
+                    </p>
+                </div>
+                <table class="tg"  id="table-requests">
                     <thead>
                         <tr>
                             <th class="tg-0lax">Term</th>
@@ -228,8 +243,8 @@
                             <td class="tg-0lax">Data controller</td>
                             <td class="tg-0lax">URI</td>
                             <td class="tg-0lax">odrl:assignee</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">GDPR</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Data subject (type)</td>
@@ -242,50 +257,50 @@
                             <td class="tg-0lax">Personal data</td>
                             <td class="tg-0lax">subclass of dpv:PersonalData</td>
                             <td class="tg-0lax">odrl:target</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">GDPR</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Personal electronic health data</td>
                             <td class="tg-0lax">subclass of pd:MedicalHealth</td>
                             <td class="tg-0lax">odrl:target</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">EHDS</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Non-personal electronic health data</td>
                             <td class="tg-0lax">...</td>
                             <td class="tg-0lax">odrl:target</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">EHDS</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Processing operation</td>
                             <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
                             <td class="tg-0lax">odrl:action</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">GDPR</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Purpose</td>
                             <td class="tg-0lax">subclass of dpv:Purpose</td>
                             <td class="tg-0lax">dpv-odrl:Purpose</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">GDPR</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Primary/Secondary use</td>
                             <td class="tg-0lax">TODO</td>
                             <td class="tg-0lax">TODO</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">EHDS</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Legal basis</td>
                             <td class="tg-0lax">subclass of dpv:LegalBasis</td>
                             <td class="tg-0lax">dpv-odrl:LegalBasis</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
+                            <td class="tg-0lax">Mandatory</td>
+                            <td class="tg-0lax">GDPR</td>
                         </tr>
                         <tr>
                             <td class="tg-0lax">Pseudo/Anonymisation</td>
@@ -337,8 +352,8 @@
                             <td class="tg-0lax"></td>
                         </tr> -->
                     </tbody>
+                    <caption>Table 3 - Terms for defining ODRL requests, respective mapping into DPV & ODRL, and their necessity according to the identified legal requirements</caption>
                 </table>
-                <div class="issue" title="TODO: Add column with mapping to legal requirements (GDPR, EHDS, ...)"></div>
                 <div class="issue" title="TODO: Add personal and non-personal electronic health data concepts to EHDS">
                     <p>
                         EHDS "lays down common rules and mechanisms for primary use of electronic health data and secondary use of electronic health data",
