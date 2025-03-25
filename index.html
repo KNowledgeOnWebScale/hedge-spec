@@ -355,7 +355,9 @@
                         In case there's joint-controllership and/or data processors involved in the processing, then policies must be specified for that as well including each parties responsibilities.
                     </p>
                 </div>
-                <div class="issue" title="TODO: How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis"></div>
+                <div class="issue" title="TODO: How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis">
+                    <p>We can odrl:event or look into how to use DPV's justifications to do it. Though, at this moment, DPV's justifications don't have any concepts for this. See https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest</p>
+                </div>
             </section>
             <section id="agreements">
                 <h2>Agreements</h2>
@@ -417,12 +419,26 @@
             odrl:rightOperand sector-health:PrimaryCareManagement], [
             odrl:leftOperand oac:LegalBasis ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .</code></pre>
             </aside>
         </section>
 
         <section id="legal-grounds">
             <h2>Using different legal grounds</h2>
+                <div class="issue" title="TODO: Using different legal grounds">
+                    <p>Which GDPR legal grounds make sense for the sharing of health data? Consent, vital interest, more?</p>
+                    <p>How do we justify that something is of vital interest to use vital interest as the legal ground</p>
+                </div>
+        </section>
+
+        <section id="catalog">
+            <h2>Health data sharing policy catalogs</h2>
+            <section id="agreements">
+                <h3>Alignment with HealthDCAT-AP</h2>
+                <div class="issue" title="TODO: Alignment with HealthDCAT-AP">
+                    <p>See https://github.com/w3c/dpv/issues/201</p>
+                </div>
+            </section>
         </section>
     </body>
 </html>
