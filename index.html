@@ -48,14 +48,14 @@
 
         <section id="introduction">
             <h2>Introduction</h2>
-            <div class="issue" title="TODO: Write introduction with requirements related to health data sharing, and specify requirements that are being brought forward by the work on the PACSOI project">
+            <div class="issue" title="Write introduction with requirements related to health data sharing, and specify requirements that are being brought forward by the work on the PACSOI project">
                 <p></p>
             </div>
         </section>
 
         <section id="standards">
             <h2>Used standards/specs</h2>
-            <div class="issue" title="TODO: Write into to ODRL, DPV and possibly DCAT, and its specialization HealthDCAT-AP">
+            <div class="issue" title="Write into to ODRL, DPV and possibly DCAT, and its specialization HealthDCAT-AP">
                 <p>Other provenance-related vocabs will also be useful like DCTerms, PROV, ...</p>
             </div>
 
@@ -140,7 +140,7 @@
 
         <section id="requirements">
             <h2>Policy requirements</h2>
-            <div class="issue" title="TODO: Map requirements into information that should be reflected in the policies, for both data holders and data users">
+            <div class="issue" title="Map requirements into information that should be reflected in the policies, for both data holders and data users">
                 <p></p>
             </div>
             <section id="offers">
@@ -215,10 +215,10 @@
                     </tbody>
                     <caption>Table 2 - Terms for defining ODRL offers, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
                 </table>
-                <div class="issue" title="TODO: Specify common healthcare-related recipients">
+                <div class="issue" title="TSpecify common healthcare-related recipients">
                     <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
                 </div>
-                <div class="issue" title="TODO: Access/usage of retrospective/prospective data">
+                <div class="issue" title="Access/usage of retrospective/prospective data">
                     <p>We should be able to allow both or just one of them</p>
                     <p>In the absense of this information, should we assume by default only retrospective data or retrospective+prospective data?</p>
                 </div>
@@ -294,8 +294,8 @@
                         </tr>
                         <tr>
                             <td class="tg-0lax">Primary/Secondary use</td>
-                            <td class="tg-0lax">TODO</td>
-                            <td class="tg-0lax">TODO</td>
+                            <td class="tg-0lax">***</td>
+                            <td class="tg-0lax">***</td>
                             <td class="tg-0lax">Mandatory</td>
                             <td class="tg-0lax">EHDS</td>
                         </tr>
@@ -343,7 +343,7 @@
                         </tr>
                         <tr>
                             <td class="tg-0lax">Events/Activities</td>
-                            <td class="tg-0lax">TODO</td>
+                            <td class="tg-0lax">***</td>
                             <td class="tg-0lax">odrl:event</td>
                             <td class="tg-0lax"></td>
                             <td class="tg-0lax"></td>
@@ -356,31 +356,31 @@
                             <td class="tg-0lax"></td>
                         </tr> -->
                     </tbody>
-                    <caption>Table 3 - Terms for defining ODRL requests, respective mapping into DPV & ODRL, and their necessity according to the identified legal requirements</caption>
+                    <caption>Table 3 - Terms for defining ODRL requests, respective mapping into DPV & ODRL, and their necessity according to the identified legal requirements. *** is used to identity terms that currently cannot be modelled with ODRL or DPV.</caption>
                 </table>
-                <div class="issue" title="TODO: Add personal and non-personal electronic health data concepts to EHDS">
+                <div class="issue" title="Add personal and non-personal electronic health data concepts to EHDS">
                     <p>
                         EHDS "lays down common rules and mechanisms for primary use of electronic health data and secondary use of electronic health data",
                         and "'electronic health data’'means personal or non-personal electronic health data".
                     </p>
                 </div>
-                <div class="issue" title="TODO: Add primary and secondary use concepts to EHDS">
+                <div class="issue" title="Add primary and secondary use concepts to EHDS">
                     <p>
                         Use case for complex right operands? (Where more than one value is needed to assess the left/right operand relation)
                     </p>
                 </div>
-                <div class="issue" title="TODO: Add concepts/examples to deal with joint controllers and data processors">
+                <div class="issue" title="Add concepts/examples to deal with joint controllers and data processors">
                     <p>
                         In case there's joint-controllership and/or data processors involved in the processing, then policies must be specified for that as well including each parties responsibilities.
                     </p>
                 </div>
-                <div class="issue" title="TODO: How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis">
+                <div class="issue" title="How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis">
                     <p>We can odrl:event or look into how to use DPV's justifications to do it. Though, at this moment, DPV's justifications don't have any concepts for this. See https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest</p>
                 </div>
             </section>
             <section id="agreements">
                 <h2>Agreements</h2>
-                <div class="issue" title="TODO: Write requirements for agreements, e.g., policies agreed upon by data subjects and controllers">
+                <div class="issue" title="Write requirements for agreements, e.g., policies agreed upon by data subjects and controllers">
                     <p></p>
                 </div>
             </section>
@@ -468,7 +468,7 @@
 
         <section id="legal-grounds">
             <h2>Using different legal grounds</h2>
-                <div class="issue" title="TODO: Using different legal grounds">
+                <div class="issue" title="Using different legal grounds">
                     <p>Which GDPR legal grounds make sense for the sharing of health data? Consent, vital interest, more?</p>
                     <p>How do we justify that something is of vital interest to use vital interest as the legal ground</p>
                 </div>
@@ -478,14 +478,14 @@
             <h2>Health data sharing policy catalogs</h2>
             <section id="healthdcatap">
                 <h3>Alignment with HealthDCAT-AP</h2>
-                <div class="issue" title="TODO: Alignment with HealthDCAT-AP">
+                <div class="issue" title="Alignment with HealthDCAT-AP">
                     <p>See <a href="https://github.com/w3c/dpv/issues/201">https://github.com/w3c/dpv/issues/201</a></p>
                     <p>HealthDCAT-AP draft spec available at <a href="https://healthdcat-ap.github.io">https://healthdcat-ap.github.io</a></p>
                 </div>
             </section>
             <section id="EHRxF">
                 <h3>Alignment with EHRxF</h2>
-                <div class="issue" title="TODO: Alignment with the European Electronic Health Record exchange Format (EHRxF)">
+                <div class="issue" title="Alignment with the European Electronic Health Record exchange Format (EHRxF)">
                     <p>See <a href="https://ehr-exchange-format.eu">https://ehr-exchange-format.eu</a></p>
                 </div>
             </section>
