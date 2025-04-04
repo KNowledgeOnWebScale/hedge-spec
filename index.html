@@ -144,9 +144,9 @@
                 <p></p>
             </div>
             <section id="offers">
-                <h2>Offers</h2>
+                <h2>Subject policies</h2>
                 <div class="issue" title="[WIP] Necessity of specified terms for offers">
-                    <p>The minimal set of terms to define offers, identified in <a href="#table-offers">Table 2</a>, is still work-in-progress.</p>
+                    <p>The minimal set of terms to define data subject or holder policies, identified in <a href="#table-offers">Table 2</a>, is still work-in-progress.</p>
                 </div>
                 <table class="tg" id="table-offers">
                     <thead>
@@ -213,7 +213,7 @@
                             <td class="tg-0lax"></td>
                         </tr> -->
                     </tbody>
-                    <caption>Table 2 - Terms for defining ODRL offers, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
+                    <caption>Table 2 - Terms for defining ODRL data subject policies, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
                 </table>
                 <div class="issue" title="TSpecify common healthcare-related recipients">
                     <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
@@ -394,13 +394,16 @@
                 should include the following terms:
             </p>
             <ul>
-                <li>Reference the ODRL request that triggered the agreement instantiation and the offer policies from the data subject/holder</li>
+                <li>Validate the proper modelling of the odrl:Policy, odrl:Request and SoTW information</li>
+                <li>Convert compact policies into their atomic equivalents</li>
+                <li>Remove the rules that are not relevant for the request</li>
+                <li>Reference the ODRL request that triggered the agreement instantiation and the policies from the data subject/holder</li>
                 <ul>
                     <li>
-                        The offer policies should only be directly accessible by the data subject/holder to mitigate privacy concerns,
-                        e.g., to avoid requesters targeting concrete 'personal data-purpose' exchange scenarios
+                        The policies associated with the data subject/holder data exchange conditions should only be directly accessible by the data subject/holder 
+                        to mitigate privacy concerns, e.g., to avoid requesters targeting concrete 'personal data-purpose' exchange scenarios
                     </li>
-                    <li>Data subjects/holders should be able to set these offers as public if that's their wish</li>
+                    <li>Data subjects/holders should be able to set these policies as public if that is their wish</li>
                 </ul>
                 <li>Instantiate the concrete assigner and assignee of the agreement</li>
                 <li>Include relevant rules with concrete actions, targets and constraints</li>
@@ -416,8 +419,8 @@
                 </p>
             </div>
 
-            <aside class="example" title="Example of an ODRL Offer specifying a patient's permission for its health data to be read for primary care">
-                <pre><code>ex:health-primarycare a odrl:Offer ;
+            <aside class="example" title="Example of an ODRL policy specifying a patient's permission for its health data to be read for primary care">
+                <pre><code>ex:health-primarycare a odrl:Set ;
     odrl:uid ex:health-primarycare ;
     dcterms:description "Patient allows her health data to be read for primary care." ;
     odrl:permission [
