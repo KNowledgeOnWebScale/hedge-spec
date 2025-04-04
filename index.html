@@ -48,9 +48,53 @@
 
         <section id="introduction">
             <h2>Introduction</h2>
-            <div class="issue" title="Write introduction with requirements related to health data sharing, and specify requirements that are being brought forward by the work on the PACSOI project">
-                <p></p>
-            </div>
+            <p>
+                The increasing digitalisation of healthcare has led to the generation of vast amounts of health-related
+                data from multiple sources, including clinical records, wearable devices, and patient-generated data.
+                However, the fragmentation and complexity of these data sources poses significant challenges in
+                achieving interoperability and data integration across healthcare systems. Addressing these challenges
+                is crucial to ensuring that health data can be effectively shared and utilized while maintaining its
+                accuracy and accessibility across different platforms and stakeholders. Beyond interoperability, the
+                reusability of health data plays a pivotal role in advancing public health initiatives, healthcare delivery,
+                and health-related research and development.
+            </p>
+            <p>
+                In this context, ensuring that health data can be repurposed for 'altruistic' activities, such as for
+                improving healthcare or performing scientific research for the general interest, as specified in the
+                EU's Data Governance Act <a href="http://data.europa.eu/eli/reg/2022/868/oj"><b>[DGA]</b></a>
+                and further specified in the newly-enforceable European Health Data
+                Space Regulation <a href="http://data.europa.eu/eli/reg/2025/327/oj"><b>[EHDS]</b></a>, e.g., 
+                for the improvement and optimisation of personalised treatment delivery
+                or for purposes of development of health-related products or services or training new algorithms for
+                medical devices, is of the utmost importance and requires robust mechanisms for data governance and
+                regulatory compliance. Moreover, both of the previously mentioned regulations build their health data
+                processing requirements over the EU's General Data Protection Regulation (GDPR) <a href="http://data.europa.eu/eli/reg/2016/679/oj"><b>[GDPR]</b></a>,
+                which sets the regulatory framework for the processing of personal data related to EU citizens, and categorises
+                health data as a special category of personal data and places additional constraints to its processing.
+                Thus, compliance with these frameworks is essential to fostering trust among stakeholders, including
+                patients, healthcare providers, researchers, and policymakers.
+            </p>
+            <p>
+                Given these considerations, it is imperative to develop a common framework to facilitate the interoperable
+                and legally compliant exchange of health data. For designing such a framework, data exchange
+                conditions must be expressed and shared amongst involved parties via interoperable, machine-readable
+                policies that are expressive enough to address technical and legal frameworks. In this context, the
+                usage of semantic standards, such as the <a href="https://www.w3.org/TR/odrl-model/">Open Digital Rights Language (ODRL)</a>
+                or the <a href="https://w3id.org/dpv">Data Privacy Vocabulary (DPV)</a>, are well-suited solutions for policy expression and 
+                data protection requirement
+                modelling, that enable a shared understanding for interpreting and enforcing health data sharing
+                conditions. As such, this document proposes a framework for modelling such conditions, aligned
+                with legal requirements from the EU's GDPR and EHDS regulation, which utilises ODRL and DPV
+                to model requirements for health data sharing. The following requirements were identified to develop the framework:
+            </p>
+            <p></p>
+            <ul>
+                <li><b>R1.</b> Ability to model policies for both data subjects/holders and data controllers/users.</li>
+                <li><b>R2.</b> Support legal requirements for health data exchange.</li>
+                <li><b>R3.</b> Define the necessity, e.g., mandatory or optional, of these requirements according to the identified legal framework.</li>
+                <li><b>R4.</b> Specify 'pre-defined' templates for common exchanges, e.g., patient-doctor, citizen-research organisation.</li>
+                <li><b>R5.</b> Generate agreements for specific health-related data exchanges between 2 parties.</li>
+            </ul>
         </section>
 
         <section id="standards">
