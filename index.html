@@ -99,10 +99,10 @@
 
         <section id="standards">
             <h2>Used standards/specs</h2>
-            <div class="issue" title="Write into to ODRL, DPV and possibly DCAT, and its specialization HealthDCAT-AP">
-                <p>Other provenance-related vocabs will also be useful like DCTerms, PROV, ...</p>
-            </div>
-
+            <p>
+                The following standards and specifications are being used to develop HEDGE.
+                In the <a href="#namespaces">Namespaces section</a> there are links to each solution.
+            </p>
             <ul>
                 <li><b>ODRL</b>: W3C standard for policy expression</li>
                 <ul>
@@ -116,6 +116,13 @@
                     <li><b>PD</b>: DPV extension for the expression of concepts related to personal data categories, including health data categories</li>
                 </ul>
             </ul>
+
+            <div class="note" title="Additional standards/specifications to add to HEDGE">
+                <p>
+                    The usage of provenance-related vocabularies, such as DCTerms, PROV, should also be explored.
+                    Furthermore, DCAT, and its specialization HealthDCAT-AP, will be explored to formalise policy catalogs.
+                </p>
+            </div>
 
             <section id="namespaces">
                 <h3>Namespaces</h3>
@@ -184,9 +191,6 @@
 
         <section id="requirements">
             <h2>Policy requirements</h2>
-            <div class="issue" title="Map requirements into information that should be reflected in the policies, for both data holders and data users">
-                <p></p>
-            </div>
             <section id="offers">
                 <h2>Subject policies</h2>
                 <div class="issue" title="[WIP] Necessity of specified terms for offers">
@@ -259,7 +263,7 @@
                     </tbody>
                     <caption>Table 2 - Terms for defining ODRL data subject policies, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
                 </table>
-                <div class="issue" title="TSpecify common healthcare-related recipients">
+                <div class="issue" title="Specify common healthcare-related recipients">
                     <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
                 </div>
                 <div class="issue" title="Access/usage of retrospective/prospective data">
@@ -419,26 +423,39 @@
                     </p>
                 </div>
                 <div class="issue" title="How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis">
-                    <p>We can odrl:event or look into how to use DPV's justifications to do it. Though, at this moment, DPV's justifications don't have any concepts for this. See https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest</p>
+                    <p>
+                        We can use <code>odrl:event</code> or look into how to use DPV's justifications to do it. 
+                        Though, at this moment, DPV's justifications don't have any concepts for this. 
+                        See <a href="https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest">https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest</a></p>
                 </div>
             </section>
-            <section id="agreements">
+<!--             <section id="agreements">
                 <h2>Agreements</h2>
                 <div class="issue" title="Write requirements for agreements, e.g., policies agreed upon by data subjects and controllers">
                     <p></p>
                 </div>
-            </section>
+            </section> -->
         </section>
 
         <section id="agreement-instantiation">
             <h2>Agreement Instantiation</h2>
+            <div class="note" title="Link to policy instantiation specification">
+                <p>
+                    ODRL policy instantiation specification being developed at 
+                    <a href="https://anonymous.4open.science/w/policy-instantiation-spec-0B25/">hhttps://anonymous.4open.science/w/policy-instantiation-spec-0B25/</a>
+                </p>
+                <p>
+                    ODRL policy instantiation implementation being developed at
+                    <a href="https://anonymous.4open.science/r/ODRL-instantiation-BF6D/">https://anonymous.4open.science/r/ODRL-instantiation-BF6D/</a>
+                </p>
+            </div>
             <p>
                 The final agreement instantiation,
                 that results from the matching of a concrete request with the set of policies that determine the access/usage of a certain target resource,
                 should include the following terms:
             </p>
             <ul>
-                <li>Validate the proper modelling of the odrl:Policy, odrl:Request and SoTW information</li>
+                <li>Validate the proper modelling of the <code>odrl:Policy</code>, <code>odrl:Request</code> and SoTW information</li>
                 <li>Convert compact policies into their atomic equivalents</li>
                 <li>Remove the rules that are not relevant for the request</li>
                 <li>Reference the ODRL request that triggered the agreement instantiation and the policies from the data subject/holder</li>
@@ -452,16 +469,6 @@
                 <li>Instantiate the concrete assigner and assignee of the agreement</li>
                 <li>Include relevant rules with concrete actions, targets and constraints</li>
             </ul>
-            <div class="issue" title="Link to policy instantiation spec">
-                <p>
-                    ODRL policy instantiation spec being developed at 
-                    <a href="https://solidlabresearch.github.io/policy-instantiation-spec/">https://solidlabresearch.github.io/policy-instantiation-spec/</a>
-                </p>
-                <p>
-                    ODRL policy instantiation implementation being developed at
-                    <a href="https://github.com/Dexagod/ODRL-instantiation">https://github.com/Dexagod/ODRL-instantiation</a>
-                </p>
-            </div>
 
             <aside class="example" title="Example of an ODRL policy specifying a patient's permission for its health data to be read for primary care">
                 <pre><code>ex:health-primarycare a odrl:Set ;
