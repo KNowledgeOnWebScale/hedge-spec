@@ -15,6 +15,7 @@ ex:physician-request a odrl:Request ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;
+        odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
