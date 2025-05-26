@@ -1,0 +1,45 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ex:            <https://example.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix report:        <https://w3id.org/force/compliance-report#> .
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+
+ex:health-primarycare a odrl:Set ;
+    odrl:uid ex:health-primarycare ;
+    dcterms:description "Patient allows her weight subset of health data to be read for primary care." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:weight ; 
+        odrl:assigner ex:patient ;
+        odrl:constraint [ 
+            odrl:leftOperand dpv-odrl:DataControllerDataSource ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand ex:physician, ex:nurse ],[
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ] ] .
+
+# ordl:target 
+# SELECT ?date ?weight 
+# WHERE {
+#    GRAPH ex:health-data {
+#        ex:patient ex:weight ?weight ;
+#        		    ex:measurementDate ?date .
+#        }
+#    }
+#    ORDER BY ?date
+
+#SELECT ?date ?weight ?measurer
+#WHERE {
+#  GRAPH ex:health-data {
+#    ex:patient ex:weight ?weight ;
+#               ex:measurementDate ?date ;
+#               ex:measuredBy ?measurer .
+#    ?measurer a ex:HealthcareProfessional .  
+#  }
+#}
+#ORDER BY ?date
