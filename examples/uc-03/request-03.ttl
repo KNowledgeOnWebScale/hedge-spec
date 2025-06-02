@@ -11,11 +11,12 @@
 
 ex:physician-request a odrl:Request ;
     odrl:uid ex:physician-request ;
-    dcterms:description "Physician requests patient to read health data for primary care without time restriction and also for non-direct encounters (e.g. remote monitoring)." ;
+    dcterms:description "Physician requests patient to read health data for primary care and remote monitoring without a time restriction  with consent as the legal basis." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;
         odrl:assignee ex:physician ;
+        odrl:assigner ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
