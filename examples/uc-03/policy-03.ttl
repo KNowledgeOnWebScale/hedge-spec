@@ -10,7 +10,7 @@
 
 ex:health-primarycare-03 a odrl:Set ;
     odrl:uid ex:health-primarycare-03 ;
-    dcterms:description "Patient allows personal health data to be read for primary care by a specific HCP without time restriction and also in non-direct encounters (e.g. remote monitoring)." ;
+    dcterms:description "Patient allows personal health data to be read for primary care and remote monitoring without a time restriction." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;
@@ -18,8 +18,4 @@ ex:health-primarycare-03 a odrl:Set ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring ], 
-            [odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand sector-health:PatientMonitoring ] ] .
-
+            odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring ] ] .
