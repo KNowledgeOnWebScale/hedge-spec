@@ -1,15 +1,11 @@
 @prefix dcterms:       <http://purl.org/dc/terms/> .
-@prefix dpv:           <https://w3id.org/dpv#> .
 @prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
-@prefix report:        <https://w3id.org/force/compliance-report#> .
-@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
-@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:health-primarycare a odrl:Set ;
-    odrl:uid ex:health-primarycare ;
+ex:p-uc01-ehr-primarycare-read a odrl:Set ;
+    odrl:uid ex:p-uc01-ehr-primarycare-read ;
     dcterms:description "Patient allows her health data to be read for primary care." ;
     odrl:permission [
         odrl:action odrl:read ;
