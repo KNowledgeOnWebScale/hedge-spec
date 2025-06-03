@@ -15,4 +15,3 @@ ex:uc03-p-ehr-monitoring-read a odrl:Set ;
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring ] ] .
-

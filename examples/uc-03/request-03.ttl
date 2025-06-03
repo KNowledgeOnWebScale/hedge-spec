@@ -13,6 +13,7 @@ ex:uc03-r-ehr-monitoring-read-physician a odrl:Request ;
         odrl:target ex:health-data ;
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
+        odrl:assigner ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
