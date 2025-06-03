@@ -6,7 +6,7 @@
 
 ex:uc03-p-ehr-monitoring-read a odrl:Set ;
     odrl:uid ex:uc03-p-ehr-monitoring-read ;
-    dcterms:description "Patient allows personal health data to be read for primary care by a specific HCP without time restriction and also in non-direct encounters (e.g. remote monitoring)." ;
+    dcterms:description "Patient allows personal health data to be read for primary care and remote monitoring without a time restriction." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;

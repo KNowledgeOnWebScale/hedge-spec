@@ -7,7 +7,7 @@
 
 ex:uc01-r-ehr-primarycare-read-physician a odrl:Request ;
     odrl:uid ex:uc01-r-ehr-primarycare-read-physician ;
-    dcterms:description "Physician requests patient to read health data for primary care." ;
+    dcterms:description "Physician requests patient to read health data for primary care with consent as the legal basis." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;
