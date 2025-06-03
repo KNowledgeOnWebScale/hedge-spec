@@ -1,0 +1,32 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix ex:            <https://example.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+
+ex:uc04-URI-r-pseudonymisedweight-improvehealthcare-read-physician a odrl:Request ;
+    odrl:uid ex:uc04-URI-r-pseudonymisedweight-improvehealthcare-read-physician ;
+    dcterms:description "Physician requests patient to read weight subset of health data for secondary use (improving healthcare) with consent as legal basis. Known URI. Data must be Pseudonymised." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:weight-by-hcp ;
+        odrl:assigner ex:patient ;
+        odrl:assignee ex:physician ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:ScientificResearch, dpv:ImproveHealthcare, sector-health:ResearchDevelopment, 
+                ehds:HealthcareScientificResearch, ehds:ProvideHealthcareOfficialStatistics, ehds:PublicInterestRelatedToHealth, 
+                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ], [
+            odrl:leftOperand dpv-odrl:Processing ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand dpv:Pseudonymisation ],[
+            odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] .

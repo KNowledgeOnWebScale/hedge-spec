@@ -1,0 +1,23 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix ex:            <https://example.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+
+ex:uc02-refinedURI-p-weight-primarycare-read a odrl:Set ;
+    odrl:uid ex:uc02-refinedURI-p-weight-primarycare-read ;
+    dcterms:description "Patient allows her weight subset of health data to be read for primary care. Known URI to be refined." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target [
+            odrl:source ex:weight ; 
+            odrl:refinement [
+                odrl:leftOperand dpv-odrl:DataControllerDataSource ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand ehds:HealthcareProvider ]] ;
+        odrl:assigner ex:patient ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ] ] .

@@ -1,0 +1,22 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix ex:            <https://example.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+
+ex:uc02-URI-r-weight-primarycare-read-physician a odrl:Request ;
+    odrl:uid ex:uc02-URI-r-weight-primarycare-read-physician ;
+    dcterms:description "Physician requests patient to read weight subset of health data for primary care with consent as legal basis. Known URI." ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:weight-by-hcp ;
+        odrl:assigner ex:patient ;
+        odrl:assignee ex:physician ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
