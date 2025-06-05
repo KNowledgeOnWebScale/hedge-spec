@@ -64,31 +64,34 @@ To assess necessity and information on how to model each of the requirements, ch
 [Description-01](./uc-01/description-01.md)
 
 1. Policy (set) and request terminology to approve:
-- Policy ex:ucXX-p-<data_cat>-<purpose>-<data_controller>-<scope>	
-- Request ex:ucXX-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>
+- Policy `ex:ucXX-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
+- Request `ex:ucXX-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
 
 ### UC-02
 [Description-02](./uc-02/description-02.md)
 
 1. As there are multiple techniques to acces to a subset of data, I have created 4 subsets: know URI [UC-02-URI](./uc-02/uc-02-URI/), refined URI [UC-02-refinedURI](./uc-02/uc-02-refinedURI/), SPARQL query [UC-02-SPARQL](./uc-02/uc-02-SPARQL/) and SHACL validation [UC-02-SHACL](./uc-02/uc-02-SHACL/). The technique is specified in the id as follows:
-- Policy ex:ucXX-<tech>-p-<data_cat>-<purpose>-<data_controller>-<scope>	
-- Request ex:ucXX-<tech>-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>
+- Policy `ex:ucXX-<tech>-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
+- Request `ex:ucXX-<tech>-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
 
-The alternative would be to create independent use cases.
+    The alternative would be to create independent use cases.
 
 2. [Description-02-refinedURI](./uc-02/uc-02-refinedURI/description-02-refinedURI.md): Weight URI refined on source, as it is interpreted as an assetCollection:
 
-    ```odrl:target [
-            odrl:source ex:weight ; #rdf:value
-            odrl:refinement [
-                odrl:leftOperand dpv-odrl:DataControllerDataSource ;
-                odrl:operator odrl:eq ;
-                odrl:rightOperand ehds:HealthcareProvider ]] ;```
+    ```
+    odrl:target [
+        odrl:source ex:weight ; #rdf:value
+        odrl:refinement [
+            odrl:leftOperand dpv-odrl:DataControllerDataSource ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ehds:HealthcareProvider ]] ;
+    ```
 
-The alternative is to refine rdf:value, but it applies to actions.
+    The alternative is to refine rdf:value, but it applies to actions.
 
 3. [Description-02-SHACL](./uc-02/uc-02-refinedURI/description-02-SHACL.md): SHACL validation is applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
-Right now it's written on both policy and request. 
+
+    Right now it's written on both policy and request. 
 
 ### UC-03
 [Description-03](./uc-03/description-03.md)
@@ -103,24 +106,31 @@ NONE
 2. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
 
 3. Pseudonymisation approach:
+
     a. Followed strategy: processing constraint with DeterministicPseudonymisation (same input always produces the same pseudonym) & MonotonicCounterPseudonymisation (Monotonically increasing counter (P1, P2...)).
 
-    ```drl:constraint [
+    ```
+    drl:constraint [
         odrl:leftOperand dpv-odrl:Processing ;
         odrl:operator odrl:isA ;
         odrl:rightOperand dpv:Pseudonymisation ],[
         odrl:leftOperand dpv:hasPseudonymisationTechnique ;
         odrl:operator odrl:isAnyOf ;
-        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]```
+        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
+    ```
 
     b. Alternatives:
-        1. Data constraint:
-        ```odrl:constraint [
+            
+        # 1. Data constraint:
+
+        ```
+        odrl:constraint [
             odrl:leftOperand dpv:Data ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]```
+            odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]
+        ```
 
-        2. Refinement on `ex:weight`
+        # 2. Refinement on `ex:weight`
         ```odrl:target [
             odrl:source ex:weight ;
             odrl:refinement [
@@ -128,9 +138,11 @@ NONE
                 odrl:operator odrl:isAnyOf ;
                 odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]] ;```
 
-        3. `odrl:action dpv-odrl:Pseudonymise / dpv-odrl:Anonymise`
+        # 3. 
+        `odrl:action dpv-odrl:Pseudonymise / dpv-odrl:Anonymise`
 
-        4. `ehds:DataRequest` : Seeks access to statistically anonymised ehd
+        # 4. 
+        `ehds:DataRequest` # Seeks access to statistically anonymised ehd
 
 ### UC-05
 [Description-05](./uc-05/description-05.md)
@@ -138,11 +150,13 @@ NONE
 1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
 2. Data subject:
-    ex:user05 vs dpv:User
+
+    `ex:user05` vs `dpv:User`
 
 3. Purpose: I would like a purpose like SecondOpinion in sector-health, or a non-official second opinion, like on this use case.
 
-4. Recipient: ex:NonHealthcareProfessional
+4. Recipient: `ex:NonHealthcareProfessional`
+
     I couldn’t find concepts already defined (not similar ones either: Layperson, Unaffiliated individual, Third-party non-provider).
     It's the same as the asignee (data controller) in the Request.
     Why is not the physician the recipient in the previous use cases?
@@ -153,9 +167,7 @@ NONE
 
 7. Data source N/A? Shouldn't it also be EHR?
 
-8. SHACL & SPARQL: unit validation to ucum:mg/dL
-[Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md)
-[Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md)
+8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md), [Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md))
 
 ### UC-06
 [Description-06](./uc-06/description-06.md)
@@ -163,16 +175,22 @@ NONE
 1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
 2. Data subject:
-    ex:user05 vs dpv:User
+
+    `ex:user05` vs `dpv:User`
 
 3. Purpose: I would like a purpose like SecondOpinion in sector-health, or a non-official second opinion, like on this use case.
 
-4. Recipient: ex:NonHealthcareProfessional
+4. Recipient: `ex:NonHealthcareProfessional`
+
     I couldn’t find concepts already defined (not similar ones either: Layperson, Unaffiliated individual, Third-party non-provider).
-    It's the same as the asignee (but not data controller) in the Request.
+    It's the same as the asignee (data controller) in the Request.
+    Why is not the physician the recipient in the previous use cases?
 
 5. Express duration in the descriptions just like '24h'?
 
 6. Not primary nor secondary use, how should we define it?
 
 7. Data source N/A? Shouldn't it also be EHR?
+
+8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-06-SHACL](./uc-06/uc-06-SHACL/description-06-SHACL.md), 
+[Description-06-SPARQL](./uc-06/uc-06-SPARQL/description-06-SPARQL.md)).
