@@ -8,9 +8,9 @@
 @prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-read-physician a odrl:Request ;
-    odrl:uid ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-read-physician ;
-    dcterms:description "Physician requests patient to read weight subset of health data for secondary use (improving healthcare) with consent as legal basis. SPARQL query. Data must be Pseudonymised." ;
+ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. SPARQL query. Data must be Pseudonymised." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [
@@ -32,6 +32,7 @@ ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-read-physician a odrl:Req
             ] ; 
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

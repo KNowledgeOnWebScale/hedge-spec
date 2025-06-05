@@ -8,13 +8,14 @@
 @prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
 ### --- ODRL Policy --- ###
-ex:uc02-SHACL-p-weight-primarycare-read a odrl:Set ;
-    odrl:uid ex:uc02-SHACL-p-weight-primarycare-read ;
+ex:uc02-SHACL-p-weight-primarycare-physicianDC-read a odrl:Set ;
+    odrl:uid ex:uc02-SHACL-p-weight-primarycare-physicianDC-read ;
     dcterms:description "Patient allows her weight subset of health data to be read for primary care. SHACL validation." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-data ;  # Reference to the data asset (separately defined)
         odrl:assigner ex:patient ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;

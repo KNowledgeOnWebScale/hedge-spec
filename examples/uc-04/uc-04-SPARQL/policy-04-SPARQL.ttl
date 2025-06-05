@@ -7,8 +7,8 @@
 @prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-read a odrl:Set ;
-    odrl:uid ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-read ;
+ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
+    odrl:uid ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-physicianDC-read ;
     dcterms:description "Patient allows her weight subset of health data to be read for secondary use (improving healthcare). SPARQL query. Data must be Pseudonymised." ;
     odrl:permission [
         odrl:action odrl:read ;
@@ -30,6 +30,7 @@ ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-read a odrl:Set ;
                 """ ;
             ] ; 
         odrl:assigner ex:patient ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

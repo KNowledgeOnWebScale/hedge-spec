@@ -6,9 +6,9 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc02-refinedURI-r-weight-primarycare-read-physician a odrl:Request ;
-    odrl:uid ex:uc02-refinedURI-r-weight-primarycare-read-physician ;
-    dcterms:description "Physician requests patient to read weight subset of health data for primary care with consent as legal basis. Known URI to be refined." ;
+ex:uc02-refinedURI-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc02-refinedURI-r-weight-primarycare-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI to be refined." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [
@@ -19,6 +19,7 @@ ex:uc02-refinedURI-r-weight-primarycare-read-physician a odrl:Request ;
                 odrl:rightOperand ehds:HealthcareProvider ] ] ;
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
