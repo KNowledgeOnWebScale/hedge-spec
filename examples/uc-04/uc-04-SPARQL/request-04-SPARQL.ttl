@@ -10,12 +10,12 @@
 
 ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odrl:Request ;
     odrl:uid ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. SPARQL query. Data must be Pseudonymised." ;
+    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. SPARQL query. Data must be Pseudonymised."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [
             a odrl:Asset ;
-            dcterms:description "SPARQL query to fetch patient weight data";
+            dcterms:description "SPARQL query to fetch patient weight data"@en;
             rdf:value """
                 PREFIX ex: <https://example.org/ns#>
                 SELECT ?date ?weight ?measurer

@@ -13,12 +13,12 @@
 
 ex:uc06-SPARQL-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
     odrl:uid ex:uc06-SPARQL-r-labresults-privatesharing-noDC-read-nonHCP ;
-    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SPARQL query." ;
+    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SPARQL query."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [
             a odrl:Asset ;
-            dcterms:description "SPARQL query to fetch user's blood glucose lab results data";
+            dcterms:description "SPARQL query to fetch user's blood glucose lab results data"@en;
             rdf:value """
                 PREFIX dpv: <https://w3id.org/dpv#>
                 PREFIX ehds: <https://w3c.github.io/dpv/2.1/legal/eu/ehds/>

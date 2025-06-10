@@ -7,7 +7,7 @@
 
 ex:uc03-r-ehr-monitoring-physicianDC-read-physician a odrl:Request ;
     odrl:uid ex:uc03-r-ehr-monitoring-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read health data for primary care and remote monitoring without a time restriction to patient with consent as the legal basis." ;
+    dcterms:description "Physician requests to read health data for primary care and remote monitoring without a time restriction to patient with consent as the legal basis."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;

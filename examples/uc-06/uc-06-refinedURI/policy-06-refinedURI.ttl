@@ -10,7 +10,7 @@
 
 ex:uc06-refinedURI-p-labresults-privatesharing-noDC-read a odrl:Set ;
     odrl:uid ex:uc06-refinedURI-p-labresults-privatesharing-noDC-read ;
-    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. Known URI to be refined." ;
+    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. Known URI to be refined."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [

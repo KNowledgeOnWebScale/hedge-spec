@@ -9,7 +9,7 @@
 
 ex:uc04-refinedURI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odrl:Request ;
     odrl:uid ex:uc04-refinedURI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. Known URI to be refined. Data must be Pseudonymised." ;
+    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. Known URI to be refined. Data must be Pseudonymised."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [

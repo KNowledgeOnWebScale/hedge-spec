@@ -7,7 +7,7 @@
 
 ex:uc02-URI-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
     odrl:uid ex:uc02-URI-r-weight-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI." ;
+    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-by-hcp ;

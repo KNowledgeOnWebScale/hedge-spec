@@ -13,7 +13,7 @@
 
 ex:uc05-SHACL-p-labresults-privatesharing-physicianDC-read a odrl:Set ;
     odrl:uid ex:uc05-SHACL-p-labresults-privatesharing-physicianDC-read ;
-    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. SHACL validation." ;
+    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. SHACL validation."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:lab-test-results-data ; # Reference to the data asset (separately defined)

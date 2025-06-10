@@ -6,7 +6,7 @@
 
 ex:uc02-URI-p-weight-primarycare-physicianDC-read a odrl:Set ;
     odrl:uid ex:uc02-URI-p-weight-primarycare-physicianDC-read ;
-    dcterms:description "Patient allows her weight subset of health data to be read for primary care. Known URI." ;
+    dcterms:description "Patient allows her weight subset of health data to be read for primary care. Known URI."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-by-hcp ; 

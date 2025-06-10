@@ -10,7 +10,7 @@
 
 ex:uc06-URI-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
     odrl:uid ex:uc06-URI-r-labresults-privatesharing-noDC-read-nonHCP ;
-    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. Known URI." ;
+    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. Known URI."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:glucose-test-results ;

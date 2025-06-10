@@ -13,7 +13,7 @@
 
 ex:uc04-SHACL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odrl:Request ;
     odrl:uid ex:uc04-SHACL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. Data must be Pseudonymised. SHACL validation." ;
+    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. Data must be Pseudonymised. SHACL validation."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-data ; # Reference to the data asset (separately defined)
@@ -61,7 +61,7 @@ ex:WeightShape a sh:NodeShape ;
                 FILTER NOT EXISTS { ?measurer a ehds:HealthcareProvider . }
             }
         """ ;
-        sh:message "Weight measurement must be recorded by a healthcare provider." ] .
+        sh:message "Weight measurement must be recorded by a healthcare provider."@en ] .
 
 ### --- Link ODRL Target to SHACL --- ###
 ex:weight-data a odrl:Asset ;
