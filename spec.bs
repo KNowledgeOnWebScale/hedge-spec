@@ -1,0 +1,507 @@
+<pre class='metadata'>
+Title: HEalth Data exchanGE policy framework
+Shortname: HEDGE
+Level: none
+Status: LD
+Editor: Beatriz Esteves, Ghent University - imec http://idlab.ugent.be/, beatriz.esteves@ugent.be
+Editor: Filip Pattyn, FAQIR https://faqir.org
+Editor: Henar Martín Santos, FAQIR https://faqir.org
+Abstract: This document defines a framework for modelling and cataloguing health data exchange conditions, 
+    aligned with legal requirements, e.g., from the European Union's General Data Protection Regulation (GDPR) and the
+    European Health Data Spaces (EHDS) regulation,
+    using semantic standards and specifications such as the
+    [Open Digital Rights Language (ODRL)](https://www.w3.org/TR/odrl-model/) and the
+    [Data Privacy Vocabulary (DPV)](https://w3id.org/dpv).
+Markup Shorthands: markdown yes, css no
+URL: https://w3id.org/hedge
+Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
+Repository: https://github.com/KNowledgeOnWebScale/hedge-spec
+!License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a>
+</pre>
+
+<p boilerplate="copyright">
+  <!-- This document is made available under the CC-BY-SA-4.0 License. -->
+</p>
+
+Introd­uction {#introduction}
+============================
+
+The increasing digitalisation of healthcare has led to the generation of vast amounts of health-related
+data from multiple sources, including clinical records, wearable devices, and patient-generated data.
+However, the fragmentation and complexity of these data sources poses significant challenges in
+achieving interoperability and data integration across healthcare systems. Addressing these challenges
+is crucial to ensuring that health data can be effectively shared and utilized while maintaining its
+accuracy and accessibility across different platforms and stakeholders. Beyond interoperability, the
+reusability of health data plays a pivotal role in advancing public health initiatives, healthcare delivery,
+and health-related research and development.
+
+In this context, ensuring that health data can be repurposed for 'altruistic' activities, such as for
+improving healthcare or performing scientific research for the general interest, as specified in the
+EU's Data Governance Act [[DGA]]
+and further specified in the newly-enforceable European Health Data Space Regulation [[EHDS]], e.g., 
+for the improvement and optimisation of personalised treatment delivery
+or for purposes of development of health-related products or services or training new algorithms for
+medical devices, is of the utmost importance and requires robust mechanisms for data governance and
+regulatory compliance. Moreover, both of the previously mentioned regulations build their health data
+processing requirements over the EU's General Data Protection Regulation [[GDPR]],
+which sets the regulatory framework for the processing of personal data related to EU citizens, and categorises
+health data as a special category of personal data and places additional constraints to its processing.
+Thus, compliance with these frameworks is essential to fostering trust among stakeholders, including
+patients, healthcare providers, researchers, and policymakers.
+
+Given these considerations, it is imperative to develop a common framework to facilitate the interoperable
+and legally compliant exchange of health data. For designing such a framework, data exchange
+conditions must be expressed and shared amongst involved parties via interoperable, machine-readable
+policies that are expressive enough to address technical and legal frameworks. In this context, the
+usage of semantic standards, such as the Open Digital Rights Language (ODRL) [[!ODRL-model]] [[!odrl-vocab]]
+or the Data Privacy Vocabulary [[!DPV]],
+are well-suited solutions for policy expression and data protection requirement
+modelling, that enable a shared understanding for interpreting and enforcing health data sharing
+conditions. As such, this document proposes a framework for modelling such conditions, aligned
+with legal requirements from the EU's GDPR and EHDS regulation, which utilises ODRL and DPV
+to model requirements for health data sharing. The following requirements were identified to develop the framework:
+
+- <b>R1.</b> Ability to model policies for both data subjects/holders and data controllers/users
+- <b>R2.</b> Support legal requirements for health data exchange
+- <b>R3.</b> Define the necessity, e.g., mandatory or optional, of these requirements according to the identified legal framework
+- <b>R4.</b> Specify 'pre-defined' templates for common exchanges, e.g., patient-doctor, citizen-research organisation
+- <b>R5.</b> Generate agreements for specific health-related data exchanges between 2 parties
+
+Used standards/specifications {#specs}
+======================================
+
+The following standards and specifications are being used to develop HEDGE.
+In the [Namespaces section](#namespaces), there are links to each solution.
+
+- <b>ODRL</b>: W3C standard for policy expression [[!ODRL-model]] [[!odrl-vocab]]
+    - <b>DPV-ODRL mapping</b>: ODRL profile for using DPV's terms in ODRL policies
+- <b>DPV</b>: W3C specification, developed by the W3C DPVCG, for the expression of data protection-related terms [[!DPV]]
+    - <b>EU-GDPR</b>: DPV extension for the expression of concepts related to the EU's General Data Protection Regulation
+    - <b>EU-EHDS</b>: DPV extension for the expression of concepts related to the EU's European Health Data Spaces
+    - <b>SECTOR-HEALTH</b>: DPV extension for the expression of concepts related to the healthcare sector
+    - <b>PD</b>: DPV extension for the expression of concepts related to personal data categories, including health data categories
+
+ <div class="note" heading="Additional standards/specifications to add to HEDGE">
+    <p>
+        The usage of provenance-related vocabularies, such as DCTerms, PROV, should also be explored.
+        Furthermore, DCAT, and its specialization HealthDCAT-AP, will be explored to formalise policy catalogs.
+    </p>
+</div>
+
+## Namespaces ## {#namespaces}
+
+Commonly used namespace prefixes used in this specification:
+```turtle
+@prefix dcat:          <hhttp://www.w3.org/ns/dcat#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix eu-ehds:       <https://w3id.org/dpv/legal/eu/ehds#> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix ex:            <https://example.com/> .
+@prefix pd:            <https://w3id.org/dpv/pd#> .
+@prefix report:        <https://w3id.org/force/compliance-report#> .
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+```
+
+Policy requirements {#requirements}
+===================================
+
+## Subject/Holder policies ## {#policies}
+
+<div class="issue" heading="Necessity of specified terms for offers">
+    <p>The minimal set of terms to define data subject or holder policies, identified in <a href="#table-offers">Table 1</a>, is still work-in-progress.</p>
+</div>
+
+<table class="tg" id="table-offers">
+    <thead>
+        <tr>
+            <th class="tg-0lax">Term</th>
+            <th class="tg-0lax">Concept</th>
+            <th class="tg-0lax">Relation / Constraint</th>
+            <th class="tg-0lax">Necessity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tg-0lax">Data subject</td>
+            <td class="tg-0lax">URI</td>
+            <td class="tg-0lax">odrl:assigner</td>
+            <td class="tg-0lax">Mandatory</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Personal data</td>
+            <td class="tg-0lax">URI / subclass of dpv:PersonalData</td>
+            <td class="tg-0lax">odrl:target</td>
+            <td class="tg-0lax">Mandatory</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Processing operation</td>
+            <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
+            <td class="tg-0lax">odrl:action</td>
+            <td class="tg-0lax">Mandatory</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Purpose</td>
+            <td class="tg-0lax">subclass of dpv:Purpose</td>
+            <td class="tg-0lax">dpv-odrl:Purpose</td>
+            <td class="tg-0lax">Mandatory</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Pseudo/Anonymisation</td>
+            <td class="tg-0lax">dpv-odrl:Pseudonymise, dpv-odrl:Anonymise</td>
+            <td class="tg-0lax">odrl:action</td>
+            <td class="tg-0lax">Optional</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Recipient</td>
+            <td class="tg-0lax">URI / subclass of dpv:Organisation</td>
+            <td class="tg-0lax">dpv-odrl:Recipient</td>
+            <td class="tg-0lax">Optional</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Duration</td>
+            <td class="tg-0lax">xsd:duration</td>
+            <td class="tg-0lax">dpv-odrl:Duration</td>
+            <td class="tg-0lax">Optional</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Frequency</td>
+            <td class="tg-0lax">xsd:positiveInteger</td>
+            <td class="tg-0lax">dpv-odrl:Frequency</td>
+            <td class="tg-0lax">Optional</td>
+        </tr>
+        <!-- <tr>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+        </tr> -->
+    </tbody>
+    <caption>Table 1 - Terms for defining ODRL data subject policies, respective mapping into DPV & ODRL, and their necessity according to the identified requirements</caption>
+</table>
+
+<div class="issue" heading="Specify common healthcare-related recipients">
+    <p>DPV's organisation taxonomy already has some concepts for this, are they enough?</p>
+</div>
+<div class="issue" heading="Access/usage of retrospective/prospective data">
+    <p>We should be able to allow both or just one of them</p>
+    <p>In the absence of this information, should we assume by default only retrospective data or retrospective+prospective data?</p>
+</div>
+
+## Requests ## {#requests}
+
+<div class="issue" heading="Necessity of specified terms for requests">
+    <p>
+        The minimal set of terms to define requests, identified in <a href="#table-requests">Table 2</a>, 
+        and respective mapping into legal requirements, e.g., from the GDPR and EHDS,
+        is still work-in-progress.
+    </p>
+</div>
+
+<table class="tg"  id="table-requests">
+    <thead>
+        <tr>
+            <th class="tg-0lax">Term</th>
+            <th class="tg-0lax">Concept</th>
+            <th class="tg-0lax">Relation / Constraint</th>
+            <th class="tg-0lax">Necessity</th>
+            <th class="tg-0lax">Legal requirements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tg-0lax">Data controller</td>
+            <td class="tg-0lax">URI</td>
+            <td class="tg-0lax">odrl:assignee</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Data subject (type)</td>
+            <td class="tg-0lax">URI / subclass of dpv:HumanSubject</td>
+            <td class="tg-0lax">odrl:assigner</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Personal data</td>
+            <td class="tg-0lax">subclass of dpv:PersonalData</td>
+            <td class="tg-0lax">odrl:target</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Personal electronic health data</td>
+            <td class="tg-0lax">subclass of pd:MedicalHealth</td>
+            <td class="tg-0lax">odrl:target</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">EHDS</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Non-personal electronic health data</td>
+            <td class="tg-0lax">***</td>
+            <td class="tg-0lax">odrl:target</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">EHDS</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Processing operation</td>
+            <td class="tg-0lax">subclass of odrl:Action or dpv:Processing</td>
+            <td class="tg-0lax">odrl:action</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Purpose</td>
+            <td class="tg-0lax">subclass of dpv:Purpose</td>
+            <td class="tg-0lax">dpv-odrl:Purpose</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Primary/Secondary use</td>
+            <td class="tg-0lax">***</td>
+            <td class="tg-0lax">***</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">EHDS</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Legal basis</td>
+            <td class="tg-0lax">subclass of dpv:LegalBasis</td>
+            <td class="tg-0lax">dpv-odrl:LegalBasis</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Pseudo/Anonymisation</td>
+            <td class="tg-0lax">dpv-odrl:Pseudonymise, dpv-odrl:Anonymise</td>
+            <td class="tg-0lax">odrl:action</td>
+            <td class="tg-0lax">Optional</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Recipient</td>
+            <td class="tg-0lax">URI / subclass of dpv:Organisation</td>
+            <td class="tg-0lax">dpv-odrl:Recipient</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Data source</td>
+            <td class="tg-0lax">subclass of dpv:DataSource</td>
+            <td class="tg-0lax">dpv-odrl:DataSource</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Duration</td>
+            <td class="tg-0lax">xsd:duration</td>
+            <td class="tg-0lax">dpv-odrl:Duration</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Frequency</td>
+            <td class="tg-0lax">xsd:positiveInteger</td>
+            <td class="tg-0lax">dpv-odrl:Frequency</td>
+            <td class="tg-0lax">Optional</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">Events/Activities</td>
+            <td class="tg-0lax">***</td>
+            <td class="tg-0lax">odrl:event</td>
+            <td class="tg-0lax">Mandatory</td>
+            <td class="tg-0lax">GDPR</td>
+        </tr>
+        <!-- <tr>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+        </tr> -->
+    </tbody>
+    <caption>Table 2 - Terms for defining ODRL requests, respective mapping into DPV & ODRL, and their necessity according to the identified legal requirements. *** is used to identity terms that currently cannot be modelled with ODRL or DPV.</caption>
+</table>
+
+<div class="issue" heading="Add personal and non-personal electronic health data concepts to EHDS">
+    <p>
+        EHDS "lays down common rules and mechanisms for primary use of electronic health data and secondary use of electronic health data",
+        and "'electronic health data’'means personal or non-personal electronic health data".
+    </p>
+</div>
+
+<div class="issue" heading="Add primary and secondary use concepts to EHDS">
+    <p>
+        Use case for complex right operands? (Where more than one value is needed to assess the left/right operand relation)
+    </p>
+</div>
+
+<div class="issue" heading="Add concepts/examples to deal with joint controllers and data processors">
+    <p>
+        In case there's joint-controllership and/or data processors involved in the processing, then policies must be specified for that as well including each parties responsibilities.
+    </p>
+</div>
+
+<div class="issue" heading="How to model events/activities, e.g., emergency events that can justify using vital interest as the legal basis">
+    <p>
+        We can use <code>odrl:event</code> or look into how to use DPV's justifications to do it. 
+        Though, at this moment, DPV's justifications don't have any concepts for this. 
+        See <a href="https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest">https://w3c.github.io/dpv/2.1/dpv/modules/legal_basis.html#desc-vital-interest</a></p>
+</div>
+
+Agreement Instantiation {#instantiation}
+========================================
+
+<div class="note" heading="Link to policy instantiation specification">
+    <p>
+        ODRL policy instantiation specification being developed at 
+        <a href="https://w3id.org/force/policy-instantiation">https://w3id.org/force/policy-instantiation</a>.
+    </p>
+    <p>
+        ODRL policy instantiation implementation being developed at
+        <a href="https://w3id.org/force/policy-instantiation/poc">https://w3id.org/force/policy-instantiation/poc</a>.
+    </p>
+</div>
+
+The final agreement instantiation,
+that results from the matching of a concrete request with the set of policies that determine the access/usage of a certain target resource,
+should include the following terms:
+
+- Validate the proper modelling of the <code>odrl:Policy</code>, <code>odrl:Request</code> and SoTW information
+- Convert compact policies into their atomic equivalents
+- Remove the rules that are not relevant for the request
+- Reference the ODRL request that triggered the agreement instantiation and the policies from the data subject/holder
+    - The policies associated with the data subject/holder data exchange conditions should only be directly accessible by the data subject/holder to mitigate privacy concerns, e.g., to avoid requesters targeting concrete 'personal data-purpose' exchange scenarios
+    - Data subjects/holders should be able to set these policies as public if that is their wish
+- Instantiate the concrete assigner and assignee of the agreement
+- Include relevant rules with concrete actions, targets and constraints
+
+## Examples ## {#examples}
+
+<aside class="example" id="set">
+    ODRL policy specifying a patient's permission for its health data to be read for primary care.
+    ```turtle
+    ex:health-primarycare a odrl:Set ;
+        odrl:uid ex:health-primarycare ;
+        dcterms:description "Patient allows her health data to be read for primary care." ;
+        odrl:permission [
+            odrl:action odrl:read ;
+            odrl:target ex:health-data ;
+            odrl:assigner ex:patient ;
+            odrl:constraint [
+                odrl:leftOperand dpv-odrl:Purpose ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand sector-health:PrimaryCareManagement ] ] .
+    ```
+</aside>
+
+<aside class="example" id="request">
+    ODRL Request specifying a physician's request to read the patient's health data for primary care.
+    ```turtle
+    ex:physician-request a odrl:Request ;
+        odrl:uid ex:physician-request ;
+        dcterms:description "Physician requests patient to read health data for primary care." ;
+        odrl:permission [
+            odrl:action odrl:read ;
+            odrl:target ex:health-data ;
+            odrl:assignee ex:physician ;
+            odrl:constraint [
+                odrl:leftOperand dpv-odrl:Purpose ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand sector-health:PrimaryCareManagement ], [
+                odrl:leftOperand dpv-odrl:LegalBasis ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+    ```
+</aside>
+
+<aside class="example" id="agreement">
+    ODRL Agreement specifying the agreed terms between physician and patient to read health data for primary care
+    ```turtle
+    ex:patient-physician-agreement a odrl:Agreement ;
+        odrl:uid ex:patient-physician-agreement ;
+        dcterms:description "Agreement between physician and patient to read health data for primary care." ;
+        odrl:permission [
+            odrl:action odrl:read ;
+            odrl:target ex:health-data ;
+            odrl:assigner ex:patient ;
+            odrl:assignee ex:physician ;
+            odrl:constraint [
+                odrl:leftOperand odrl:purpose ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand sector-health:PrimaryCareManagement], [
+                odrl:leftOperand oac:LegalBasis ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+    ```
+</aside>
+
+Using different legal grounds {#legal-grounds}
+==============================================
+
+<div class="issue" heading="Using different legal grounds">
+    <p>Which GDPR legal grounds make sense for the sharing of health data? Consent, vital interest, more?</p>
+    <p>How do we justify that something is of vital interest to use vital interest as the legal ground</p>
+</div>
+
+Health data sharing policy catalogs {#catalogs}
+===============================================
+
+## Alignment with HealthDCAT-AP ## {#healthdcatap}
+
+<div class="issue" heading="Alignment with HealthDCAT-AP">
+    <p>See <a href="https://github.com/w3c/dpv/issues/201">https://github.com/w3c/dpv/issues/201</a></p>
+    <p>HealthDCAT-AP draft spec available at <a href="https://healthdcat-ap.github.io">https://healthdcat-ap.github.io</a></p>
+</div>
+
+## Alignment with EHRxF ## {#EHRxF}
+
+<div class="issue" heading="Alignment with the European Electronic Health Record exchange Format (EHRxF)">
+    <p>See <a href="https://ehr-exchange-format.eu">https://ehr-exchange-format.eu</a></p>
+</div>
+
+<pre class=biblio> 
+{
+    "DGA": {
+        "href": "http://data.europa.eu/eli/reg/2022/868/oj",
+        "title": "Regulation (EU) 2022/868 of the European Parliament and of the Council of 30 May 2022 on European data governance and amending Regulation (EU) 2018/1724 (Data Governance Act)",
+        "authors": []
+    },
+    "EHDS": {
+        "href": "http://data.europa.eu/eli/reg/2025/327/oj",
+        "title": "Regulation (EU) 2025/327 of the European Parliament and of the Council of 11 February 2025 on the European Health Data Space and amending Directive 2011/24/EU and Regulation (EU) 2024/2847",
+        "authors": []
+    },
+    "GDPR": {
+        "href": "http://data.europa.eu/eli/reg/2016/679/oj",
+        "title": "Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)",
+        "authors": []
+    },
+    "DPV": {
+        "href": "https://w3id.org/dpv",
+        "title": "Data Privacy Vocabulary (DPV)",
+        "authors": [
+            "Harshvardhan J. Pandit",
+            "Beatriz Esteves",
+            "Delaram Golpayegani",
+            "Georg P. Krog",
+            "Julian Flake",
+            "Paul Ryan"
+        ]
+    }
+}
+</pre>
+
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
