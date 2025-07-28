@@ -30,11 +30,7 @@ ex:uc04-refinedURI-p-pseudonymisedweight-improvehealthcare-physicianDC-read a od
                         time:intervalAfter ex:SurgeryEvent ;
                         time:hasDurationDescription [
                             a time:DurationDescription ;
-                            time:years "1"^^xsd:integer  # 1 year after surgery, time window activated when surgery date is recorded
-                        ]
-                    ]
-                ]
-            ] ];
+                            time:years "1"^^xsd:integer ] ] ] ] ]; # 1 year after surgery, time window activated when surgery date is recorded
         odrl:assigner ex:patient ;
         dpv:DataController ex:physician ;
         odrl:constraint [
