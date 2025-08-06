@@ -26,8 +26,8 @@ ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
+            odrl:operator odrl:eq ;
+            odrl:rightOperand dpv:NonCommercialPurpose ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .

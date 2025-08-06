@@ -22,10 +22,8 @@ ex:uc10-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odr
         dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:ScientificResearch, dpv:ImproveHealthcare, sector-health:ResearchDevelopment, 
-                ehds:HealthcareScientificResearch, ehds:ProvideHealthcareOfficialStatistics, ehds:PublicInterestRelatedToHealth, 
-                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ], [
+            odrl:operator odrl:eq ;
+            odrl:rightOperand dpv:ImproveHealthcare ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .

@@ -17,8 +17,8 @@ ex:uc06-r-ehr-monitoring-physicianDC-read-physician a odrl:Request ;
         dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring ],[ 
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ],[ 
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .

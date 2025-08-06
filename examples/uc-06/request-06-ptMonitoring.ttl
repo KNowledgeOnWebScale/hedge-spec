@@ -1,26 +1,24 @@
 @prefix dcterms:       <http://purl.org/dc/terms/> .
 @prefix dpv:           <https://w3id.org/dpv#> .
 @prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
-@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
 @prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
-@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc07-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc07-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. Known URI. Data must be Pseudonymised."@en ;
+ex:uc06-r-ehr-monitoring-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc06-r-ehr-monitoring-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read health data for primary care and remote monitoring without a time restriction to patient with consent as the legal basis."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target ex:weight-by-hcp ;
+        odrl:target ex:health-data ;
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand dpv:ImproveHealthcare ], [
+            odrl:rightOperand sector-health:PatientMonitoring ],[ 
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .
