@@ -44,16 +44,6 @@ ex:WeightShape a sh:NodeShape ;
         sh:path ex:measuredBy ;
         sh:class ehds:HealthcareProvider ;
         sh:minCount 1 ] ;
-    sh:sparql [ # Checks if measurer is not a healthcare provider and reports if it isn't
-        sh:select """
-            SELECT $this ?date ?weight ?measurer
-            WHERE {
-                $this ex:weight ?weight ;
-                      ex:measurementDate ?date ;
-                      ex:measuredBy ?measurer .
-                FILTER NOT EXISTS { ?measurer a ehds:HealthcareProvider . }
-            }
-        """ ;
         sh:message "Weight measurement must be recorded by a healthcare provider."@en ] .
 
 ### --- Link ODRL Target to SHACL --- ###

@@ -14,7 +14,7 @@ ex:uc03-p-weight-primarycare-physicianDC-read a odrl:Set ;
         odrl:target [
             odrl:source ex:weight ; 
             odrl:refinement [
-                odrl:leftOperand dpv-odrl:DataControllerDataSource ;
+                odrl:leftOperand dpv:DataSource ;
                 odrl:operator odrl:eq ;
                 odrl:rightOperand ehds:HealthcareProvider ]] ;
         odrl:assigner ex:patient ;
