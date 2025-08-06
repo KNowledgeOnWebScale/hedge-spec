@@ -1,0 +1,78 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix ex:            <https://example.org/> .
+@prefix loinc:         <http://loinc.org/id/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix report:        <https://w3id.org/force/compliance-report#> .
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix sh:            <http://www.w3.org/ns/shacl#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix ucum:          <http://unitsofmeasure.org/ucum.html#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+
+ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
+    odrl:uid ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP ;
+    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SHACL validation."@en ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target ex:lab-test-results-data ; # Reference to the data asset (separately defined)
+        odrl:assigner dpv:User ;
+        odrl:assignee ex:nonHealthcareProfessional ;
+        dpv:DataController ex:nonHealthcareProfessional ;
+        dpv:Recipient ex:nonHealthcareProfessional ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ], [
+            odrl:leftOperand odrl:elapsedTime ;
+            odrl:operator odrl:lteq ;  # Duration ≤ 24h
+            odrl:rightOperand [
+                a time:Duration ;
+                time:unitType time:unitHour ;
+                time:numericDuration 24 ] ] ] .
+
+### --- SHACL Validation --- ###
+ex:LabTestResultsShape a sh:NodeShape ;
+    sh:targetClass dpv:User ; # Applies to user data
+    sh:property [
+        # Must be a lab test result
+        sh:path ex:lab-test-results ;
+        sh:node ex:GlucoseTestResultShape ; # Nested shape for test details
+        sh:minCount 1 ] ;
+    sh:property [
+        # Measurement date is required
+        sh:path ex:measurementDate ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+    ] .
+
+ex:GlucoseTestResultShape a sh:NodeShape ;
+    # Specific test type (e.g., glucose)
+    sh:property [
+        sh:path ex:testType ;
+        sh:hasValue loinc:2345-7 ;  # Glucose test (LOINC 2345-7)
+        sh:minCount 1 ;
+    ] ;
+    # Numeric result value
+    sh:property [
+        sh:path ex:resultValue ;
+        sh:datatype xsd:float ;
+        sh:minCount 1 ;
+    ] ;
+    # Unit of measurement (e.g., mg/dL)
+    sh:property [
+        sh:path ex:resultUnit ;
+        sh:hasValue ucum:mg/dL ;  # UCUM unit: mass/volume in plasma
+        sh:minCount 1 ;
+    ] .
+    
+### --- Link ODRL Target to SHACL --- ###
+ex:lab-test-results-data a odrl:Asset ;
+    dcterms:conformsTo ex:GlucoseTestResultShape .  # Indicates the data must comply with SHACL rules        

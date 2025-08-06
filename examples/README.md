@@ -5,23 +5,26 @@
 | Use Case         | Description | Policy | Policy ID | Request | Request ID |
 |------------------|-------------|--------|-----------|---------|------------|
 | UC-01 | [Description-01](./uc-01/description-01.md) | [Policy-01](./uc-01/policy-01.ttl) | `ex:uc01-p-ehr-primarycare-physicianDC-read` | [Request-01](./uc-01/request-01.ttl) | `ex:uc01-r-ehr-primarycare-physicianDC-read-physician` |
-| UC-02-URI | [Description-02-URI](./uc-02/uc-02-URI/description-02-URI.md) | [Policy-02-URI](./uc-02/uc-02-URI/policy-02-URI.ttl) | `ex:uc02-URI-p-weight-primarycare-physicianDC-read` | [Request-02-URI](./uc-02/uc-02-URI/request-02-URI.ttl) | `ex:uc02-URI-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-refinedURI | [Description-02-refinedURI](./uc-02/uc-02-refinedURI/description-02-refinedURI.md) | [Policy-02-refinedURI](./uc-02/uc-02-refinedURI/policy-02-refinedURI.ttl) | `ex:uc02-refinedURI-p-weight-primarycare-physicianDC-read` | [Request-02-refinedURI](./uc-02/uc-02-refinedURI/request-02-refinedURI.ttl) | `ex:uc02-refinedURI-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-SPARQL | [Description-02-SPARQL](./uc-02/uc-02-SPARQL/description-02-SPARQL.md) | [Policy-02-SPARQL](./uc-02/uc-02-SPARQL/policy-02-SPARQL.ttl) | `ex:uc02-SPARQL-p-weight-primarycare-physicianDC-read` | [Request-02-SPARQL](./uc-02/uc-02-SPARQL/request-02-SPARQL.ttl) | `ex:uc02-SPARQL-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-SHACL | [Description-02-SHACL](./uc-02/uc-02-SHACL/description-02-SHACL.md) | [Policy-02-SHACL](./uc-02/uc-02-SHACL/policy-02-SHACL.ttl) | `ex:uc02-SHACL-p-weight-primarycare-physicianDC-read` | [Request-02-SHACL](./uc-02/uc-02-SHACL/request-02-SHACL.ttl) | `ex:uc02-SHACL-r-weight-primarycare-physicianDC-read-physician` |
-| UC-03 | [Description-03](./uc-03/description-03.md) | [Policy-03](./uc-03/policy-03.ttl) | `ex:uc03-p-ehr-monitoring-physicianDC-read` | [Request-03](./uc-03/request-03.ttl) | `ex:uc03-r-ehr-monitoring-physicianDC-read-physician` |
-| UC-04-URI | [Description-04-URI](./uc-04/uc-04-URI/description-04-URI.md) | [Policy-04-URI](./uc-04/uc-04-URI/policy-04-URI.ttl) | `ex:uc04-URI-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-URI](./uc-04/uc-04-URI/request-04-URI.ttl) | `ex:uc04-URI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-refinedURI | [Description-04-refinedURI](./uc-04/uc-04-refinedURI/description-04-refinedURI.md) | [Policy-04-refinedURI](./uc-04/uc-04-refinedURI/policy-04-refinedURI.ttl) | `ex:uc04-refinedURI-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-refinedURI](./uc-04/uc-04-refinedURI/request-04-refinedURI.ttl) | `ex:uc04-refinedURI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-SPARQL | [Description-04-SPARQL](./uc-04/uc-04-SPARQL/description-04-SPARQL.md) | [Policy-04-SPARQL](./uc-04/uc-04-SPARQL/policy-04-SPARQL.ttl) | `ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-SPARQL](./uc-04/uc-04-SPARQL/request-04-SPARQL.ttl) | `ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-SHACL | [Description-04-SHACL](./uc-04/uc-04-SHACL/description-04-SHACL.md) | [Policy-04-SHACL](./uc-04/uc-04-SHACL/policy-04-SHACL.ttl) | `ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-SHACL](./uc-04/uc-04-SHACL/request-04-SHACL.ttl) | `ex:uc04-SHACL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-05-URI | [Description-05-URI](./uc-05/uc-05-URI/description-05-URI.md) | [Policy-05-URI](./uc-05/uc-05-URI/policy-05-URI.ttl) | `ex:uc05-URI-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-URI](./uc-05/uc-05-URI/request-05-URI.ttl) | `ex:uc05-URI-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-refinedURI | [Description-05-refinedURI](./uc-05/uc-05-refinedURI/description-05-refinedURI.md) | [Policy-05-refinedURI](./uc-05/uc-05-refinedURI/policy-05-refinedURI.ttl) | `ex:uc05-refinedURI-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-refinedURI](./uc-05/uc-05-refinedURI/request-05-refinedURI.ttl) | `ex:uc05-refinedURI-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-SPARQL | [Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md) | [Policy-05-SPARQL](./uc-05/uc-05-SPARQL/policy-05-SPARQL.ttl) | `ex:uc05-SPARQL-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-SPARQL](./uc-05/uc-05-SPARQL/request-05-SPARQL.ttl) | `ex:uc05-SPARQL-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-SHACL | [Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md) | [Policy-05-SHACL](./uc-05/uc-05-SHACL/policy-05-SHACL.ttl) | `ex:uc05-SHACL-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-SHACL](./uc-05/uc-05-SHACL/request-05-SHACL.ttl) | `ex:uc05-SHACL-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-06-URI | [Description-06-URI](./uc-06/uc-06-URI/description-06-URI.md) | [Policy-06-URI](./uc-06/uc-06-URI/policy-06-URI.ttl) | `ex:uc06-URI-p-labresults-privatesharing-noDC-read` | [Request-06-URI](./uc-06/uc-06-URI/request-06-URI.ttl) | `ex:uc06-URI-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-refinedURI | [Description-06-refinedURI](./uc-06/uc-06-refinedURI/description-06-refinedURI.md) | [Policy-06-refinedURI](./uc-06/uc-06-refinedURI/policy-06-refinedURI.ttl) | `ex:uc06-refinedURI-p-labresults-privatesharing-noDC-read` | [Request-06-refinedURI](./uc-06/uc-06-refinedURI/request-06-refinedURI.ttl) | `ex:uc06-refinedURI-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-SPARQL | [Description-06-SPARQL](./uc-06/uc-06-SPARQL/description-06-SPARQL.md) | [Policy-06-SPARQL](./uc-06/uc-06-SPARQL/policy-06-SPARQL.ttl) | `ex:uc06-SPARQL-p-labresults-privatesharing-noDC-read` | [Request-06-SPARQL](./uc-06/uc-06-SPARQL/request-06-SPARQL.ttl) | `ex:uc06-SPARQL-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-SHACL | [Description-06-SHACL](./uc-06/uc-06-SHACL/description-06-SHACL.md) | [Policy-06-SHACL](./uc-06/uc-06-SHACL/policy-06-SHACL.ttl) | `ex:uc06-SHACL-p-labresults-privatesharing-noDC-read` | [Request-06-SHACL](./uc-06/uc-06-SHACL/request-06-SHACL.ttl) | `ex:uc06-SHACL-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-02 | [Description-02](./uc-02/description-02.md) | [Policy-02](./uc-02/policy-02.ttl) | `ex:uc02-p-weight-primarycare-physicianDC-read` | [Request-02](./uc-02/request-02.ttl) | `ex:uc02-r-weight-primarycare-physicianDC-read-physician` |
+| UC-03 | [Description-03](./uc-03/description-03.md) | [Policy-03](./uc-03/policy-03.ttl) | `ex:uc03-p-weight-primarycare-physicianDC-read` | [Request-03](./uc-03/request-03.ttl) | `ex:uc03-r-weight-primarycare-physicianDC-read-physician` |
+| UC-04 | [Description-04](./uc-04/description-04.md) | [Policy-04](./uc-04/policy-04.ttl) | `ex:uc04-p-weight-primarycare-physicianDC-read` | [Request-04](./uc-04/request-04.ttl) | `ex:uc04-r-weight-primarycare-physicianDC-read-physician` |
+| UC-05 | [Description-05](./uc-05/description-05.md) | [Policy-05](./uc-05/policy-05.ttl) | `ex:uc05-p-weight-primarycare-physicianDC-read` | [Request-05](./uc-05/request-05.ttl) | `ex:uc05-r-weight-primarycare-physicianDC-read-physician` |
+| UC-06 | [Description-06](./uc-06/description-06.md) | [Policy-06](./uc-06/policy-06.ttl) | `ex:uc03-p-ehr-monitoring-physicianDC-read` | [Request-06](./uc-06/request-06.ttl) | `ex:uc03-r-ehr-monitoring-physicianDC-read-physician` |
+| UC-07 | [Description-07](./uc-07/description-07.md) | [Policy-07](./uc-07/policy-07.ttl) | `ex:uc07-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-07](./uc-07/request-07.ttl) | `ex:uc07-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-08 | [Description-08](./uc-08/description-08.md) | [Policy-08](./uc-08/policy-08.ttl) | `ex:uc08-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-08](./uc-08/request-08.ttl) | `ex:uc08-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-09 | [Description-09](./uc-09/description-09.md) | [Policy-09](./uc-09/policy-09.ttl) | `ex:uc09-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-09](./uc-09/request-09.ttl) | `ex:uc09-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-10 | [Description-10](./uc-10/description-10.md) | [Policy-10](./uc-10/policy-10.ttl) | `ex:uc10-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-10](./uc-10/request-10.ttl) | `ex:uc10-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-11 | [Description-11](./uc-11/description-11.md) | [Policy-11](./uc-11/policy-11.ttl) | `ex:uc11-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-11](./uc-11/request-11.ttl) | `ex:uc11-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-12 | [Description-12](./uc-12/description-12.md) | [Policy-12](./uc-12/policy-12.ttl) | `ex:uc12-p-labresults-privatesharing-nonHCPDC-read` | [Request-12](./uc-12/request-12.ttl) | `ex:uc12-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-13 | [Description-13](./uc-13/description-13.md) | [Policy-13](./uc-13/policy-13.ttl) | `ex:uc13-p-labresults-privatesharing-nonHCPDC-read` | [Request-13](./uc-13/request-13.ttl) | `ex:uc13-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-14 | [Description-14](./uc-14/description-14.md) | [Policy-14](./uc-14/policy-14.ttl) | `ex:uc14-p-labresults-privatesharing-nonHCPDC-read` | [Request-14](./uc-14/request-14.ttl) | `ex:uc14-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-15 | [Description-15](./uc-15/description-15.md) | [Policy-15](./uc-15/policy-15.ttl) | `ex:uc15-p-labresults-privatesharing-nonHCPDC-read` | [Request-15](./uc-15/request-15.ttl) | `ex:uc15-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-16 | [Description-16](./uc-16/description-16.md) | [Policy-16](./uc-16/policy-16.ttl) | `ex:uc16-p-labresults-privatesharing-nonHCPDC-read` | [Request-16](./uc-16/request-16.ttl) | `ex:uc16-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-17 | [Description-17](./uc-17/description-17.md) | [Policy-17](./uc-17/policy-17.ttl) | `ex:uc17-p-labresults-privatesharing-noDC-read` | [Request-17](./uc-17/request-17.ttl) | `ex:uc17-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-18 | [Description-18](./uc-18/description-18.md) | [Policy-18](./uc-18/policy-18.ttl) | `ex:uc18-p-labresults-privatesharing-noDC-read` | [Request-18](./uc-18/request-18.ttl) | `ex:uc18-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-19 | [Description-19](./uc-19/description-19.md) | [Policy-19](./uc-19/policy-19.ttl) | `ex:uc19-p-labresults-privatesharing-noDC-read` | [Request-19](./uc-19/request-19.ttl) | `ex:uc19-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-20 | [Description-20](./uc-20/description-20.md) | [Policy-20](./uc-20/policy-20.ttl) | `ex:uc20-p-labresults-privatesharing-noDC-read` | [Request-20](./uc-20/request-20.ttl) | `ex:uc20-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
 
 ## Requirements to be included in the policies
 
@@ -67,39 +70,15 @@ To assess necessity and information on how to model each of the requirements, ch
 - Policy `ex:ucXX-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
 - Request `ex:ucXX-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
 
-### UC-02
-[Description-02](./uc-02/description-02.md)
-
-1. As there are multiple techniques to acces to a subset of data, I have created 4 subsets: know URI [UC-02-URI](./uc-02/uc-02-URI/), refined URI [UC-02-refinedURI](./uc-02/uc-02-refinedURI/), SPARQL query [UC-02-SPARQL](./uc-02/uc-02-SPARQL/) and SHACL validation [UC-02-SHACL](./uc-02/uc-02-SHACL/). The technique is specified in the id as follows:
-- Policy `ex:ucXX-<tech>-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
-- Request `ex:ucXX-<tech>-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
-
-    The alternative would be to create independent use cases.
-
-2. [Description-02-refinedURI](./uc-02/uc-02-refinedURI/description-02-refinedURI.md): Weight URI refined on source, as it is interpreted as an assetCollection:
-
-    ```
-    odrl:target [
-        odrl:source ex:weight ; #rdf:value
-        odrl:refinement [
-            odrl:leftOperand dpv-odrl:DataControllerDataSource ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand ehds:HealthcareProvider ]] ;
-    ```
-
-    The alternative is to refine rdf:value, but it applies to actions.
-
-3. [Description-02-SHACL](./uc-02/uc-02-refinedURI/description-02-SHACL.md): SHACL validation is applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
+### UC-05
+3. [Description-05](./uc-05/description-05.md): SHACL validation is applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
 
     Right now it's written on both policy and request. 
 
-### UC-03
-[Description-03](./uc-03/description-03.md)
+    --> Leave as it is and stop working on SHACL
 
-NONE
-
-### UC-04
-[Description-04](./uc-04/description-04.md)
+### UC-07
+[Description-07](./uc-07/description-07.md)
 
 1. "From the first encounter until 1 year after surgery": retrospective and limited prospective data. Should the surgery be represented as event or activity?
 
@@ -144,8 +123,8 @@ NONE
         # 4. 
         `ehds:DataRequest` # Seeks access to statistically anonymised ehd
 
-### UC-05
-[Description-05](./uc-05/description-05.md)
+### UC-12
+[Description-05](./uc-12/description-12.md)
 
 1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
@@ -167,10 +146,10 @@ NONE
 
 7. Data source N/A? Shouldn't it also be EHR?
 
-8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md), [Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md))
+8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md))
 
-### UC-06
-[Description-06](./uc-06/description-06.md)
+### UC-17
+[Description-17](./uc-17/description-17.md)
 
 1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
@@ -192,5 +171,5 @@ NONE
 
 7. Data source N/A? Shouldn't it also be EHR?
 
-8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-06-SHACL](./uc-06/uc-06-SHACL/description-06-SHACL.md), 
-[Description-06-SPARQL](./uc-06/uc-06-SPARQL/description-06-SPARQL.md)).
+8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-20](./uc-20/description-20.md), 
+[Description-19](./uc-19/description-19.md)).
