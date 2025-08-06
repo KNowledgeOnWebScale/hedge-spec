@@ -25,12 +25,4 @@ ex:uc08-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odr
                 ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand eu-gdpr:A9-2-a ] ;
-        odrl:duty [
-            odrl:action [
-                rdf:value dpv:Pseudonymise ;
-                odrl:refinement [
-                    odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-                    odrl:operator odrl:isAnyOf ;
-                    odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation
-                ] ] ] ] .
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .

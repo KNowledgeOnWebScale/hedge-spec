@@ -26,10 +26,4 @@ ex:uc19-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
             odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand eu-gdpr:A9-2-a ], [
-            odrl:leftOperand odrl:elapsedTime ;
-            odrl:operator odrl:lteq ;  # Duration ≤ 24h
-            odrl:rightOperand [
-                a time:Duration ;
-                time:unitType time:unitHour ;
-                time:numericDuration 24 ] ] ] .
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
