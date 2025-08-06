@@ -13,7 +13,8 @@ ex:uc17-p-labresults-privatesharing-noDC-read a odrl:Set ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:glucose-test-results ; 
-        odrl:assigner dpv:User ;
+        odrl:assigner ex:user17 ;
+        dpv:DataSubject ex:user17 ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

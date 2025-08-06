@@ -17,7 +17,7 @@ ex:uc14-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:labTestResult ; 
-        odrl:assigner dpv:User ;
+        odrl:assigner ex:user14 ;
         odrl:assignee ex:nonHealthcareProfessional ;
         dpv:DataController ex:nonHealthcareProfessional ;
         dpv:Recipient ex:nonHealthcareProfessional ;

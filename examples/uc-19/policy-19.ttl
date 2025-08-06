@@ -28,7 +28,7 @@ ex:uc19-p-labresults-privatesharing-noDC-read a odrl:Set ;
                 SELECT ?date ?resultValue ?resultUnit
                 WHERE {
                     GRAPH ex:lab-test-results {
-                        dpv:User ex:labTestResult ?testResult ;
+                        ex:user19 ex:labTestResult ?testResult ;
                                 ex:measurementDate ?date .
 
                         ?testResult ex:testType loinc:2345-7 ;  # Glucose test (LOINC 2345-7)
@@ -39,7 +39,8 @@ ex:uc19-p-labresults-privatesharing-noDC-read a odrl:Set ;
                 ORDER BY ?date
                 """ ;
             ] ; 
-        odrl:assigner dpv:User ;
+        odrl:assigner ex:user19 ;
+        dpv:DataSubject ex:user19 ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

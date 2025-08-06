@@ -14,7 +14,7 @@ ex:uc12-p-labresults-privatesharing-physicianDC-read a odrl:Set ;
         odrl:action odrl:read ;
         odrl:target ex:glucose-test-results ; 
         odrl:assigner dpv:User ;
-        dpv:DataController ex:nonHealthcareProfessional ;
+        dpv:DataSubject ex:user12 ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

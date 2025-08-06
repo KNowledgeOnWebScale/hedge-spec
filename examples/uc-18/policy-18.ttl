@@ -20,7 +20,8 @@ ex:uc18-p-labresults-privatesharing-noDC-read a odrl:Set ;
                 odrl:leftOperand ex:labTestType ;
                 odrl:operator odrl:eq ;
                 odrl:rightOperand loinc:2345-7 ] ] ; # LOINC Glucose test "2345-7" 
-        odrl:assigner dpv:User ;
+        odrl:assigner ex:user18 ;
+        dpv:DataSubject ex:user18 ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

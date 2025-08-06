@@ -15,7 +15,7 @@ ex:uc10-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
         odrl:action odrl:read ;
         odrl:target ex:weight-data ; # Reference to the data asset (separately defined)
         odrl:assigner ex:patient ;
-        dpv:DataController ex:physician ;
+        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

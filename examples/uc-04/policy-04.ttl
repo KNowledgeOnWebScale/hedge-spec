@@ -31,7 +31,7 @@ ex:uc04-p-weight-primarycare-physicianDC-read a odrl:Set ;
                 """ ;
             ] ; 
         odrl:assigner ex:patient ;
-        dpv:DataController ex:physician ;
+        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;

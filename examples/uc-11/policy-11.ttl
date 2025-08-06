@@ -29,7 +29,7 @@ ex:uc11-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
                 odrl:rightOperand "P1Y"^^xsd:duration ;
                 odrl:rightOperandReference ex:surgeryEvent] ] ; 
         odrl:assigner ex:patient ;
-        dpv:DataController ex:physician ;
+        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

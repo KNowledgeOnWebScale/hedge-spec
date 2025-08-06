@@ -32,7 +32,7 @@ ex:uc08-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
                             a time:DurationDescription ;
                             time:years "1"^^xsd:integer ] ] ] ] ]; # 1 year after surgery, time window activated when surgery date is recorded
         odrl:assigner ex:patient ;
-        dpv:DataController ex:physician ;
+        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

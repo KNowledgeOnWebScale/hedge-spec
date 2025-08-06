@@ -17,7 +17,8 @@ ex:uc20-p-labresults-privatesharing-noDC-read a odrl:Set ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:lab-test-results-data ; # Reference to the data asset (separately defined)
-        odrl:assigner dpv:User ;
+        odrl:assigner ex:user20 ;
+        dpv:DataSubject ex:user20 ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
