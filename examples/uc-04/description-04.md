@@ -1,6 +1,6 @@
 # Use Case Description
 
-Access by physician as data controller to specific subset of data (e.g. historical weight measurements recorded by HCP). Using a SPARQL query.
+Access by physician as data controller to specific subset of data (e.g. historical weight measurements recorded by HCP). Using a SPARQL query. Data subset defined from the patient's policy side.
 
 For that:
 - The patient has a [policy](policy-04.ttl) allows a subset of her health data to be read for primary care.

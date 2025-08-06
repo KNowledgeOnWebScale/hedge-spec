@@ -1,6 +1,6 @@
 # Use Case Description
 
-Access by physician as data controller to specific subset of data with a known URI to be refined (e.g. historical weight measurements recorded by HCP).
+Access by physician as data controller to specific subset of data with a known URI to be refined (e.g. historical weight measurements recorded by HCP). Data subset defined from the patient's policy side. Data subset defined from the patient's policy side.
 
 For that:
 - The patient has a [policy](policy-03.ttl) allows a subset of her health data to be read for primary care.

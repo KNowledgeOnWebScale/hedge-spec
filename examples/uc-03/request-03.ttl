@@ -12,12 +12,7 @@ ex:uc03-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
     dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI to be refined."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target [
-            odrl:source ex:weight ;
-            odrl:refinement [
-                odrl:leftOperand dpv-odrl:DataControllerDataSource ;
-                odrl:operator odrl:eq ;
-                odrl:rightOperand ehds:HealthcareProvider ] ] ;
+        odrl:target ex:weight ;
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         dpv:DataController ex:physician ;

@@ -75,7 +75,7 @@ To assess necessity and information on how to model each of the requirements, ch
 
     Right now it's written on both policy and request. 
 
-    --> Leave as it is and stop working on SHACL
+    --> Leave as it is and stop working on SHACL. If we use it in the future, yes, separate it into independent files.
 
 ### UC-07
 [Description-07](./uc-07/description-07.md)
@@ -124,11 +124,9 @@ To assess necessity and information on how to model each of the requirements, ch
         `ehds:DataRequest` # Seeks access to statistically anonymised ehd
 
 ### UC-12
-[Description-05](./uc-12/description-12.md)
+[Description-12](./uc-12/description-12.md)
 
-1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
-
-2. Data subject:
+1. Data subject:
 
     `ex:user05` vs `dpv:User`
 

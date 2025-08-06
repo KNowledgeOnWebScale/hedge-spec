@@ -16,30 +16,7 @@ ex:uc19-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
     dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SPARQL query."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target [
-            a odrl:Asset ;
-            dcterms:description "SPARQL query to fetch user's blood glucose lab results data"@en;
-            rdf:value """
-                PREFIX dpv: <https://w3id.org/dpv#>
-                PREFIX ehds: <https://w3c.github.io/dpv/2.1/legal/eu/ehds/>
-                PREFIX ex: <https://example.org/ns#>
-                PREFIX loinc: <http://loinc.org/id/>
-                PREFIX ucum: <http://unitsofmeasure.org/ucum.html#>
-
-                SELECT ?date ?resultValue ?resultUnit
-                WHERE {
-                    GRAPH ex:lab-test-results {
-                        dpv:User ex:labTestResult ?testResult ;
-                                ex:measurementDate ?date .
-
-                        ?testResult ex:testType loinc:2345-7 ;  # Glucose test (LOINC 2345-7)
-                                    ex:resultValue ?resultValue ;
-                                    ex:resultUnit ucum:mg/dL .  # Strict UCUM unit validation
-                    }
-                }
-                ORDER BY ?date
-                """ ;
-            ] ; 
+        odrl:target ex:lab-test-results ; 
         odrl:assigner dpv:User ;
         odrl:assignee ex:nonHealthcareProfessional ;
         dpv:Recipient ex:nonHealthcareProfessional ;

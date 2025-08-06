@@ -1,6 +1,6 @@
 # Use Case Description
 
-Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h. Using a SPARQL query.
+Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h. Using a SPARQL query. Data subset defined from the patient's policy side.
 
 For that:
 - The user has a [policy](policy-14.ttl) that allows a subset of her health data to be read by a non-healthcare professional for 24h.

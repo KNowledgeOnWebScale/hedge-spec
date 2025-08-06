@@ -14,13 +14,7 @@ ex:uc13-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
     dcterms:description "Non Healthcare professional requests to read a glucose test result, subset of health data, to user with consent as legal basis. Known URI to be refined."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target [
-            odrl:source ex:lab-test-results ; 
-            odrl:refinement [
-                a odrl:Constraint ;
-                odrl:leftOperand ex:labTestType ;
-                odrl:operator odrl:eq ;
-                odrl:rightOperand loinc:2345-7 ] ] ; # LOINC Glucose test
+        odrl:target ex:lab-test-results ; 
         odrl:assigner dpv:User ;
         odrl:assignee ex:nonHealthcareProfessional ;
         dpv:DataController ex:nonHealthcareProfessional ;

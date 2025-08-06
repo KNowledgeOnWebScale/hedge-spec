@@ -1,6 +1,6 @@
 # Use Case Description
 
-Access by non-healthcare professional as data controller to specific subset of data with a known URI to be refined (e.g. lab test results of one specific blood sampling, like glucose test) for 24h.
+Access by non-healthcare professional as data controller to specific subset of data with a known URI to be refined (e.g. lab test results of one specific blood sampling, like glucose test) for 24h. Data subset defined from the patient's policy side.
 
 For that:
 - The user has a [policy](policy-16.ttl) that allows a subset of her health data to be read by a non-healthcare professional for 24h.

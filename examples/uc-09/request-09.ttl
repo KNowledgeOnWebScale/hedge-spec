@@ -13,23 +13,7 @@ ex:uc09-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician a odr
     dcterms:description "Physician requests to read weight subset of health data for secondary use (improving healthcare) to patient with consent as legal basis. SPARQL query. Data must be Pseudonymised."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target [
-            a odrl:Asset ;
-            dcterms:description "SPARQL query to fetch patient weight data"@en;
-            rdf:value """
-                PREFIX ex: <https://example.org/ns#>
-                SELECT ?date ?weight ?measurer
-                WHERE {
-                    GRAPH ex:health-data {
-                        ex:patient ex:weight ?weight ;
-                                ex:measurementDate ?date ;
-                                ex:measuredBy ?measurer .
-                        ?measurer a ehds:HealthcareProvider .
-                    }
-                }
-                ORDER BY ?date
-                """ ;
-            ] ; 
+        odrl:target ex:weight ; 
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         dpv:DataController ex:physician ;

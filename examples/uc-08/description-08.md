@@ -1,6 +1,6 @@
 # Use Case Description
 
-Access by physician as data controller to specific subset of data with a known URI to be refined (e.g. historical weight measurements recorded by HCP) for secondary use (e.g. analyze the weight outcomes of his/her own patient population from first encounter until 1 year after surgery), without time limitation.
+Access by physician as data controller to specific subset of data with a known URI to be refined (e.g. historical weight measurements recorded by HCP) for secondary use (e.g. analyze the weight outcomes of his/her own patient population from first encounter until 1 year after surgery), without time limitation. Data subset defined from the patient's policy side.
 
 For that:
 - The patient has a [policy](policy-08.ttl) that allows a subset of her health data to be read for secondary use after being pseudonymised.
