@@ -162,6 +162,7 @@ To assess necessity and information on how to model each of the requirements, ch
     I couldn’t find concepts already defined (not similar ones either: Layperson, Unaffiliated individual, Third-party non-provider).
     It's the same as the asignee (data controller) in the Request.
     Why is not the physician the recipient in the previous use cases?
+    --> Recipient is a third party that is not DataController
 
 5. Express duration in the descriptions just like '24h'?
 

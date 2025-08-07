@@ -21,8 +21,8 @@ ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
         odrl:action odrl:read ;
         odrl:target ex:lab-test-results-data ; # Reference to the data asset (separately defined)
         odrl:assigner ex:user15 ;
-        odrl:assignee ex:nonHealthcareProfessional ;
         dpv:DataController ex:nonHealthcareProfessional ;
+        odrl:assignee ex:nonHealthcareProfessional ;
         dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
