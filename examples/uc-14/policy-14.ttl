@@ -10,8 +10,8 @@
 @prefix time:          <http://www.w3.org/2006/time#> .
 @prefix ucum:          <http://unitsofmeasure.org/ucum.html#> .
 
-ex:uc14-p-labresults-privatesharing-physicianDC-read a odrl:Set ;
-    odrl:uid ex:uc14-p-labresults-privatesharing-physicianDC-read ;
+ex:uc14-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
+    odrl:uid ex:uc14-p-labresults-privatesharing-nonHCPDC-read ;
     dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. SPARQL query."@en ;
     odrl:permission [
         odrl:action odrl:read ;

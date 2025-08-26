@@ -14,8 +14,8 @@
 @prefix ucum:          <http://unitsofmeasure.org/ucum.html#> .
 @prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
-    odrl:uid ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP ;
+ex:uc15-r-labresults-privatesharing-nonHCPDC-read-nonHCP a odrl:Request ;
+    odrl:uid ex:uc15-r-labresults-privatesharing-nonHCPDC-read-nonHCP ;
     dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SHACL validation."@en ;
     odrl:permission [
         odrl:action odrl:read ;
@@ -23,7 +23,6 @@ ex:uc15-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
         odrl:assigner ex:user15 ;
         dpv:DataController ex:nonHealthcareProfessional ;
         odrl:assignee ex:nonHealthcareProfessional ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;

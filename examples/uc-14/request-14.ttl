@@ -11,8 +11,8 @@
 @prefix time:          <http://www.w3.org/2006/time#> .
 @prefix ucum:          <http://unitsofmeasure.org/ucum.html#> .
 
-ex:uc14-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
-    odrl:uid ex:uc14-r-labresults-privatesharing-physicianDC-read-nonHCP ;
+ex:uc14-r-labresults-privatesharing-nonHCPDC-read-nonHCP a odrl:Request ;
+    odrl:uid ex:uc14-r-labresults-privatesharing-nonHCPDC-read-nonHCP ;
     dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. SPARQL query."@en ;
     odrl:permission [
         odrl:action odrl:read ;
@@ -20,7 +20,6 @@ ex:uc14-r-labresults-privatesharing-physicianDC-read-nonHCP a odrl:Request ;
         odrl:assigner ex:user14 ;
         dpv:DataController ex:nonHealthcareProfessional ;
         odrl:assignee ex:nonHealthcareProfessional ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
