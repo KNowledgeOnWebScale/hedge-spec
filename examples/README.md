@@ -157,6 +157,15 @@ To assess necessity and information on how to model each of the requirements, ch
 
 8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md))
 
+
+9. Recipient vs DataController: ### UC-12-16
+- Policy:
+    - Recipient: <https://example.org/NonHealthcareProfessional> 
+    Always even if nonHCP as DC?
+- Request:
+    - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
+    - DataController: <https://example.org/NonHealthcareProfessional>
+
 ### UC-16
 [Description-16](./uc-16/description-16.md)
 1. How does the engine know that it means P24H after the event?
@@ -189,7 +198,14 @@ odrl:rightOperandReference ex:accessToNonHCPEvent
 
 6. Not primary nor secondary use, how should we define it?
 
-7. Data source N/A? Shouldn't it also be EHR?
+7. Data source N/A? Shouldn't it also be EHR? WHAT IS THE DIFFERENCE? WHAT IS THE CORRECT APPROACH?
 
 8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-20](./uc-20/description-20.md), 
 [Description-19](./uc-19/description-19.md)).
+
+9. Recipient vs DataController: ### UC-17-21
+- Policy:
+    - Recipient: <https://example.org/NonHealthcareProfessional>
+- Request:
+    - Recipient: <https://example.org/NonHealthcareProfessional>
+    - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?

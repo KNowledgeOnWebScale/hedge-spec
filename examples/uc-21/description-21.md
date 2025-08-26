@@ -67,3 +67,11 @@ odrl:operator odrl:lteq ;
 odrl:rightOperand "P24H"^^xsd:duration ;
 odrl:rightOperandReference ex:accessToNonHCPEvent
 ```
+
+9. Recipient vs DataController:
+- Policy:
+    - Recipient: <https://example.org/NonHealthcareProfessional>
+- Request:
+    - Recipient: <https://example.org/NonHealthcareProfessional>
+    - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
+
