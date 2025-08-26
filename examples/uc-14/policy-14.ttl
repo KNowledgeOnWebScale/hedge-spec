@@ -48,8 +48,5 @@ ex:uc14-p-labresults-privatesharing-physicianDC-read a odrl:Set ;
             odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
             odrl:leftOperand odrl:elapsedTime ;
             odrl:operator odrl:lteq ;  # Duration ≤ 24h
-            odrl:rightOperand [
-                a time:Duration ;
-                time:unitType time:unitHour ;
-                time:numericDuration 24 ] ] ] .
+            odrl:rightOperand "P24H"^^xsd:duration ] ] .
         

@@ -38,13 +38,15 @@ ex:uc08-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand dpv:ScientificResearch, dpv:ImproveHealthcare, sector-health:ResearchDevelopment, 
                 ehds:HealthcareScientificResearch, ehds:ProvideHealthcareOfficialStatistics, ehds:PublicInterestRelatedToHealth, 
-                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ], [
-            odrl:leftOperand dpv-odrl:Processing ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:Pseudonymisation ],[
-            odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] .
+                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ] ;
+        odrl:duty [
+            odrl:action [
+                rdf:value dpv:Pseudonymise ;
+                odrl:refinement [
+                    odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+                    odrl:operator odrl:isAnyOf ;
+                    odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation
+                ] ] ] ] .
 
 # Abstract event definitions, in a third file "events-04.ttl" (to be instantiated with concrete dates)
 ex:FirstEncounterEvent a time:Instant, odrl:Event ;
@@ -119,17 +121,3 @@ ex:SurgeryEvent a time:Instant, odrl:Event ;
 #    time:hasDuration "P1Y"^^xsd:duration  # 1 year after surgery, time window activated when surgery date is recorded
 #    ] ]
 #+ declaring events-04.ttl
-
-#Pseudonymisation
-#odrl:constraint [
-#            odrl:leftOperand dpv:Data ;
-#            odrl:operator odrl:isAnyOf ;
-#            odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]
-#∫
-#odrl:target [
-#            odrl:source ex:weight ; 
-#            odrl:refinement [
-#                odrl:leftOperand dpv:Data ;
-#                odrl:operator odrl:isAnyOf ;
-#                odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]] ;
-        

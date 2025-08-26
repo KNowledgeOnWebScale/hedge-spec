@@ -86,18 +86,17 @@ To assess necessity and information on how to model each of the requirements, ch
 
 3. Pseudonymisation approach:
 
-    a. Followed strategy: processing constraint with DeterministicPseudonymisation (same input always produces the same pseudonym) & MonotonicCounterPseudonymisation (Monotonically increasing counter (P1, P2...)).
-
-    ```
-    drl:constraint [
-        odrl:leftOperand dpv-odrl:Processing ;
-        odrl:operator odrl:isA ;
-        odrl:rightOperand dpv:Pseudonymisation ],[
-        odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-        odrl:operator odrl:isAnyOf ;
-        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
-    ```
-
+    a. Followed strategy: Duty 
+        ```
+        odrl:permission [
+            odrl:duty [
+                odrl:action [
+                    rdf:value dpv:Pseudonymise ;
+                    odrl:refinement [
+                        odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+                        odrl:operator odrl:isAnyOf ;
+                        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] ] ]
+        ```
     b. Alternatives:
             
         # 1. Data constraint:
@@ -123,6 +122,18 @@ To assess necessity and information on how to model each of the requirements, ch
         # 4. 
         `ehds:DataRequest` # Seeks access to statistically anonymised ehd
 
+        # 5. processing constraint with DeterministicPseudonymisation (same input always produces the same pseudonym) & MonotonicCounterPseudonymisation (Monotonically increasing counter (P1, P2...)).
+
+        ```
+        drl:constraint [
+            odrl:leftOperand dpv-odrl:Processing ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand dpv:Pseudonymisation ],[
+            odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
+        ```
+
 ### UC-12
 [Description-12](./uc-12/description-12.md)
 
@@ -145,6 +156,16 @@ To assess necessity and information on how to model each of the requirements, ch
 7. Data source N/A? Shouldn't it also be EHR?
 
 8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md))
+
+### UC-16
+[Description-16](./uc-16/description-16.md)
+1. How does the engine know that it means P24H after the event?
+```
+odrl:leftOperand odrl:dateTime ;
+odrl:operator odrl:lteq ;
+odrl:rightOperand "P24H"^^xsd:duration ;
+odrl:rightOperandReference ex:accessToNonHCPEvent
+```
 
 ### UC-17
 [Description-17](./uc-17/description-17.md)

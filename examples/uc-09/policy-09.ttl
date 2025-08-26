@@ -36,23 +36,12 @@ ex:uc09-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand dpv:ScientificResearch, dpv:ImproveHealthcare, sector-health:ResearchDevelopment, 
                 ehds:HealthcareScientificResearch, ehds:ProvideHealthcareOfficialStatistics, ehds:PublicInterestRelatedToHealth, 
-                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ], [
-            odrl:leftOperand dpv-odrl:Processing ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:Pseudonymisation ],[
-            odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] .
-
-#odrl:constraint [
-#            odrl:leftOperand dpv:Data ;
-#            odrl:operator odrl:isAnyOf ;
-#            odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]
-#∫
-#odrl:target [
-#            odrl:source ex:weight ; 
-#            odrl:refinement [
-#                odrl:leftOperand dpv:Data ;
-#                odrl:operator odrl:isAnyOf ;
-#                odrl:rightOperand dpv:PseudonymisedData, dpv:AnonymisedData ]] ;
-        
+                ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ] ; 
+        odrl:duty [
+            odrl:action [
+                rdf:value dpv:Pseudonymise ;
+                odrl:refinement [
+                    odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+                    odrl:operator odrl:isAnyOf ;
+                    odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation
+                ] ] ] ] .

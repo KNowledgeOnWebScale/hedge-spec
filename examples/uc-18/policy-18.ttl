@@ -26,11 +26,8 @@ ex:uc18-p-labresults-privatesharing-noDC-read a odrl:Set ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ],[
+            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
             odrl:leftOperand odrl:elapsedTime ;
             odrl:operator odrl:lteq ;  # Duration ≤ 24h
-            odrl:rightOperand [
-                a time:Duration ;
-                time:unitType time:unitHour ;
-                time:numericDuration 24 ] ] ] .
+            odrl:rightOperand "P24H"^^xsd:duration ] ] .
         
