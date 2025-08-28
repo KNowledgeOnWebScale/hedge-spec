@@ -267,6 +267,8 @@ What is the difference? What is the correct approach in the policies? Always N/A
 
 The data controller would be the user or none at all?
 
+9. [Description-22](./uc-22/description-22.md): Can `dpv:AccountManagement` be a processing operation besides a purpose? 
+
 ### Closed Issues 
 
 1. **SHACL validation** ([Description-05](./uc-05/description-05.md), [Description-10](./uc-10/description-10.md), [Description-15](./uc-15/description-15.md), [Description-20](./uc-20/description-20.md)): applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
