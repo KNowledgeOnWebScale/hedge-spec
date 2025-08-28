@@ -1,0 +1,39 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix ex:            <https://example.org/> .
+@prefix loinc:         <http://loinc.org/id/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+
+ex:uc16-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
+    odrl:uid ex:uc16-p-labresults-privatesharing-nonHCPDC-read ;
+    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. Known URI to be refined with dynamic values."@en ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target [
+            odrl:source ex:lab-test-results ; 
+            odrl:refinement [
+                a odrl:Constraint ;
+                odrl:leftOperand ex:labTestType ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand loinc:2345-7 ], [ # LOINC Glucose test "2345-7" 
+                odrl:leftOperand odrl:dateTime ;
+                odrl:operator odrl:lteq ;
+                odrl:rightOperand "P24H"^^xsd:duration ;
+                odrl:rightOperandReference ex:accessToNonHCPEvent] ] ; 
+        odrl:assigner ex:user16 ;
+        dpv:DataSubject ex:user16 ;
+        dpv:Recipient ex:nonHealthcareProfessional ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, 
+            sector-health:ResourceManagement, ex:SecondOpinion ] ] .
+        
+ex:accessToNonHCPEvent a odrl3proposal:OperandReference ;
+    odrl3proposal:reference ex:externalSource ;
+    odrl3proposal:path ex:updateFirstEncounterEvent ;
+    rdfs:comment "Moment in time when the user gives access to the non-healthcare professional" .
