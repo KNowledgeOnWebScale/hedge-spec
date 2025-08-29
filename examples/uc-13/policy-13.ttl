@@ -1,0 +1,35 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix ex:            <https://example.org/> .
+@prefix loinc:         <http://loinc.org/id/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+
+ex:uc13-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
+    odrl:uid ex:uc13-p-labresults-privatesharing-nonHCPDC-read ;
+    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. Known URI to be refined."@en ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target [
+            odrl:source ex:lab-test-results ; 
+            odrl:refinement [
+                a odrl:Constraint ;
+                odrl:leftOperand ex:labTestType ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand loinc:2345-7 ] ] ; # LOINC Glucose test "2345-7" 
+        odrl:assigner ex:user13 ;
+        dpv:DataSubject ex:user13 ;
+        dpv:Recipient ex:nonHealthcareProfessional ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, 
+            sector-health:ResourceManagement, ex:SecondOpinion ], [
+            odrl:leftOperand odrl:elapsedTime ;
+            odrl:operator odrl:lteq ;  # Duration ≤ 24h
+            odrl:rightOperand "P24H"^^xsd:duration ] ] .
+        

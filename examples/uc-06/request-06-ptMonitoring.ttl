@@ -6,9 +6,9 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc01-r-ehr-primarycare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc01-r-ehr-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read health data for primary care to patient with consent as the legal basis."@en ;
+ex:uc06-r-ehr-monitoring-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc06-r-ehr-monitoring-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read health data for primary care and remote monitoring without a time restriction to patient with consent as the legal basis."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;
@@ -18,7 +18,7 @@ ex:uc01-r-ehr-primarycare-physicianDC-read-physician a odrl:Request ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand sector-health:PrimaryCareManagement ], [
+            odrl:rightOperand sector-health:PatientMonitoring ],[ 
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .
