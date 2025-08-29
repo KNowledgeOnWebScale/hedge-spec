@@ -245,23 +245,23 @@ To assess necessity and information on how to model each of the requirements, ch
     
     --> Because a Recipient is a third party that is not DataController
 
-**Recipient vs DataController**: 
-- UC-12 to UC-16: nonHCP as Data Controller:
-    - Policy:
-        - Recipient: <https://example.org/NonHealthcareProfessional> 
-        
-        Always even if nonHCP as DC?
+    **Recipient vs DataController**: 
+    - UC-12 to UC-16: nonHCP as Data Controller:
+        - Policy:
+            - Recipient: <https://example.org/NonHealthcareProfessional> 
+            
+            Always even if nonHCP as DC?
 
-    - Request:
-        - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
-        - DataController: <https://example.org/NonHealthcareProfessional>
+        - Request:
+            - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
+            - DataController: <https://example.org/NonHealthcareProfessional>
 
-- UC-17 to UC-21: no Data Controller:
-    - Policy:
-        - Recipient: <https://example.org/NonHealthcareProfessional>
-    - Request:
-        - Recipient: <https://example.org/NonHealthcareProfessional>
-        - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
+    - UC-17 to UC-21: no Data Controller:
+        - Policy:
+            - Recipient: <https://example.org/NonHealthcareProfessional>
+        - Request:
+            - Recipient: <https://example.org/NonHealthcareProfessional>
+            - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
 
 7. **NA DataSource** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h.
 " 
