@@ -6,21 +6,22 @@
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
 
-ex:uc03-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc03-r-weight-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI to be refined."@en ;
+ex:uc17-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
+    odrl:uid ex:uc17-r-labresults-privatesharing-noDC-read-nonHCP ;
+    dcterms:description "Non Healthcare professional requests to read a specific glucose test result, subset of health data, to user with consent as legal basis. Known URI."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target ex:weight ;
-        odrl:assigner ex:patient ;
-        odrl:assignee ex:physician ;
-        dpv:DataController ex:physician ;
+        odrl:target ex:glucose-test-results ;
+        odrl:assigner ex:user17 ;
+        dpv:DataController ex:user17 ;
+        odrl:assignee ex:nonHealthcareProfessional ;
+        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand sector-health:PrimaryCareManagement ], [
+            odrl:rightOperand dpv:NonCommercialPurpose ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .
-
