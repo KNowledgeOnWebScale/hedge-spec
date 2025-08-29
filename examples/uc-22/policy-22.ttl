@@ -1,47 +1,22 @@
 @prefix dcterms:       <http://purl.org/dc/terms/> .
 @prefix dpv:           <https://w3id.org/dpv#> .
 @prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
-@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
 @prefix ex:            <https://example.org/> .
-@prefix loinc:         <http://loinc.org/id/> .
+@prefix faqir:         <https://faqir.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
-@prefix time:          <http://www.w3.org/2006/time#> .
 
-ex:uc21-p-labresults-privatesharing-noDC-read a odrl:Set ;
-    odrl:uid ex:uc21-p-labresults-privatesharing-noDC-read ;
-    dcterms:description "User allows a specific glucose test result, subset of health data, to be read by a non-healthcare professional for 24h. Known URI to be refined with dynamic values."@en ;
+ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement a odrl:Set ;
+    odrl:uid ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement ;
+    dcterms:description "User allows FAQIR Pod Management Service full access to manage his Pod."@en ;
     odrl:permission [
-        odrl:action odrl:read ;
-        odrl:target [
-            odrl:source ex:lab-test-results ; 
-            odrl:refinement [
-                a odrl:Constraint ;
-                odrl:leftOperand ex:labTestType ;
-                odrl:operator odrl:eq ;
-                odrl:rightOperand loinc:2345-7 ], [ # LOINC Glucose test "2345-7" 
-                odrl:leftOperand odrl:dateTime ;
-                odrl:operator odrl:lteq ;
-                odrl:rightOperand "P24H"^^xsd:duration ;
-                odrl:rightOperandReference ex:accessToNonHCPEvent
-                ] ] ; 
-        odrl:assigner ex:user21 ;
-        dpv:DataSubject ex:user21 ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
+        odrl:action dpv:Processing, odrl:use ; #dpv:AccountManagement
+        odrl:target faqir:pod ; 
+        odrl:assigner ex:patient ;
+        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ] ] .
-            
-            ,[
-            odrl:leftOperand odrl:elapsedTime ;
-            odrl:operator odrl:lteq ;  # Duration ≤ 24h
-            odrl:rightOperand [
-                a time:Duration ;
-                time:unitType time:unitHour ;
-                time:numericDuration 24 ] ] 
-               
-ex:accessToNonHCPEvent a odrl3proposal:OperandReference ;
-    odrl3proposal:reference ex:externalSource ;
-    odrl3proposal:path ex:updateFirstEncounterEvent ;
-    rdfs:comment "Moment in time when the user gives access to the non-healthcare professional" .
+            odrl:rightOperand dpv:AccountManagement, sector-health:ResourceManagement, 
+            dpv:NonCommercialPurpose,  dpv:DataSecurityManagement, dpv:DataQualityManagement,
+            dpv:DataSubjectRightsManagement ] ] .

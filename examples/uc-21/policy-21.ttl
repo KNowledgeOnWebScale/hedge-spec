@@ -5,8 +5,11 @@
 @prefix ex:            <https://example.org/> .
 @prefix loinc:         <http://loinc.org/id/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix odrl3proposal: <https://spec.knows.idlab.ugent.be/odrl3proposal/latest/#r2> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 @prefix time:          <http://www.w3.org/2006/time#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
 ex:uc21-p-labresults-privatesharing-noDC-read a odrl:Set ;
     odrl:uid ex:uc21-p-labresults-privatesharing-noDC-read ;
@@ -31,15 +34,13 @@ ex:uc21-p-labresults-privatesharing-noDC-read a odrl:Set ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ] ] .
-            
-            ,[
+            odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ],[
             odrl:leftOperand odrl:elapsedTime ;
             odrl:operator odrl:lteq ;  # Duration ≤ 24h
             odrl:rightOperand [
                 a time:Duration ;
                 time:unitType time:unitHour ;
-                time:numericDuration 24 ] ] 
+                time:numericDuration 24 ] ] ] .
                
 ex:accessToNonHCPEvent a odrl3proposal:OperandReference ;
     odrl3proposal:reference ex:externalSource ;

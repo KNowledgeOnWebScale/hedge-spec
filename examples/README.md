@@ -25,6 +25,7 @@
 | UC-19 | [Description-19](./uc-19/description-19.md) | [Policy-19](./uc-19/policy-19.ttl) | `ex:uc19-p-labresults-privatesharing-noDC-read` | [Request-19](./uc-19/request-19.ttl) | `ex:uc19-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-20 | [Description-20](./uc-20/description-20.md) | [Policy-20](./uc-20/policy-20.ttl) | `ex:uc20-p-labresults-privatesharing-noDC-read` | [Request-20](./uc-20/request-20.ttl) | `ex:uc20-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-22 | [Description-22](./uc-22/description-22.md) | [Policy-22](./uc-22/policy-22.ttl) | `ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement` | [Request-22](./uc-22/request-22.ttl) | `ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer` |
 
 ## Requirements to be included in the policies
 
@@ -268,6 +269,8 @@ What is the difference? What is the correct approach in the policies? Always N/A
 The data controller would be the user or none at all?
 
 9. [Description-22](./uc-22/description-22.md): Can `dpv:AccountManagement` be a processing operation besides a purpose? 
+
+If it cant, are `dpv:Processing` and `odrl:use` enough to represent "full control" over the pod?
 
 ### Closed Issues 
 
