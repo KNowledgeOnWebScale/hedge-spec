@@ -1,0 +1,25 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix ex:            <https://example.org/> .
+@prefix faqir:         <https://faqir.org/> .
+@prefix moveUp:        <https://www.moveup.care/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+
+ex:uc24-r-sensorSlice-serviceProvision-moveUpProfileDC-readWrite-moveUpProfile a odrl:Request ;
+    odrl:uid ex:uc24-r-sensorSlice-serviceProvision-moveUpProfileDC-readWrite-moveUpProfile ;
+    dcterms:description "MoveUp patient's profiles requests read and write (modify) access to the patient's pod sensor slice. With consent as legal basis."@en ;
+    odrl:permission [
+        odrl:action odrl:read, odrl:modify ; 
+        odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
+        odrl:assigner ex:patient ;
+        dpv:DataController moveUp:patient ; 
+        odrl:assignee moveUp:patient ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand dpv:ServiceProvision ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
