@@ -6,12 +6,12 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc01-r-ehr-primarycare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc01-r-ehr-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read health data for primary care to patient with consent as the legal basis."@en ;
+ex:uc02-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc02-r-weight-primarycare-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target ex:health-data ;
+        odrl:target ex:weight-by-hcp ;
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         dpv:DataController ex:physician ;

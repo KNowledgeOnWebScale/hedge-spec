@@ -1,0 +1,28 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix ex:            <https://example.org/> .
+@prefix faqir:         <https://faqir.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+
+ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator a odrl:Request ;
+    odrl:uid ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator ;
+    dcterms:description "FAQIR Aggregator requests read access to the patient's sensor slice. With consent as legal basis."@en ;
+    odrl:permission [
+        odrl:action odrl:read ; 
+        odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
+        odrl:assigner ex:patient ;
+        dpv:DataController faqir:podManagementService ; 
+        odrl:assignee faqir:aggregator ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand dpv:ServiceProvision ], [
+            odrl:leftOperand dpv-odrl:LegalBasis ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+
+faqir:podManagementService a dpv:ServiceProvider, dpv:NonProfitOrganisation .
+
+faqir:aggregator a dpv:ServiceProvider .
