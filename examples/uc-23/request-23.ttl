@@ -8,7 +8,7 @@
 
 ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator a odrl:Request ;
     odrl:uid ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator ;
-    dcterms:description "FAQIR Aggregator requests read access to the patient's senspr slice. With consent as legal basis."@en ;
+    dcterms:description "FAQIR Aggregator requests read access to the patient's sensor slice. With consent as legal basis."@en ;
     odrl:permission [
         odrl:action odrl:read ; 
         odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
