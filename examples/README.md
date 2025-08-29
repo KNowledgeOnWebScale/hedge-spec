@@ -26,6 +26,7 @@
 | UC-20 | [Description-20](./uc-20/description-20.md) | [Policy-20](./uc-20/policy-20.ttl) | `ex:uc20-p-labresults-privatesharing-noDC-read` | [Request-20](./uc-20/request-20.ttl) | `ex:uc20-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-22 | [Description-22](./uc-22/description-22.md) | [Policy-22](./uc-22/policy-22.ttl) | `ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement` | [Request-22](./uc-22/request-22.ttl) | `ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer` |
+| UC-23 | [Description-23](./uc-23/description-23.md) | [Policy-23](./uc-23/policy-23.ttl) | `ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read` | [Request-23](./uc-23/request-23.ttl) | `ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator` |
 
 ## Requirements to be included in the policies
 
@@ -270,7 +271,19 @@ The data controller would be the user or none at all?
 
 9. [Description-22](./uc-22/description-22.md): Can `dpv:AccountManagement` be a processing operation besides a purpose? 
 
-If it cant, are `dpv:Processing` and `odrl:use` enough to represent "full control" over the pod?
+If it can't, are `dpv:Processing` and `odrl:use` enough to represent "full control" over the pod?
+
+10. **Data Source** ([Description-22](./uc-22/description-22.md)[Description-23](./uc-23/description-23.md)): Is Data Source not applicable or is it FAQIR?
+
+11. **Pseudo/Anonymisation** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
+
+Pseudo/Anonymisation depends on who will have access to the aggregated data, so it is not applicable on this policy, which only refers to the in-house service. Is this interpretation correct?
+
+12. **Purpose** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
+
+The purpose of the Aggregator is to aggregate the patient's slice, I assume. `dpv:Aggregate` is an action or processing, but not a purpose. 
+
+Is `dpv:ServiceProvision` enough to represent the Aggregator's purpose?
 
 ### Closed Issues 
 
