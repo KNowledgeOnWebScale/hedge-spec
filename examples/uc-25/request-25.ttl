@@ -7,12 +7,12 @@
 @prefix moveUp:        <https://www.moveup.care/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 
-ex:uc25-r-sensorSlice-serviceProvision-moveUpServiceDC-readModify-moveUpService a odrl:Request ;
-    odrl:uid ex:uc25-r-sensorSlice-serviceProvision-moveUpServiceDC-readModify-moveUpService ;
-    dcterms:description "MoveUp's Service requests read and write (modify) access to the patient's pod sensor slice. With consent as legal basis."@en ;
+ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService a odrl:Request ;
+    odrl:uid ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService ;
+    dcterms:description "MoveUp's Service requests read and write (modify) access to the patient's pod profile, questionnaire, and sensor slices. With consent as legal basis."@en ;
     odrl:permission [
         odrl:action odrl:read, odrl:modify ; 
-        odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
+        odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
         odrl:assigner ex:patient ;
         dpv:DataController moveUp:service ; 
         odrl:assignee moveUp:service ;

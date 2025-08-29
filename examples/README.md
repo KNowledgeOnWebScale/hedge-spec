@@ -27,8 +27,8 @@
 | UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-22 | [Description-22](./uc-22/description-22.md) | [Policy-22](./uc-22/policy-22.ttl) | `ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement` | [Request-22](./uc-22/request-22.ttl) | `ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer` |
 | UC-23 | [Description-23](./uc-23/description-23.md) | [Policy-23](./uc-23/policy-23.ttl) | `ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read` | [Request-23](./uc-23/request-23.ttl) | `ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator` |
-| UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-sensorSlice-serviceProvision-moveUpProfileDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-sensorSlice-serviceProvision-moveUpProfileDC-readModify-moveUpProfile` |
-| UC-25 | [Description-25](./uc-25/description-25.md) | [Policy-25](./uc-25/policy-25.ttl) | `ex:uc25-p-sensorSlice-serviceProvision-moveUpServiceDC-readModify` | [Request-25](./uc-25/request-25.ttl) | `ex:uc25-r-sensorSlice-serviceProvision-moveUpServiceDC-readModify-moveUpService` |
+| UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify-moveUpProfile` |
+| UC-25 | [Description-25](./uc-25/description-25.md) | [Policy-25](./uc-25/policy-25.ttl) | `ex:uc25-p-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify` | [Request-25](./uc-25/request-25.ttl) | `ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService` |
 
 ## Requirements to be included in the policies
 

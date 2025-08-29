@@ -5,12 +5,12 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc24-p-sensorSlice-serviceProvision-moveUpProfileDC-readModify a odrl:Set ;
-    odrl:uid ex:uc24-p-sensorSlice-serviceProvision-moveUpProfileDC-readModify ;
-    dcterms:description "User allows his own MoveUp profile read and write (modify) access to his sensor slice."@en ;
+ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify a odrl:Set ;
+    odrl:uid ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify ;
+    dcterms:description "User allows his own MoveUp profile read and write (modify) access to his profile, questionnaire, and sensor slices."@en ;
     odrl:permission [
         odrl:action odrl:read, odrl:modify ; 
-        odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
+        odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
         odrl:assigner ex:patient ;
         dpv:DataSubject ex:patient ;
         odrl:constraint [
