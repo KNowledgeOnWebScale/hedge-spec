@@ -27,7 +27,8 @@
 | UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
 | UC-22 | [Description-22](./uc-22/description-22.md) | [Policy-22](./uc-22/policy-22.ttl) | `ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement` | [Request-22](./uc-22/request-22.ttl) | `ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer` |
 | UC-23 | [Description-23](./uc-23/description-23.md) | [Policy-23](./uc-23/policy-23.ttl) | `ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read` | [Request-23](./uc-23/request-23.ttl) | `ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator` |
-| UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-sensorSlice-serviceProvision-patientDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-sensorSlice-serviceProvision-moveUpProfileDC-readWrite-moveUpProfile` |
+| UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-sensorSlice-serviceProvision-moveUpProfileDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-sensorSlice-serviceProvision-moveUpProfileDC-readModify-moveUpProfile` |
+| UC-25 | [Description-25](./uc-25/description-25.md) | [Policy-25](./uc-25/policy-25.ttl) | `ex:uc25-p-sensorSlice-serviceProvision-moveUpServiceDC-readModify` | [Request-25](./uc-25/request-25.ttl) | `ex:uc25-r-sensorSlice-serviceProvision-moveUpServiceDC-readModify-moveUpService` |
 
 ## Requirements to be included in the policies
 
@@ -219,6 +220,8 @@ To assess necessity and information on how to model each of the requirements, ch
             rdfs:comment "Surgery date (timestamp unknown)" .
         ```
 
+    - How does the engine know that it means 'P1Y' after the event? Should we always add a `odrl:rightOperandReference ex:accessToNonHCPEvent`?
+
 3. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
 
     Current approach ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), and [Description-11](./uc-11/description-11.md)): `dpv:Pseudonymisation` (`dpv:DeterministicPseudonymisation` or `dpv:MonotonicCounterPseudonymisation`)
@@ -274,7 +277,7 @@ To assess necessity and information on how to model each of the requirements, ch
 
     If it can't, are `dpv:Processing` and `odrl:use` enough to represent "full control" over the pod?
 
-10. **Data Source** ([Description-22](./uc-22/description-22.md)[Description-23](./uc-23/description-23.md)[Description-24](./uc-24/description-24.md)): Is Data Source not applicable or is it FAQIR?
+10. **Data Source** ([Description-22](./uc-22/description-22.md), [Description-23](./uc-23/description-23.md), [Description-24](./uc-24/description-24.md), [Description-25](./uc-25/description-25.md)): Is Data Source not applicable or is it FAQIR?
 
 11. **Pseudo/Anonymisation** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
 
@@ -422,7 +425,5 @@ However, when defining a SHACL shape, it refers to user data as a generic catego
             time:numericDuration 24 ] 
     ]
     ```
-
-- How does the engine know that it means P24H after the event? Should we always add a `odrl:rightOperandReference ex:accessToNonHCPEvent`?
 
 6. SHACL & SPARQL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md)): unit validation to ucum:mg/dL 
