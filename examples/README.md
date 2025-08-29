@@ -29,6 +29,7 @@
 | UC-23 | [Description-23](./uc-23/description-23.md) | [Policy-23](./uc-23/policy-23.ttl) | `ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read` | [Request-23](./uc-23/request-23.ttl) | `ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator` |
 | UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify-moveUpProfile` |
 | UC-25 | [Description-25](./uc-25/description-25.md) | [Policy-25](./uc-25/policy-25.ttl) | `ex:uc25-p-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify` | [Request-25](./uc-25/request-25.ttl) | `ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService` |
+| UC-26 | [Description-26](./uc-26/description-26.md) | [Policy-26](./uc-26/policy-26.ttl) | `ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read` | [Request-26](./uc-26/request-26.ttl) | `ex:uc26-r-profileQuestionnaireSensor-primarycare-patientDC-read-hcp` |
 
 ## Requirements to be included in the policies
 
@@ -298,6 +299,29 @@ To assess necessity and information on how to model each of the requirements, ch
     Is it the aggregator?
 
     Is there None?
+
+14. **DataController** ([Description-26](./uc-26/description-26.md)): "Read access by anyone with a healthcare relationship with the patient's MoveUp patient ID over the patient's Profile, Questionnaire, and Sensor pod slices."
+
+    Would the healthcare professional be data controller or just a reader?
+
+    If just a reader, would it be the Recipient?
+
+15. **Healthcare relationship** ([Description-26](./uc-26/description-26.md)): "Read access by anyone with a healthcare relationship with the patient's MoveUp patient ID over the patient's Profile, Questionnaire, and Sensor pod slices."
+
+    Is the permission `odrl:assignee ehds:HealthProfessional` enough?
+
+    Or should the relationship be declared explicitly? (Current approach)
+    ```
+    odrl:permission [
+            ...
+            odrl:assignee ex:healthcareProfessional ;
+            dpv:Recipient ex:healthcareProfessional ;
+            ... ]
+
+    ex:healthcareProfessional a ehds:HealthProfessional ;
+        dpv:hasRelationWithDataSubject ex:patient .
+    ```
+
 
 ### Closed Issues 
 
