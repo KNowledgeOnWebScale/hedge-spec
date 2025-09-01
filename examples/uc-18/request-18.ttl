@@ -18,7 +18,6 @@ ex:uc18-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
         odrl:assigner ex:user18 ;
         dpv:DataController ex:user18 ; # or OMIT
         odrl:assignee ex:nonHealthcareProfessional ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;

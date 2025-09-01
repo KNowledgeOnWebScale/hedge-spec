@@ -17,7 +17,6 @@ ex:uc26-r-profileQuestionnaireSensor-primarycare-patientDC-read-hcp a odrl:Reque
         odrl:assigner ex:patient ;
         dpv:DataController ex:patient ; 
         odrl:assignee ex:healthcareProfessional ;
-        dpv:Recipient ex:healthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;

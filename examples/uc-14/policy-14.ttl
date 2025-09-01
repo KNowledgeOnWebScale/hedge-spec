@@ -42,8 +42,10 @@ ex:uc14-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
             ] ; 
         odrl:assigner ex:user14 ;
         dpv:DataSubject ex:user14 ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:nonHealthcareProfessional ], [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [

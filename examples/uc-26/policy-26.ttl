@@ -15,7 +15,13 @@ ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read a odrl:Set ;
         odrl:assigner ex:patient ;
         dpv:DataSubject ex:patient ;
         odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:healthcareProfessional ],[
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring,
             dpv:ImproveHealthcare, ehds:EnsureQualitySafetyHealthcare] ] .
+
+ex:healthcareProfessional a ehds:HealthProfessional ;
+    dpv:hasRelationWithDataSubject ex:patient .

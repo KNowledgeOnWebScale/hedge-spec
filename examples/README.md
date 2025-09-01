@@ -260,7 +260,7 @@ To assess necessity and information on how to model each of the requirements, ch
         - Policy:
             - Recipient: <https://example.org/NonHealthcareProfessional>
         - Request:
-            - Recipient: <https://example.org/NonHealthcareProfessional>
+            - Recipient: <https://example.org/NonHealthcareProfessional> Should it also be stated in the request? As a constraint or as a permission?
             - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
 
 7. **NA DataSource** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h.
@@ -310,17 +310,23 @@ To assess necessity and information on how to model each of the requirements, ch
 
     Is the permission `odrl:assignee ehds:HealthProfessional` enough?
 
-    Or should the relationship be declared explicitly? (Current approach)
+    Or should the relationship be declared explicitly with a constraint? (Current approach)
+
+    Is it only stated in the policy or both policy & request?
     ```
     odrl:permission [
             ...
             odrl:assignee ex:healthcareProfessional ;
-            dpv:Recipient ex:healthcareProfessional ;
             ... ]
+    odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:healthcareProfessional ]
+            ... 
 
     ex:healthcareProfessional a ehds:HealthProfessional ;
         dpv:hasRelationWithDataSubject ex:patient .
-    ```
+    ``` 
 
 
 ### Closed Issues 
