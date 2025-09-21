@@ -6,13 +6,16 @@
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix sh:            <http://www.w3.org/ns/shacl#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc03-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc03-r-weight-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. Known URI to be refined."@en ;
+### --- ODRL Request --- ###
+ex:uc05-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc05-r-weight-primarycare-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. SHACL validation."@en ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target ex:weight ;
+        odrl:target ex:weight-data ;  # Reference to the data asset (separately defined)
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
         dpv:DataController ex:physician ;
@@ -23,4 +26,3 @@ ex:uc03-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .
-

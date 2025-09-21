@@ -5,23 +5,26 @@
 | Use Case         | Description | Policy | Policy ID | Request | Request ID |
 |------------------|-------------|--------|-----------|---------|------------|
 | UC-01 | [Description-01](./uc-01/description-01.md) | [Policy-01](./uc-01/policy-01.ttl) | `ex:uc01-p-ehr-primarycare-physicianDC-read` | [Request-01](./uc-01/request-01.ttl) | `ex:uc01-r-ehr-primarycare-physicianDC-read-physician` |
-| UC-02-URI | [Description-02-URI](./uc-02/uc-02-URI/description-02-URI.md) | [Policy-02-URI](./uc-02/uc-02-URI/policy-02-URI.ttl) | `ex:uc02-URI-p-weight-primarycare-physicianDC-read` | [Request-02-URI](./uc-02/uc-02-URI/request-02-URI.ttl) | `ex:uc02-URI-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-refinedURI | [Description-02-refinedURI](./uc-02/uc-02-refinedURI/description-02-refinedURI.md) | [Policy-02-refinedURI](./uc-02/uc-02-refinedURI/policy-02-refinedURI.ttl) | `ex:uc02-refinedURI-p-weight-primarycare-physicianDC-read` | [Request-02-refinedURI](./uc-02/uc-02-refinedURI/request-02-refinedURI.ttl) | `ex:uc02-refinedURI-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-SPARQL | [Description-02-SPARQL](./uc-02/uc-02-SPARQL/description-02-SPARQL.md) | [Policy-02-SPARQL](./uc-02/uc-02-SPARQL/policy-02-SPARQL.ttl) | `ex:uc02-SPARQL-p-weight-primarycare-physicianDC-read` | [Request-02-SPARQL](./uc-02/uc-02-SPARQL/request-02-SPARQL.ttl) | `ex:uc02-SPARQL-r-weight-primarycare-physicianDC-read-physician` |
-| UC-02-SHACL | [Description-02-SHACL](./uc-02/uc-02-SHACL/description-02-SHACL.md) | [Policy-02-SHACL](./uc-02/uc-02-SHACL/policy-02-SHACL.ttl) | `ex:uc02-SHACL-p-weight-primarycare-physicianDC-read` | [Request-02-SHACL](./uc-02/uc-02-SHACL/request-02-SHACL.ttl) | `ex:uc02-SHACL-r-weight-primarycare-physicianDC-read-physician` |
-| UC-03 | [Description-03](./uc-03/description-03.md) | [Policy-03](./uc-03/policy-03.ttl) | `ex:uc03-p-ehr-monitoring-physicianDC-read` | [Request-03](./uc-03/request-03.ttl) | `ex:uc03-r-ehr-monitoring-physicianDC-read-physician` |
-| UC-04-URI | [Description-04-URI](./uc-04/uc-04-URI/description-04-URI.md) | [Policy-04-URI](./uc-04/uc-04-URI/policy-04-URI.ttl) | `ex:uc04-URI-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-URI](./uc-04/uc-04-URI/request-04-URI.ttl) | `ex:uc04-URI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-refinedURI | [Description-04-refinedURI](./uc-04/uc-04-refinedURI/description-04-refinedURI.md) | [Policy-04-refinedURI](./uc-04/uc-04-refinedURI/policy-04-refinedURI.ttl) | `ex:uc04-refinedURI-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-refinedURI](./uc-04/uc-04-refinedURI/request-04-refinedURI.ttl) | `ex:uc04-refinedURI-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-SPARQL | [Description-04-SPARQL](./uc-04/uc-04-SPARQL/description-04-SPARQL.md) | [Policy-04-SPARQL](./uc-04/uc-04-SPARQL/policy-04-SPARQL.ttl) | `ex:uc04-SPARQL-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-SPARQL](./uc-04/uc-04-SPARQL/request-04-SPARQL.ttl) | `ex:uc04-SPARQL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-04-SHACL | [Description-04-SHACL](./uc-04/uc-04-SHACL/description-04-SHACL.md) | [Policy-04-SHACL](./uc-04/uc-04-SHACL/policy-04-SHACL.ttl) | `ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-04-SHACL](./uc-04/uc-04-SHACL/request-04-SHACL.ttl) | `ex:uc04-SHACL-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
-| UC-05-URI | [Description-05-URI](./uc-05/uc-05-URI/description-05-URI.md) | [Policy-05-URI](./uc-05/uc-05-URI/policy-05-URI.ttl) | `ex:uc05-URI-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-URI](./uc-05/uc-05-URI/request-05-URI.ttl) | `ex:uc05-URI-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-refinedURI | [Description-05-refinedURI](./uc-05/uc-05-refinedURI/description-05-refinedURI.md) | [Policy-05-refinedURI](./uc-05/uc-05-refinedURI/policy-05-refinedURI.ttl) | `ex:uc05-refinedURI-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-refinedURI](./uc-05/uc-05-refinedURI/request-05-refinedURI.ttl) | `ex:uc05-refinedURI-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-SPARQL | [Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md) | [Policy-05-SPARQL](./uc-05/uc-05-SPARQL/policy-05-SPARQL.ttl) | `ex:uc05-SPARQL-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-SPARQL](./uc-05/uc-05-SPARQL/request-05-SPARQL.ttl) | `ex:uc05-SPARQL-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-05-SHACL | [Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md) | [Policy-05-SHACL](./uc-05/uc-05-SHACL/policy-05-SHACL.ttl) | `ex:uc05-SHACL-p-labresults-privatesharing-nonHCPDC-read` | [Request-05-SHACL](./uc-05/uc-05-SHACL/request-05-SHACL.ttl) | `ex:uc05-SHACL-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
-| UC-06-URI | [Description-06-URI](./uc-06/uc-06-URI/description-06-URI.md) | [Policy-06-URI](./uc-06/uc-06-URI/policy-06-URI.ttl) | `ex:uc06-URI-p-labresults-privatesharing-noDC-read` | [Request-06-URI](./uc-06/uc-06-URI/request-06-URI.ttl) | `ex:uc06-URI-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-refinedURI | [Description-06-refinedURI](./uc-06/uc-06-refinedURI/description-06-refinedURI.md) | [Policy-06-refinedURI](./uc-06/uc-06-refinedURI/policy-06-refinedURI.ttl) | `ex:uc06-refinedURI-p-labresults-privatesharing-noDC-read` | [Request-06-refinedURI](./uc-06/uc-06-refinedURI/request-06-refinedURI.ttl) | `ex:uc06-refinedURI-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-SPARQL | [Description-06-SPARQL](./uc-06/uc-06-SPARQL/description-06-SPARQL.md) | [Policy-06-SPARQL](./uc-06/uc-06-SPARQL/policy-06-SPARQL.ttl) | `ex:uc06-SPARQL-p-labresults-privatesharing-noDC-read` | [Request-06-SPARQL](./uc-06/uc-06-SPARQL/request-06-SPARQL.ttl) | `ex:uc06-SPARQL-r-labresults-privatesharing-noDC-read-nonHCP` |
-| UC-06-SHACL | [Description-06-SHACL](./uc-06/uc-06-SHACL/description-06-SHACL.md) | [Policy-06-SHACL](./uc-06/uc-06-SHACL/policy-06-SHACL.ttl) | `ex:uc06-SHACL-p-labresults-privatesharing-noDC-read` | [Request-06-SHACL](./uc-06/uc-06-SHACL/request-06-SHACL.ttl) | `ex:uc06-SHACL-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-02 | [Description-02](./uc-02/description-02.md) | [Policy-02](./uc-02/policy-02.ttl) | `ex:uc02-p-weight-primarycare-physicianDC-read` | [Request-02](./uc-02/request-02.ttl) | `ex:uc02-r-weight-primarycare-physicianDC-read-physician` |
+| UC-03 | [Description-03](./uc-03/description-03.md) | [Policy-03](./uc-03/policy-03.ttl) | `ex:uc03-p-weight-primarycare-physicianDC-read` | [Request-03](./uc-03/request-03.ttl) | `ex:uc03-r-weight-primarycare-physicianDC-read-physician` |
+| UC-04 | [Description-04](./uc-04/description-04.md) | [Policy-04](./uc-04/policy-04.ttl) | `ex:uc04-p-weight-primarycare-physicianDC-read` | [Request-04](./uc-04/request-04.ttl) | `ex:uc04-r-weight-primarycare-physicianDC-read-physician` |
+| UC-05 | [Description-05](./uc-05/description-05.md) | [Policy-05](./uc-05/policy-05.ttl) | `ex:uc05-p-weight-primarycare-physicianDC-read` | [Request-05](./uc-05/request-05.ttl) | `ex:uc05-r-weight-primarycare-physicianDC-read-physician` |
+| UC-06 | [Description-06](./uc-06/description-06.md) | [Policy-06](./uc-06/policy-06.ttl) | `ex:uc06-p-ehr-monitoring-physicianDC-read` | [Request-06-primaryCare](./uc-06/request-06-primaryCare.ttl) & [Request-06-ptMonitoring](./uc-06/request-06-ptMonitoring.ttl) | `ex:uc06-r-ehr-primarycare-physicianDC-read-physician` & `ex:uc06-r-ehr-monitoring-physicianDC-read-physician` |
+| UC-07 | [Description-07](./uc-07/description-07.md) | [Policy-07](./uc-07/policy-07.ttl) | `ex:uc07-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-07](./uc-07/request-07.ttl) | `ex:uc07-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-08 | [Description-08](./uc-08/description-08.md) | [Policy-08](./uc-08/policy-08.ttl) | `ex:uc08-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-08](./uc-08/request-08.ttl) | `ex:uc08-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-09 | [Description-09](./uc-09/description-09.md) | [Policy-09](./uc-09/policy-09.ttl) | `ex:uc09-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-09](./uc-09/request-09.ttl) | `ex:uc09-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-10 | [Description-10](./uc-10/description-10.md) | [Policy-10](./uc-10/policy-10.ttl) | `ex:uc10-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-10](./uc-10/request-10.ttl) | `ex:uc10-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-11 | [Description-11](./uc-11/description-11.md) | [Policy-11](./uc-11/policy-11.ttl) | `ex:uc11-p-pseudonymisedweight-improvehealthcare-physicianDC-read` | [Request-11](./uc-11/request-11.ttl) | `ex:uc11-r-pseudonymisedweight-improvehealthcare-physicianDC-read-physician` |
+| UC-12 | [Description-12](./uc-12/description-12.md) | [Policy-12](./uc-12/policy-12.ttl) | `ex:uc12-p-labresults-privatesharing-nonHCPDC-read` | [Request-12](./uc-12/request-12.ttl) | `ex:uc12-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-13 | [Description-13](./uc-13/description-13.md) | [Policy-13](./uc-13/policy-13.ttl) | `ex:uc13-p-labresults-privatesharing-nonHCPDC-read` | [Request-13](./uc-13/request-13.ttl) | `ex:uc13-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-14 | [Description-14](./uc-14/description-14.md) | [Policy-14](./uc-14/policy-14.ttl) | `ex:uc14-p-labresults-privatesharing-nonHCPDC-read` | [Request-14](./uc-14/request-14.ttl) | `ex:uc14-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-15 | [Description-15](./uc-15/description-15.md) | [Policy-15](./uc-15/policy-15.ttl) | `ex:uc15-p-labresults-privatesharing-nonHCPDC-read` | [Request-15](./uc-15/request-15.ttl) | `ex:uc15-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-16 | [Description-16](./uc-16/description-16.md) | [Policy-16](./uc-16/policy-16.ttl) | `ex:uc16-p-labresults-privatesharing-nonHCPDC-read` | [Request-16](./uc-16/request-16.ttl) | `ex:uc16-r-labresults-privatesharing-nonHCPDC-read-nonHCP` |
+| UC-17 | [Description-17](./uc-17/description-17.md) | [Policy-17](./uc-17/policy-17.ttl) | `ex:uc17-p-labresults-privatesharing-noDC-read` | [Request-17](./uc-17/request-17.ttl) | `ex:uc17-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-18 | [Description-18](./uc-18/description-18.md) | [Policy-18](./uc-18/policy-18.ttl) | `ex:uc18-p-labresults-privatesharing-noDC-read` | [Request-18](./uc-18/request-18.ttl) | `ex:uc18-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-19 | [Description-19](./uc-19/description-19.md) | [Policy-19](./uc-19/policy-19.ttl) | `ex:uc19-p-labresults-privatesharing-noDC-read` | [Request-19](./uc-19/request-19.ttl) | `ex:uc19-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-20 | [Description-20](./uc-20/description-20.md) | [Policy-20](./uc-20/policy-20.ttl) | `ex:uc20-p-labresults-privatesharing-noDC-read` | [Request-20](./uc-20/request-20.ttl) | `ex:uc20-r-labresults-privatesharing-noDC-read-nonHCP` |
+| UC-21 | [Description-21](./uc-21/description-21.md) | [Policy-21](./uc-21/policy-21.ttl) | `ex:uc21-p-labresults-privatesharing-noDC-read` | [Request-21](./uc-21/request-21.ttl) | `ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP` |
 
 ## Requirements to be included in the policies
 
@@ -58,67 +61,234 @@ To assess necessity and information on how to model each of the requirements, ch
 - Frequency
 - Events/Activities
 
-## Open Issues
+## Issues
+### Open Issues
 
-### UC-01
-[Description-01](./uc-01/description-01.md)
+1. Policy (set) and request **URI terminology** to approve:
+- Policy `ex:ucXX-p-<data_cat>-<purpose>-<data_controller>DC-<scope>`	
+- Request `ex:ucXX-r-<data_cat>-<purpose>-<data_controller>DC-<scope>-<assignee>`
 
-1. Policy (set) and request terminology to approve:
-- Policy `ex:ucXX-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
-- Request `ex:ucXX-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
-
-### UC-02
-[Description-02](./uc-02/description-02.md)
-
-1. As there are multiple techniques to acces to a subset of data, I have created 4 subsets: know URI [UC-02-URI](./uc-02/uc-02-URI/), refined URI [UC-02-refinedURI](./uc-02/uc-02-refinedURI/), SPARQL query [UC-02-SPARQL](./uc-02/uc-02-SPARQL/) and SHACL validation [UC-02-SHACL](./uc-02/uc-02-SHACL/). The technique is specified in the id as follows:
-- Policy `ex:ucXX-<tech>-p-<data_cat>-<purpose>-<data_controller>-<scope>`	
-- Request `ex:ucXX-<tech>-r-<data_cat>-<purpose>-<data_controller>-<scope>-<assignee>`
-
-    The alternative would be to create independent use cases.
-
-2. [Description-02-refinedURI](./uc-02/uc-02-refinedURI/description-02-refinedURI.md): Weight URI refined on source, as it is interpreted as an assetCollection:
-
+2. "From the first encounter until 1 year after surgery": **retrospective** and limited **prospective data**. Should the surgery be represented as event or activity?
+- UC-07, [Description-07](./uc-07/description-07.md): known URI.
+- UC-08, [Description-08](./uc-08/description-08.md): refined URI.
+    - Current approach, ProperInterval:
     ```
     odrl:target [
-        odrl:source ex:weight ; #rdf:value
-        odrl:refinement [
-            odrl:leftOperand dpv-odrl:DataControllerDataSource ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand ehds:HealthcareProvider ]] ;
+                odrl:source ex:weight ; 
+                odrl:refinement [
+                    odrl:leftOperand dpv:DataSource ;
+                    odrl:operator odrl:eq ;
+                    odrl:rightOperand ehds:HealthcareProvider ], [
+                    odrl:leftOperand odrl:dateTime ;
+                    odrl:operator odrl:isIn ;
+                    odrl:rightOperand [
+                        a time:ProperInterval ;
+                        time:hasBeginning ex:FirstEncounterEvent ;
+                        time:hasEnd [
+                            a time:ProperInterval ;
+                            time:intervalAfter ex:SurgeryEvent ;
+                            time:hasDurationDescription [
+                                a time:DurationDescription ;
+                                time:years "1"^^xsd:integer ] ] ] ] ]; # 1 year after surgery, time window activated when surgery date is recorded
+
+    # Abstract event definitions, in a third file "events-04.ttl" (to be instantiated with concrete dates)
+    ex:FirstEncounterEvent a time:Instant, odrl:Event ;
+        rdfs:comment "The first patient-physician encounter".
+
+    ex:SurgeryEvent a time:Instant, odrl:Event ;
+        rdfs:comment "The surgical procedure (may be in future)".
     ```
 
-    The alternative is to refine rdf:value, but it applies to actions.
-
-3. [Description-02-SHACL](./uc-02/uc-02-refinedURI/description-02-SHACL.md): SHACL validation is applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
-
-    Right now it's written on both policy and request. 
-
-### UC-03
-[Description-03](./uc-03/description-03.md)
-
-NONE
-
-### UC-04
-[Description-04](./uc-04/description-04.md)
-
-1. "From the first encounter until 1 year after surgery": retrospective and limited prospective data. Should the surgery be represented as event or activity?
-
-2. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
-
-3. Pseudonymisation approach:
-
-    a. Followed strategy: processing constraint with DeterministicPseudonymisation (same input always produces the same pseudonym) & MonotonicCounterPseudonymisation (Monotonically increasing counter (P1, P2...)).
-
+    - Explicit time points:
     ```
-    drl:constraint [
-        odrl:leftOperand dpv-odrl:Processing ;
-        odrl:operator odrl:isA ;
-        odrl:rightOperand dpv:Pseudonymisation ],[
-        odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-        odrl:operator odrl:isAnyOf ;
-        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
+    odrl:target [
+                odrl:source ex:weight ; 
+                odrl:refinement [
+                    odrl:leftOperand dpv:DataSource ;
+                    odrl:operator odrl:eq ;
+                    odrl:rightOperand ehds:HealthcareProvider ], [
+                    odrl:leftOperand odrl:dateTime ;
+                    odrl:operator odrl:gteq ;
+                    odrl:rightOperand ex:Patient123_FirstEncounter ],[
+                    odrl:leftOperand odrl:dateTime ;
+                    odrl:operator odrl:lteq ;
+                    odrl:rightOperand ex:Patient123_PostSurgeryYear ] ]
+
+    #...
+
+    ### Concrete event instances (would be generated by your system when creating the policy)
+    ex:Patient123_FirstEncounter a time:Instant, ex:FirstEncounterEvent ;
+        time:inXSDDateTimeStamp "2024-01-15T09:00:00Z"^^xsd:dateTime .
+
+    ex:Patient123_Surgery a time:Instant, ex:SurgeryEvent ;
+        time:inXSDDateTimeStamp "2024-06-20T12:00:00Z"^^xsd:dateTime .
+
+    ex:Patient123_PostSurgeryYear a time:Instant, ex:OneYearPostSurgery ;
+        time:inXSDDateTimeStamp "2025-06-20T12:00:00Z"^^xsd:dateTime .
     ```
 
+    - Not valid turtle: '?encounterDate'
+    ```
+    odrl:Event ; # Anchor to surgery event
+                    odrl:operator odrl:isA ;
+                    odrl:rightOperand [
+                        a time:ProperInterval ;
+                        time:hasBeginning [
+                            a time:Instant ;
+                            time:inXSDDateTimeStamp ?encounterDate ;
+                            odrl:Event ex:FirstEncounterEvent
+                        ] ;
+                        time:hasEnd [
+                            a time:Instant ;
+                            time:inXSDDateTimeStamp ?surgeryEndDate ;
+                            odrl:Event [
+                                a ex:SurgeryEvent ;
+                                time:hasDuration "P1Y"^^xsd:duration  # 1 year after surgery
+                            ] ] ] ] ];
+    ```
+    - time:IntervalAfter
+    ```
+    odrl:target [
+                odrl:source ex:weight ; 
+                odrl:refinement [
+                    odrl:leftOperand dpv:DataSource ;
+                    odrl:operator odrl:eq ;
+                    odrl:rightOperand ehds:HealthcareProvider ], [
+                    odrl:leftOperand odrl:dateTime ; 
+                    odrl:operator odrl:isIn ;
+                    odrl:rightOperand ex:FirstEncounterEvent ], [
+                    odrl:leftOperand odrl:dateTime ; 
+                    odrl:operator odrl:lteq ;
+                    odrl:rightOperand [
+                        a time:Instant ;
+                        time:intervalAfter ex:SurgeryEvent ;
+                        time:hasDuration "P1Y"^^xsd:duration  # 1 year after surgery, time window activated when surgery date is recorded
+                        ] ]
+    #+ declaring events-04.ttl
+    ```
+- UC-09, [Description-09](./uc-09/description-09.md): SPARQL.
+    ```
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target [
+            a odrl:Asset ;
+            dcterms:description "SPARQL query to fetch patient weight data"@en;
+            rdf:value """
+                PREFIX ex: <https://example.org/ns#>
+                SELECT ?date ?weight ?measurer
+                WHERE {
+                    GRAPH ex:health-data {
+                        ex:patient ex:weight ?weight ;
+                                ex:measurementDate ?date ;
+                                ex:measuredBy ?measurer .
+                        ?measurer a ehds:HealthcareProvider .
+                    }
+                }
+                ORDER BY ?date
+                """ ;
+            ] ; 
+    ```
+
+- UC-11, [Description-11](./uc-09/description-11.md): Dynamic values refinement.
+    ```
+    odrl:target [
+            odrl:source ex:weight ; 
+            odrl:refinement [
+                odrl:leftOperand dpv:DataSource ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand ehds:HealthcareProvider ], [
+                odrl:leftOperand odrl:dateTime ; #DataGenerationTime
+                odrl:operator odrl:gteq ;
+                odrl:rightOperandReference ex:firstEncounterEvent], [
+                odrl:leftOperand odrl:elapsedTime ; 
+                odrl:operator odrl:lteq ;
+                odrl:rightOperand "P1Y"^^xsd:duration ;
+                odrl:rightOperandReference ex:surgeryEvent] ] ;
+
+    ex:firstEncounterEvent a odrl3proposal:OperandReference ;
+    odrl3proposal:reference ex:externalSource ;
+    odrl3proposal:path ex:updateFirstEncounterEvent ;
+    rdfs:comment "First patient-physician encounter (timestamp unknown)" .
+
+    ex:surgeryEvent a odrl3proposal:OperandReference ;
+        odrl3proposal:reference ex:externalSource ;
+        odrl3proposal:path ex:updateSurgeryEvent ;
+        rdfs:comment "Surgery date (timestamp unknown)" .
+    ```
+
+3. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
+
+Current approach ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), and [Description-11](./uc-11/description-11.md)): `dpv:Pseudonymisation` (`dpv:DeterministicPseudonymisation` or `dpv:MonotonicCounterPseudonymisation`)
+
+4. **"Neither Primary nor Secondary Use"** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h." -> "Neither Primary nor Secondary use."
+
+Wouldn't it be a kind of secondary use? Like getting a second opinion.
+
+If it is not primary nor secondary use, how should we define it?
+
+5. Missing concepts ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): 
+- Purpose like `SecondOpinion` in sector-health, or a non-official second opinion, like on use cases UC-12 to UC-21 ("Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h").
+- `ex:NonHealthcareProfessional`: Similar concepts (Layperson, Unaffiliated individual, Third-party non-provider) not found.
+
+6. Recipient ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md)): `ex:NonHealthcareProfessional`
+
+    The recipient is the same as the asignee (data controller) in the Request.
+
+    Why is not the physician the recipient in the previous use cases?
+    
+    --> Because a Recipient is a third party that is not DataController
+
+**Recipient vs DataController**: 
+- UC-12 to UC-16: nonHCP as Data Controller:
+    - Policy:
+        - Recipient: <https://example.org/NonHealthcareProfessional> 
+        
+        Always even if nonHCP as DC?
+
+    - Request:
+        - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
+        - DataController: <https://example.org/NonHealthcareProfessional>
+
+- UC-17 to UC-21: no Data Controller:
+    - Policy:
+        - Recipient: <https://example.org/NonHealthcareProfessional>
+    - Request:
+        - Recipient: <https://example.org/NonHealthcareProfessional>
+        - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
+
+7. **NA DataSource** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h.
+" 
+
+Data source N/A? Shouldn't it also be EHR?
+
+What is the difference? What is the correct approach in the policies? Always N/A?
+
+8. No DataController ([Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h."
+
+The data controller would be the user or none at all?
+
+### Closed Issues 
+
+1. **SHACL validation** ([Description-05](./uc-05/description-05.md), [Description-10](./uc-10/description-10.md), [Description-15](./uc-15/description-15.md), [Description-20](./uc-20/description-20.md)): applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
+
+    Right now it's written on both policy and request. -> It should only be in policy. Request should be blind to validation.
+
+    --> Leave as it is and stop working on SHACL. If we use it in the future, yes, separate it into independent files.
+
+
+2. **Pseudonymisation approach** ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), [Description-11](./uc-11/description-11.md)):
+
+    a. Followed strategy: Duty 
+        ```
+        odrl:permission [
+            odrl:duty [
+                odrl:action [
+                    rdf:value dpv:Pseudonymise ;
+                    odrl:refinement [
+                        odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+                        odrl:operator odrl:isAnyOf ;
+                        odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] ] ]
+        ```
     b. Alternatives:
             
         # 1. Data constraint:
@@ -144,53 +314,86 @@ NONE
         # 4. 
         `ehds:DataRequest` # Seeks access to statistically anonymised ehd
 
-### UC-05
-[Description-05](./uc-05/description-05.md)
+        # 5. processing constraint with DeterministicPseudonymisation (same input always produces the same pseudonym) & MonotonicCounterPseudonymisation (Monotonically increasing counter (P1, P2...)).
 
-1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
+        ```
+        drl:constraint [
+            odrl:leftOperand dpv-odrl:Processing ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand dpv:Pseudonymisation ],[
+            odrl:leftOperand dpv:hasPseudonymisationTechnique ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
+        ```
 
-2. Data subject:
+3. Glucose test as blood test ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
-    `ex:user05` vs `dpv:User`
+4. Data subject ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): `ex:user05` vs `dpv:User`
 
-3. Purpose: I would like a purpose like SecondOpinion in sector-health, or a non-official second opinion, like on this use case.
+"Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h."
 
-4. Recipient: `ex:NonHealthcareProfessional`
+The assigner and DataSubject is a specific user, so `ex:userXX` will be used:
+```
+        odrl:assigner ex:user12 ;
+        dpv:DataSubject ex:user12 ;
+```
 
-    I couldn’t find concepts already defined (not similar ones either: Layperson, Unaffiliated individual, Third-party non-provider).
-    It's the same as the asignee (data controller) in the Request.
-    Why is not the physician the recipient in the previous use cases?
+However, when defining a SHACL shape, it refers to user data as a generic category, so `dpv:User` will be used:
+```
+        ex:LabTestResultsShape a sh:NodeShape ;
+        sh:targetClass dpv:User ; # Applies to user data
+```
 
-5. Express duration in the descriptions just like '24h'?
+5. Express 24h access duration as constraint ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md))
 
-6. Not primary nor secondary use, how should we define it?
+- Current approach: `"P24H"^^xsd:duration`
 
-7. Data source N/A? Shouldn't it also be EHR?
+    ```
+    [ 
+        odrl:leftOperand odrl:elapsedTime ;
+        odrl:operator odrl:lteq ;  
+        odrl:rightOperand "P24H"^^xsd:duration 
+    ]
+    ```
 
-8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-05-SHACL](./uc-05/uc-05-SHACL/description-05-SHACL.md), [Description-05-SPARQL](./uc-05/uc-05-SPARQL/description-05-SPARQL.md))
+- Dynamic refinement approach ([Description-16](./uc-16/description-16.md) & [Description-21](./uc-21/description-21.md)):
 
-### UC-06
-[Description-06](./uc-06/description-06.md)
+ ```odrl:target [
 
-1. Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
+      odrl:source ex:lab-test-results ; 
 
-2. Data subject:
+      odrl:refinement [
 
-    `ex:user05` vs `dpv:User`
+          a odrl:Constraint ;
 
-3. Purpose: I would like a purpose like SecondOpinion in sector-health, or a non-official second opinion, like on this use case.
+          odrl:leftOperand ex:labTestType ;
 
-4. Recipient: `ex:NonHealthcareProfessional`
+          odrl:operator odrl:eq ;
 
-    I couldn’t find concepts already defined (not similar ones either: Layperson, Unaffiliated individual, Third-party non-provider).
-    It's the same as the asignee (data controller) in the Request.
-    Why is not the physician the recipient in the previous use cases?
+          odrl:rightOperand loinc:2345-7 ], [ # LOINC Glucose test "2345-7" 
 
-5. Express duration in the descriptions just like '24h'?
+          odrl:leftOperand odrl:dateTime ;
 
-6. Not primary nor secondary use, how should we define it?
+          odrl:operator odrl:lteq ;
 
-7. Data source N/A? Shouldn't it also be EHR?
+          odrl:rightOperand "P24H"^^xsd:duration ;
 
-8. SHACL & SPARQL: unit validation to ucum:mg/dL ([Description-06-SHACL](./uc-06/uc-06-SHACL/description-06-SHACL.md), 
-[Description-06-SPARQL](./uc-06/uc-06-SPARQL/description-06-SPARQL.md)).
+          odrl:rightOperandReference ex:accessToNonHCPEvent] ] ;
+
+```
+
+- Original approach: 
+    ```
+    [
+        odrl:leftOperand odrl:elapsedTime ;
+        odrl:operator odrl:lteq ;  
+        odrl:rightOperand [
+            a time:Duration ;
+            time:unitType time:unitHour ;
+            time:numericDuration 24 ] 
+    ]
+    ```
+
+- How does the engine know that it means P24H after the event? Should we always add a `odrl:rightOperandReference ex:accessToNonHCPEvent`?
+
+6. SHACL & SPARQL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md)): unit validation to ucum:mg/dL 
