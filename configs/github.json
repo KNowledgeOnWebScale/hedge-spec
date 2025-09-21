@@ -1,0 +1,26 @@
+{
+    "repo": "https://github.com/KNowledgeOnWebScale/hedge-spec",
+    "name": "HEalth Data exchanGE policy framework (HEDGE)",
+    "id": "hedge",
+    "root": "hedge",
+    "publications": [
+      {
+        "name": "All commits",
+        "id": "all-commits",
+        "path": "all",
+        "comment": "Publish all commits on the main branch.",
+        "type": "all-commits"
+      },
+      {
+        "name": "Latest",
+        "id": "latest",
+        "comment": "Redirects /latest to latest commit in repo",
+        "path": "/latest",
+        "type": "redirect",
+        "redirect-to": {
+          "type": "latest",
+          "publication": "all-commits"
+        }
+      }
+    ]
+  }

@@ -4,20 +4,19 @@
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix sotw:          <https://w3id.org/force/sotw#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc01-r-ehr-primarycare-physicianDC-read-physician a odrl:Request ;
-    odrl:uid ex:uc01-r-ehr-primarycare-physicianDC-read-physician ;
-    dcterms:description "Physician requests to read health data for primary care to patient with consent as the legal basis." ;
-    odrl:permission [
-        odrl:action odrl:read ;
-        odrl:target ex:health-data ;
-        odrl:assigner ex:patient ;
-        odrl:assignee ex:physician ;
-        dpv:DataController ex:physician ;
-        odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand sector-health:PrimaryCareManagement ], [
-            odrl:leftOperand dpv-odrl:LegalBasis ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+ex:uc01-r-ehr-primarycare-physicianDC-read-physician a sotw:EvaluationRequest ;
+    dcterms:issued "2024-02-12T11:20:10.999Z"^^xsd:dateTime ;
+    dcterms:description "Physician requests patient to read health data for primary care with consent as the legal basis." ;
+    sotw:requestedAction odrl:read ;
+    sotw:requestedTarget ex:health-data ;
+    sotw:requestingParty ex:physician ;
+    sotw:context [
+        odrl:leftOperand dpv-odrl:Purpose ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand sector-health:PrimaryCareManagement ], [
+        odrl:leftOperand dpv-odrl:LegalBasis ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand eu-gdpr:A9-2-a ] .

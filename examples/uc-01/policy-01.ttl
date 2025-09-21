@@ -6,6 +6,7 @@
 
 ex:p-uc01-ehr-primarycare-physicianDC-read a odrl:Set ;
     odrl:uid ex:p-uc01-ehr-primarycare-physicianDC-read ;
+    odrl:profile dpv-odrl: ;
     dcterms:description "Patient allows her health data to be read for primary care." ;
     odrl:permission [
         odrl:action odrl:read ;
