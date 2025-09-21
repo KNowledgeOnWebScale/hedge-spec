@@ -7,7 +7,7 @@
 @prefix sotw:          <https://w3id.org/force/sotw#> .
 @prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc01-r-ehr-primarycare-read-physician a sotw:EvaluationRequest ;
+ex:uc01-r-ehr-primarycare-physicianDC-read-physician a sotw:EvaluationRequest ;
     dcterms:issued "2024-02-12T11:20:10.999Z"^^xsd:dateTime ;
     dcterms:description "Physician requests patient to read health data for primary care with consent as the legal basis." ;
     sotw:requestedAction odrl:read ;

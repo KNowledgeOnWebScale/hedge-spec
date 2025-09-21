@@ -8,13 +8,14 @@
 @prefix sh:            <http://www.w3.org/ns/shacl#> .
 @prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-read a odrl:Set ;
-    odrl:uid ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-read ;
+ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
+    odrl:uid ex:uc04-SHACL-p-pseudonymisedweight-improvehealthcare-physicianDC-read ;
     dcterms:description "Patient allows her weight subset of health data to be read for secondary use (improving healthcare). Data must be Pseudonymised. SHACL validation." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-data ; # Reference to the data asset (separately defined)
         odrl:assigner ex:patient ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

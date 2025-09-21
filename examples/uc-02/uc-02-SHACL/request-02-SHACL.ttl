@@ -9,14 +9,15 @@
 @prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
 ### --- ODRL Request --- ###
-ex:uc02-SHACL-r-weight-primarycare-read-physician a odrl:Request ;
-    odrl:uid ex:uc02-SHACL-r-weight-primarycare-read-physician ;
-    dcterms:description "Physician requests patient to read weight subset of health data for primary care with consent as legal basis. SHACL validation." ;
+ex:uc02-SHACL-r-weight-primarycare-physicianDC-read-physician a odrl:Request ;
+    odrl:uid ex:uc02-SHACL-r-weight-primarycare-physicianDC-read-physician ;
+    dcterms:description "Physician requests to read weight subset of health data for primary care to patient with consent as legal basis. SHACL validation." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:weight-data ;  # Reference to the data asset (separately defined)
         odrl:assigner ex:patient ;
         odrl:assignee ex:physician ;
+        dpv:DataController ex:physician ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
