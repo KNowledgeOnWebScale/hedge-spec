@@ -1,24 +1,25 @@
 @prefix dcterms:       <http://purl.org/dc/terms/> .
 @prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
 @prefix dpv:           <https://w3id.org/dpv#> .
-@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix eu-ehds:       <https://w3id.org/dpv/legal/eu/ehds#> .
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
 ex:uc03-p-weight-primarycare-physicianDC-read a odrl:Set ;
     odrl:uid ex:uc03-p-weight-primarycare-physicianDC-read ;
-    dcterms:description "Patient allows her weight subset of health data to be read for primary care. Known URI to be refined."@en ;
+    odrl:profile dpv-odrl: ;
+    dcterms:description "Patient allows her weight data, sourced from a healthcare provider, to be read for primary care."@en ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target [
+            a odrl:AssetCollection ;
             odrl:source ex:weight ; 
             odrl:refinement [
-                odrl:leftOperand dpv:DataSource ;
-                odrl:operator odrl:eq ;
-                odrl:rightOperand ehds:HealthcareProvider ]] ;
+                odrl:leftOperand dpv-odrl:DataSource ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand eu-ehds:HealthcareProvider ]] ;
         odrl:assigner ex:patient ;
-        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
