@@ -5,9 +5,10 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 
-ex:uc01-p-ehr-primarycare-physicianDC-read a odrl:Set ;
-    odrl:uid ex:uc01-p-ehr-primarycare-physicianDC-read ;
-    dcterms:description "Patient allows her health data to be read for primary care."@en ;
+ex:p-uc01-ehr-primarycare-physicianDC-read a odrl:Set ;
+    odrl:uid ex:p-uc01-ehr-primarycare-physicianDC-read ;
+    odrl:profile dpv-odrl: ;
+    dcterms:description "Patient allows her health data to be read for primary care." ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target ex:health-data ;

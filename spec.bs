@@ -175,6 +175,12 @@ Policy requirements {#requirements}
             <td class="tg-0lax">dpv-odrl:Frequency</td>
             <td class="tg-0lax">Optional</td>
         </tr>
+        <tr>
+            <td class="tg-0lax">Data source</td>
+            <td class="tg-0lax">URI / subclass of dpv:Entity</td>
+            <td class="tg-0lax">dpv-odrl:DataSource</td>
+            <td class="tg-0lax">Optional</td>
+        </tr>
         <!-- <tr>
             <td class="tg-0lax"></td>
             <td class="tg-0lax"></td>
