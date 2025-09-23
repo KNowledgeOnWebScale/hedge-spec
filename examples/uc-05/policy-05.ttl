@@ -36,7 +36,7 @@ ex:WeightShape a sh:NodeShape ;
     sh:property [
         sh:path ex:measuredBy ;
         sh:class ehds:HealthcareProvider ;
-        sh:minCount 1 ] ;
+        sh:minCount 1 ;
         sh:message "Weight measurement must be recorded by a healthcare provider."@en ] .
 
 ### --- Link ODRL Target to SHACL --- ###
