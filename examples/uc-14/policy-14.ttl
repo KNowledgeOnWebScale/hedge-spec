@@ -9,6 +9,7 @@
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 @prefix time:          <http://www.w3.org/2006/time#> .
 @prefix ucum:          <http://unitsofmeasure.org/ucum.html#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
 ex:uc14-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
     odrl:uid ex:uc14-p-labresults-privatesharing-nonHCPDC-read ;
