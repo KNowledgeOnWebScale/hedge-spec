@@ -19,8 +19,10 @@ ex:uc20-p-labresults-privatesharing-noDC-read a odrl:Set ;
         odrl:target ex:lab-test-results-data ; # Reference to the data asset (separately defined)
         odrl:assigner ex:user20 ;
         dpv:DataSubject ex:user20 ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:nonHealthcareProfessional ], [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand dpv:NonCommercialPurpose, dpv:RequestedServiceProvision, sector-health:ResourceManagement, ex:SecondOpinion ], [
@@ -59,7 +61,7 @@ ex:GlucoseTestResultShape a sh:NodeShape ;
     # Unit of measurement (e.g., mg/dL)
     sh:property [
         sh:path ex:resultUnit ;
-        sh:hasValue ucum:mg/dL ;  # UCUM unit: mass/volume in plasma
+        sh:hasValue "ucum:mg/dL" ;  # UCUM unit: mass/volume in plasma
         sh:minCount 1 ;
     ] .
     

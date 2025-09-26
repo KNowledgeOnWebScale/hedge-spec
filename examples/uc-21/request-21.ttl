@@ -16,9 +16,7 @@ ex:uc21-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
         odrl:action odrl:read ;
         odrl:target ex:lab-test-results ; 
         odrl:assigner ex:user21 ;
-        dpv:DataController ex:user21 ; # or OMIT
         odrl:assignee ex:nonHealthcareProfessional ;
-        dpv:Recipient ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
