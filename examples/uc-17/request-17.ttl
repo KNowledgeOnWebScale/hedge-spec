@@ -15,7 +15,6 @@ ex:uc17-r-labresults-privatesharing-noDC-read-nonHCP a odrl:Request ;
         odrl:action odrl:read ;
         odrl:target ex:glucose-test-results ;
         odrl:assigner ex:user17 ;
-        dpv:DataController ex:user17 ;
         odrl:assignee ex:nonHealthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

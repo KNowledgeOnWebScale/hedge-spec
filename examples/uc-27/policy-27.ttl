@@ -8,7 +8,7 @@
 
 ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read a odrl:Set ;
     odrl:uid ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read ;
-    dcterms:description "User allows anyone with a healthcare relationship with his own MoveUp patient ID read access to his profile, questionnaire, and sensor slices for primary use."@en ;
+    dcterms:description "User allows anyone with a healthcare relationship with his own MoveUp patient ID read access to his profile, questionnaire, and sensor slices for secondary use."@en ;
     odrl:permission [
         odrl:action odrl:read ; 
         odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
@@ -20,7 +20,10 @@ ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read a odrl:Set ;
             odrl:rightOperand ex:healthcareProfessional ],[
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand sector-health:PrimaryCareManagement, sector-health:PatientMonitoring] ] .
+            odrl:rightOperand dpv:ImproveHealthcare, ehds:EnsureQualitySafetyHealthcare] 
+        odrl:duty [
+            odrl:action [
+                rdf:value dpv:Pseudonymise ] ] ] .
 
 ex:healthcareProfessional a ehds:HealthProfessional ;
     dpv:hasRelationWithDataSubject ex:patient .

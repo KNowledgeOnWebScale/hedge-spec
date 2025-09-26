@@ -14,7 +14,7 @@ ex:uc24-r-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify
         odrl:action odrl:read, odrl:modify ; 
         odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
         odrl:assigner ex:patient ;
-        dpv:DataController moveUp:patient ; 
+        dpv:DataController moveUp:patient, faqir:patientPod ; 
         odrl:assignee moveUp:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;

@@ -23,10 +23,5 @@ ex:uc07-p-pseudonymisedweight-improvehealthcare-physicianDC-read a odrl:Set ;
                 ehds:EnsureQualitySafetyHealthcare, ehds:ProtectAgainstCrossBorderThreatsToHealth, ehds:PublicHealthSurveillance ] ; 
         odrl:duty [
             odrl:action [
-                rdf:value dpv:Pseudonymise ;
-                odrl:refinement [
-                    odrl:leftOperand dpv:hasPseudonymisationTechnique ;
-                    odrl:operator odrl:isAnyOf ;
-                    odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation
-                ] ] ] ] .
+                rdf:value dpv:Pseudonymise ] ] ] .
         
