@@ -7,14 +7,14 @@
 
 ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read a odrl:Set ;
     odrl:uid ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read ;
-    dcterms:description "User allows FAQIR Aggregator read access to his sensor slice."@en ;
+    odrl:profile dpv-odrl: ;
+    dcterms:description "User allows FAQIR Aggregator read access to its sensor slice."@en ;
     odrl:permission [
         odrl:action odrl:read ; 
         odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
         odrl:assigner ex:patient ;
-        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:ServiceProvision, dpv:NonCommercialResearch, 
-            sector-health:ResourceManagement ] ] .
+            odrl:rightOperand dpv:ServiceProvision, dpv:NonCommercialResearch,
+                sector-health:ResourceManagement ] ] .
