@@ -29,6 +29,7 @@
 | UC-23 | [Description-23](./uc-23/description-23.md) | [Policy-23](./uc-23/policy-23.ttl) | `ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read` | [Request-23](./uc-23/request-23.ttl) | `ex:uc23-r-sensorSlice-serviceProvision-faqirDC-read-faqirAggregator` |
 | UC-24 | [Description-24](./uc-24/description-24.md) | [Policy-24](./uc-24/policy-24.ttl) | `ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify` | [Request-24](./uc-24/request-24.ttl) | `ex:uc24-r-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify-moveUpProfile` |
 | UC-25 | [Description-25](./uc-25/description-25.md) | [Policy-25](./uc-25/policy-25.ttl) | `ex:uc25-p-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify` | [Request-25](./uc-25/request-25.ttl) | `ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService` |
+| UC-26 | [Description-26](./uc-26/description-26.md) | [Policy-26](./uc-26/policy-26.ttl) | `ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read` | [Request-26](./uc-26/request-26.ttl) | `ex:uc26-r-profileQuestionnaireSensor-primarycare-patientDC-read-hcp` |
 
 ## Requirements to be included in the policies
 
@@ -56,7 +57,7 @@ To assess necessity and information on how to model each of the requirements, ch
 - Non-personal electronic health data
 - Processing operation, e.g., read, write, ...
 - Purpose
-- Primary/Secondary use
+- Primary/Secondary/Household use
 - Legal basis
 - Pseudo/Anonymisation as a duty
 - Recipient
@@ -192,7 +193,6 @@ To assess necessity and information on how to model each of the requirements, ch
                     """ ;
                 ] ; 
         ```
-
     - UC-11, [Description-11](./uc-09/description-11.md): Dynamic values refinement.
         ```
         odrl:target [
@@ -222,16 +222,6 @@ To assess necessity and information on how to model each of the requirements, ch
 
     - How does the engine know that it means 'P1Y' after the event? Should we always add a `odrl:rightOperandReference ex:accessToNonHCPEvent`?
 
-3. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
-
-    Current approach ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), and [Description-11](./uc-11/description-11.md)): `dpv:Pseudonymisation` (`dpv:DeterministicPseudonymisation` or `dpv:MonotonicCounterPseudonymisation`)
-
-4. **"Neither Primary nor Secondary Use"** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h." -> "Neither Primary nor Secondary use."
-
-    Wouldn't it be a kind of secondary use? Like getting a second opinion.
-
-    If it is not primary nor secondary use, how should we define it?
-
 5. Missing concepts ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): 
     - Purpose like `SecondOpinion` in sector-health, or a non-official second opinion, like on use cases UC-12 to UC-21 ("Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h").
     - `ex:NonHealthcareProfessional`: Similar concepts (Layperson, Unaffiliated individual, Third-party non-provider) not found.
@@ -244,44 +234,29 @@ To assess necessity and information on how to model each of the requirements, ch
     
     --> Because a Recipient is a third party that is not DataController
 
-**Recipient vs DataController**: 
-- UC-12 to UC-16: nonHCP as Data Controller:
-    - Policy:
-        - Recipient: <https://example.org/NonHealthcareProfessional> 
-        
-        Always even if nonHCP as DC?
+    **Recipient vs DataController**: 
+    - UC-12 to UC-16: nonHCP as Data Controller:
+        - Policy:
+            - Recipient: <https://example.org/NonHealthcareProfessional> 
+            
+            Always even if nonHCP as DC?
 
-    - Request:
-        - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
-        - DataController: <https://example.org/NonHealthcareProfessional>
+        - Request:
+            - Recipient: NOT STATED. -> Recipient is a third party that is not DataController
+            - DataController: <https://example.org/NonHealthcareProfessional>
 
-- UC-17 to UC-21: no Data Controller:
-    - Policy:
-        - Recipient: <https://example.org/NonHealthcareProfessional>
-    - Request:
-        - Recipient: <https://example.org/NonHealthcareProfessional>
-        - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
-
-7. **NA DataSource** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h.
-" 
-
-    Data source N/A? Shouldn't it also be EHR?
-
-    What is the difference? What is the correct approach in the policies? Always N/A?
-
-8. No DataController ([Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h."
-
-    The data controller would be the user or none at all?
+    - UC-17 to UC-21: no Data Controller:
+        - Policy:
+            - Recipient: <https://example.org/NonHealthcareProfessional>
+        - Request:
+            - Recipient: <https://example.org/NonHealthcareProfessional> Should it also be stated in the request? As a constraint or as a permission?
+            - DataController: None or <https://example.org/user21>? Should it be omitted? Should it only be stated if requesting to be DataController?
 
 9. [Description-22](./uc-22/description-22.md): Can `dpv:AccountManagement` be a processing operation besides a purpose? 
 
     If it can't, are `dpv:Processing` and `odrl:use` enough to represent "full control" over the pod?
 
-10. **Data Source** ([Description-22](./uc-22/description-22.md), [Description-23](./uc-23/description-23.md), [Description-24](./uc-24/description-24.md), [Description-25](./uc-25/description-25.md)): Is Data Source not applicable or is it FAQIR?
-
-11. **Pseudo/Anonymisation** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
-
-    Pseudo/Anonymisation depends on who will have access to the aggregated data, so it is not applicable on this policy, which only refers to the in-house service. Is this interpretation correct?
+    _@besteves4 comment:_ it needs to be mapped to simple ODRL actions like read and write
 
 12. **Purpose** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
 
@@ -289,23 +264,27 @@ To assess necessity and information on how to model each of the requirements, ch
 
     Is `dpv:ServiceProvision` enough to represent the Aggregator's purpose?
 
-13. **Data Controller** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
+15. **Healthcare relationship** ([Description-26](./uc-26/description-26.md), [Description-27](./uc-27/description-27.md)): "Read access by anyone with a healthcare relationship with the patient's MoveUp patient ID over the patient's Profile, Questionnaire, and Sensor pod slices."
 
-    Is it FAQIR the Data Controller? (Current approach)
+    Is the permission `odrl:assignee ehds:HealthProfessional` enough?
 
-    Is it the patient?
+    Or should the relationship be declared explicitly with a constraint? (Current approach)
 
-    Is it the aggregator?
+    Is it only stated in the policy or both policy & request?
+    ```
+    odrl:permission [
+            ...
+            odrl:assignee ex:healthcareProfessional ;
+            ... ]
+    odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:healthcareProfessional ]
+            ... 
 
-    Is there None?
-
-### Closed Issues 
-
-1. **SHACL validation** ([Description-05](./uc-05/description-05.md), [Description-10](./uc-10/description-10.md), [Description-15](./uc-15/description-15.md), [Description-20](./uc-20/description-20.md)): applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
-
-    Right now it's written on both policy and request. -> It should only be in policy. Request should be blind to validation.
-
-    --> Leave as it is and stop working on SHACL. If we use it in the future, yes, separate it into independent files.
+    ex:healthcareProfessional a ehds:HealthProfessional ;
+        dpv:hasRelationWithDataSubject ex:patient .
+    ``` 
 
 
 2. **Pseudonymisation approach** ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), [Description-11](./uc-11/description-11.md)):
@@ -321,6 +300,29 @@ To assess necessity and information on how to model each of the requirements, ch
                         odrl:operator odrl:isAnyOf ;
                         odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ] ] ] ]
         ```
+
+    _@besteves4 comment:_
+
+        No need to specify the type of Pseudo/Anonymisation.
+
+        Does the assignee of the duty of pseudo/anonymisation need to be explicitly stated in the policy?
+
+        _#JelleCousyns comment:_
+
+            No need to mention, as it depends on the case, it could be the user, the doctor or the technology provider (one of the Data Controllers). 
+
+        _@henarmartinsantos comment:_
+
+            Maybe the duty assignee could be included as a Dynamic value: 
+            
+            ```
+            XXX a odrl3proposal:OperandReference ;
+                odrl3proposal:reference ex:externalSource ;
+                odrl3proposal:path ex:PseudomisingDutyAssignee ;
+            ```
+
+            To be specified when known in the SotW
+
     b. Alternatives:
             
         # 1. Data constraint:
@@ -358,6 +360,31 @@ To assess necessity and information on how to model each of the requirements, ch
             odrl:rightOperand dpv:DeterministicPseudonymisation, dpv:MonotonicCounterPseudonymisation ]
         ```
 
+7. **NA DataSource** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h.
+" 
+
+    Data source N/A? Shouldn't it also be EHR?
+
+        Could be the patient or could be the EHR
+
+    What is the difference? What is the correct approach in the policies? Always N/A?
+
+    _@Jelle Cousyns' (AContrario Law) comment:_ 
+ 
+        - The '**source**' of the data is the place or system where the data originally comes from (ie., directly from the patient; indirectly from another system such as the EHR; indirectly from another person or organization such as the HCP). From a legal point of view, the source of data impacts several aspects (e.g.; who is responsible to provide transparency to the data subject; what lawful basis applies; etc.). 
+
+        
+        - The **'single source of truth' (SSOT)** is the system designated to hold the authoritative version of a given dataset, regardless of where the data was originally collected. For example, in healthcare, the electronic health record (EHR) serves as the authoritative system for most patient information. Even if data is synced from the EHR into other platforms, the EHR remains the SSOT. Practically and legally, this means that if data is inaccurate and requires correction, the update must be made in the EHR so the change can propagate consistently to other systems. It also means that obligations such as legal retention periods for a specified number of years apply to the EHR as the SSOT, not necessarily to every system where the data has been replicated.
+
+
+### Closed Issues 
+
+1. **SHACL validation** ([Description-05](./uc-05/description-05.md), [Description-10](./uc-10/description-10.md), [Description-15](./uc-15/description-15.md), [Description-20](./uc-20/description-20.md)): applied on the simple policy and request. Should it be a separate file to avoid code repetition by importing and linking it?
+
+    Right now it's written on both policy and request. -> It should only be in policy. Request should be blind to validation.
+
+    --> Leave as it is and stop working on SHACL. If we use it in the future, yes, separate it into independent files.
+    
 3. Glucose test as blood test ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): Personal data: e.g. lab test results of one specific blood sampling. I have done the use case for blood glucose, allowing the mapping to LOINC "Glucose test" concept (LOINC 2345-7).
 
 4. Data subject ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): `ex:user05` vs `dpv:User`
@@ -427,3 +454,67 @@ However, when defining a SHACL shape, it refers to user data as a generic catego
     ```
 
 6. SHACL & SPARQL ([Description-15](./uc-15/description-15.md), [Description-14](./uc-14/description-14.md)): unit validation to ucum:mg/dL 
+
+4. **"Neither Primary nor Secondary Use"** ([Description-12](./uc-12/description-12.md), [Description-13](./uc-13/description-13.md), [Description-14](./uc-14/description-14.md), [Description-15](./uc-15/description-15.md), [Description-16](./uc-16/description-16.md), [Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional as data controller to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h." -> "Neither Primary nor Secondary use."
+
+    Wouldn't it be a kind of secondary use? Like getting a second opinion.
+
+    If it is not primary nor secondary use, how should we define it?
+
+    _@JelleCousyns (AContrario Law) comment:_
+
+        In my view, this is an edge case.
+        
+        **Primary use** refers to using the data directly for the provision of healthcare. Here, we are talking about sharing data that was already collected for other purposes, so it does not constitute primary use. 
+        
+        **Secondary use** then refers to using the data for a purpose beyond the original medical / clinical purpose (e.g., research, analytics, quality improvement, etc). Traditionally, from a legal point of view, secondary use is initiated by a legal person or organization (e.g. research institute) and not by the patient itself (however, the patient may need to be informed and may need to provide a consent). The legal requirements on secondary use are tailored to these kinds of scenarios (e.g., transparency to data subject; pseudonymization or anonymization; requesting a data permit; etc.). 
+        
+        Here, we are talking about a use case where the patient / individual is sharing the data under their own control, with another natural person (non-HCP). I interpret this to be a personal use case, falling outside the scope of the legal taxonomy of primary or secondary use. Both GDPR and the EHDS have exemptions for **household use** / purely **personal use**. 
+
+10. **Data Source** ([Description-22](./uc-22/description-22.md), [Description-23](./uc-23/description-23.md), [Description-24](./uc-24/description-24.md), [Description-25](./uc-25/description-25.md)): Is Data Source not applicable or is it FAQIR?
+
+    The Data Source is the patient itself.
+
+3. If the physician is only accessing to his own patients' data and he doesn't share them, could it not be anonymised? Is it enough to be pseudonymised?
+
+    Current approach ([Description-07](./uc-07/description-07.md), [Description-08](./uc-08/description-08.md), [Description-09](./uc-09/description-09.md), [Description-10](./uc-10/description-10.md), and [Description-11](./uc-11/description-11.md)): `dpv:Pseudonymisation` (`dpv:DeterministicPseudonymisation` or `dpv:MonotonicCounterPseudonymisation`)
+
+    _@JelleCousyns (AContrario Law) comment:_
+
+        In this scenario, the Belgian legislation (art. 199 of the Belgian data protection act) requires anonymization or pseudonymization; so both options are legally valid. 
+    
+    _@besteves4 comment:_
+
+        No need to specify the type of Pseudo/Anonymisation.
+
+8. No DataController ([Description-17](./uc-17/description-17.md), [Description-18](./uc-18/description-18.md), [Description-19](./uc-19/description-19.md), [Description-20](./uc-20/description-20.md), and [Description-21](./uc-21/description-21.md)): "Access by non-healthcare professional to specific subset of data (e.g. lab test results of one specific blood sampling, like a glucose test) for 24h."
+
+    The data controller would be the user or none at all
+
+    _@JelleCousyns comment:_ No DC.
+
+11. **Pseudo/Anonymisation** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
+
+    Pseudo/Anonymisation depends on who will have access to the aggregated data, so it is not applicable on this policy, which only refers to the in-house service. Is this interpretation correct? 
+    
+    Yes
+
+13. **Data Controller** ([Description-23](./uc-23/description-23.md)): "Read access by FAQIR Aggregator ID over Patient ID Sensor slice."
+
+    Is it FAQIR the Data Controller? (Current approach)
+
+    Is it the patient?
+
+    Is it the aggregator?
+
+    Is there None?
+
+    FAQIR is the DC. The aggregator is a service hosted by FAQIR, so the ultimate responsible entity is FAQIR.
+
+14. **DataController** ([Description-26](./uc-26/description-26.md), [Description-27](./uc-27/description-27.md)): "Read access by anyone with a healthcare relationship with the patient's MoveUp patient ID over the patient's Profile, Questionnaire, and Sensor pod slices."
+
+    Would the healthcare professional be data controller or just a reader?
+
+    If just a reader, would it be the Recipient?
+
+    The Healthcare professional is Data Controller.

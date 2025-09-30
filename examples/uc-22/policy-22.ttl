@@ -20,3 +20,4 @@ ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement a odrl:Set 
             odrl:rightOperand dpv:AccountManagement, sector-health:ResourceManagement, 
             dpv:NonCommercialPurpose,  dpv:DataSecurityManagement, dpv:DataQualityManagement,
             dpv:DataSubjectRightsManagement ] ] .
+            

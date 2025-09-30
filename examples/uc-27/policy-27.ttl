@@ -1,0 +1,29 @@
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix dpv:           <https://w3id.org/dpv#> .
+@prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
+@prefix ex:            <https://example.org/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+
+ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read a odrl:Set ;
+    odrl:uid ex:uc26-p-profileQuestionnaireSensor-primarycare-patientDC-read ;
+    dcterms:description "User allows anyone with a healthcare relationship with his own MoveUp patient ID read access to his profile, questionnaire, and sensor slices for secondary use."@en ;
+    odrl:permission [
+        odrl:action odrl:read ; 
+        odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
+        odrl:assigner ex:patient ;
+        dpv:DataSubject ex:patient ;
+        odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand ex:healthcareProfessional ],[
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand dpv:ImproveHealthcare, ehds:EnsureQualitySafetyHealthcare] 
+        odrl:duty [
+            odrl:action [
+                rdf:value dpv:Pseudonymise ] ] ] .
+
+ex:healthcareProfessional a ehds:HealthProfessional ;
+    dpv:hasRelationWithDataSubject ex:patient .

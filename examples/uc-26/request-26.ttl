@@ -1,25 +1,30 @@
 @prefix dcterms:       <http://purl.org/dc/terms/> .
 @prefix dpv:           <https://w3id.org/dpv#> .
 @prefix dpv-odrl:      <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ehds:          <https://w3c.github.io/dpv/2.1/legal/eu/ehds/> .
 @prefix eu-gdpr:       <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix ex:            <https://example.org/> .
 @prefix faqir:         <https://faqir.org/> .
 @prefix moveUp:        <https://www.moveup.care/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 
-ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService a odrl:Request ;
-    odrl:uid ex:uc25-r-profileQuestionnaireSensor-serviceProvision-moveUpServiceDC-readModify-moveUpService ;
-    dcterms:description "MoveUp's Service requests read and write (modify) access to the patient's pod profile, questionnaire, and sensor slices. With consent as legal basis."@en ;
+ex:uc26-r-profileQuestionnaireSensor-primarycare-patientDC-read-hcp a odrl:Request ;
+    odrl:uid ex:uc26-r-profileQuestionnaireSensor-primarycare-patientDC-read-hcp ;
+    dcterms:description "Healthcare professional requests read access to his patient's pod profile, questionnaire, and sensor slices for primary use. With consent as legal basis."@en ;
     odrl:permission [
-        odrl:action odrl:read, odrl:modify ; 
+        odrl:action odrl:read ; 
         odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
         odrl:assigner ex:patient ;
-        dpv:DataController moveUp:service, <https://faqir.org/> ; 
-        odrl:assignee moveUp:service ;
+        dpv:DataController ex:healthcareProfessional, <https://www.moveup.care> ; 
+        odrl:assignee ex:healthcareProfessional ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand dpv:ServiceProvision ], [
+            odrl:rightOperand sector-health:PrimaryCareManagement ], [
             odrl:leftOperand dpv-odrl:LegalBasis ;
             odrl:operator odrl:eq ;
             odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+
+ex:healthcareProfessional a ehds:HealthProfessional ;
+    dpv:hasRelationWithDataSubject ex:patient .
+
