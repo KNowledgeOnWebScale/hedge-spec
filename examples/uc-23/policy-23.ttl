@@ -4,6 +4,7 @@
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix faqir:         <https://faqir.org/> .
 
 ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read a odrl:Set ;
     odrl:uid ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read ;
@@ -13,8 +14,11 @@ ex:uc23-p-sensorSlice-serviceProvision-faqirDC-read a odrl:Set ;
         odrl:action odrl:read ; 
         odrl:target <https://faqir.org/patientPod/sensor/slice> ; 
         odrl:assigner ex:patient ;
+        odrl:assignee faqir:aggregator ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
             odrl:rightOperand dpv:ServiceProvision, dpv:NonCommercialResearch,
                 sector-health:ResourceManagement ] ] .
+
+faqir:aggregator a dpv:ServiceProvider .

@@ -4,6 +4,7 @@
 @prefix ex:            <https://example.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+@prefix moveUp:        <https://www.moveup.care/> .
 
 ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify a odrl:Set ;
     odrl:uid ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify ;
@@ -13,6 +14,7 @@ ex:uc24-p-profileQuestionnaireSensor-serviceProvision-moveUpProfileDC-readModify
         odrl:action odrl:read, odrl:modify ; 
         odrl:target <https://faqir.org/patientPod/sensor>, <https://faqir.org/patientPod/profile>, <https://faqir.org/patientPod/questionnaire> ; 
         odrl:assigner ex:patient ;
+        odrl:assignee moveUp:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;

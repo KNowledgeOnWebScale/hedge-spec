@@ -14,7 +14,10 @@ ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement a odrl:Set 
         odrl:action odrl:read, odrl:modify ;
         odrl:target faqir:patientPod ; 
         odrl:assigner ex:patient ;
+        odrl:assignee faqir:podManagementService ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:eq ;
             odrl:rightOperand dpv:AccountManagement ] ] .
+
+faqir:podManagementService a dpv:ServiceProvider, dpv:NonProfitOrganisation .
