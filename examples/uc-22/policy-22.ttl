@@ -11,7 +11,7 @@ ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement a odrl:Set 
     dcterms:description "User allows FAQIR Pod Management Service full access to manage his Pod."@en ;
     odrl:permission [
         odrl:action dpv:Processing, odrl:use ; #dpv:AccountManagement
-        odrl:target faqir:pod ; 
+        odrl:target faqir:patientPod ; 
         odrl:assigner ex:patient ;
         dpv:DataSubject ex:patient ;
         odrl:constraint [
