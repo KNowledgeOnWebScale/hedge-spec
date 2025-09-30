@@ -59,7 +59,7 @@ ex:GlucoseTestResultShape a sh:NodeShape ;
     # Unit of measurement (e.g., mg/dL)
     sh:property [
         sh:path ex:resultUnit ;
-        sh:hasValue ucum:mg/dL ;  # UCUM unit: mass/volume in plasma
+        sh:hasValue "ucum:mg/dL" ;  # UCUM unit: mass/volume in plasma
         sh:minCount 1 ;
     ] .
     

@@ -6,6 +6,7 @@
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
 @prefix sector-health: <https://w3id.org/dpv/sector/health#> .
 @prefix time:          <http://www.w3.org/2006/time#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
 ex:uc12-p-labresults-privatesharing-nonHCPDC-read a odrl:Set ;
     odrl:uid ex:uc12-p-labresults-privatesharing-nonHCPDC-read ;
