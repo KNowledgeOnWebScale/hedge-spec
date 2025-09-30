@@ -5,22 +5,21 @@
 @prefix ex:            <https://example.org/> .
 @prefix faqir:         <https://faqir.org/> .
 @prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sotw:          <https://w3id.org/force/sotw#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 
-ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer a odrl:Request ;
-    odrl:uid ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer ;
-    dcterms:description "FAQIR Pod Management Service requests full access to manage the patient's Pod. With consent as legal basis."@en ;
-    odrl:permission [
-        odrl:action dpv:Processing, odrl:use ; #dpv:AccountManagement
-        odrl:target faqir:patientPod ; 
-        odrl:assigner ex:patient ;
-        dpv:DataController faqir:podManagementService ; 
-        odrl:assignee faqir:podManagementService ;
-        odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand dpv:AccountManagement ], [
-            odrl:leftOperand dpv-odrl:LegalBasis ;
-            odrl:operator odrl:eq ;
-            odrl:rightOperand eu-gdpr:A9-2-a ] ] .
+ex:uc22-r-pod-accountManagement-faqirDC-processing-faqirPodManagSer a sotw:EvaluationRequest ;
+    dcterms:issued "2024-02-12T11:20:10.999Z"^^xsd:dateTime ;
+    dcterms:description "FAQIR Pod Management Service requests full access to manage the patient's Pod. With consent as legal basis." ;
+    sotw:requestedAction odrl:read ;
+    sotw:requestedTarget faqir:patientPod ;
+    sotw:requestingParty faqir:podManagementService ;
+    sotw:context [
+        odrl:leftOperand dpv-odrl:Purpose ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand dpv:AccountManagement ], [
+        odrl:leftOperand dpv-odrl:LegalBasis ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand eu-gdpr:A9-2-a ] .
 
 faqir:podManagementService a dpv:ServiceProvider, dpv:NonProfitOrganisation .

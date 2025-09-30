@@ -8,16 +8,13 @@
 
 ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement a odrl:Set ;
     odrl:uid ex:uc22-p-pod-accountManagement-faqirPodManagSerDC-accountManagement ;
+    odrl:profile dpv-odrl: ;
     dcterms:description "User allows FAQIR Pod Management Service full access to manage his Pod."@en ;
     odrl:permission [
-        odrl:action dpv:Processing, odrl:use ; #dpv:AccountManagement
+        odrl:action odrl:read, odrl:modify ;
         odrl:target faqir:patientPod ; 
         odrl:assigner ex:patient ;
-        dpv:DataSubject ex:patient ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand dpv:AccountManagement, sector-health:ResourceManagement, 
-            dpv:NonCommercialPurpose,  dpv:DataSecurityManagement, dpv:DataQualityManagement,
-            dpv:DataSubjectRightsManagement ] ] .
-            
+            odrl:operator odrl:eq ;
+            odrl:rightOperand dpv:AccountManagement ] ] .
